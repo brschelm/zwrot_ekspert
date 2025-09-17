@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  zwrot-ekspert:
+    build: .
+    container_name: zwrot-ekspert-website
+    ports:
+      - "3002:3000"  # Port 3002 na host, 3000 w kontenerze
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    volumes:
+      - ./.env.local:/app/.env.local:ro  # Opcjonalnie - jeśli masz zmienne środowiskowe
+    networks:
+      - zwrot-network
+
+networks:
+  zwrot-network:
+    driver: bridge
+
+

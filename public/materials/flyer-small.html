@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulotka - Zwrot Ekspert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: white;
+            padding: 20px;
+        }
+        
+        .flyer {
+            width: 148mm;
+            height: 210mm;
+            background: white;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            color: black;
+            padding: 20px;
+            border: 2px solid black;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+            border-bottom: 2px solid black;
+            padding-bottom: 15px;
+        }
+        
+        .logo-container {
+            background: white;
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: black;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .company-name {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: black;
+        }
+        
+        .tagline {
+            font-size: 0.9em;
+            font-weight: 300;
+            color: black;
+        }
+        
+        .main-title {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: black;
+            background: black;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .service-card {
+            background: white;
+            border: 1px solid black;
+            border-radius: 8px;
+            padding: 10px;
+        }
+        
+        .service-icon {
+            width: 25px;
+            height: 25px;
+            background: black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 5px;
+            font-size: 12px;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .service-title {
+            font-size: 0.8em;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+        
+        .service-description {
+            color: black;
+            font-size: 0.7em;
+            line-height: 1.2;
+            text-align: center;
+        }
+        
+        .benefits-section {
+            background: white;
+            border: 2px solid black;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .benefits-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: black;
+            text-align: center;
+            text-decoration: underline;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 5px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            font-size: 0.8em;
+            color: black;
+        }
+        
+        .benefit-icon {
+            width: 15px;
+            height: 15px;
+            background: black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 6px;
+            font-size: 0.7em;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .stats-section {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+            background: black;
+            color: white;
+            border-radius: 8px;
+            padding: 15px;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 1.5em;
+            font-weight: bold;
+            display: block;
+            color: white;
+        }
+        
+        .stat-label {
+            font-size: 0.7em;
+            color: white;
+        }
+        
+        .guarantee-section {
+            background: black;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .guarantee-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .guarantee-text {
+            font-size: 0.9em;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 15px 0;
+        }
+        
+        .cta-button {
+            background: black;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            margin: 3px;
+            border: 2px solid black;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            color: black;
+            border: 2px solid black;
+        }
+        
+        .contact-info {
+            background: black;
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 15px;
+            border: 3px solid black;
+        }
+        
+        .contact-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-decoration: underline;
+        }
+        
+        .phone {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+            color: white;
+            background: white;
+            color: black;
+            padding: 8px;
+            border-radius: 8px;
+            border: 2px solid black;
+        }
+        
+        .availability {
+            font-size: 1em;
+            margin-top: 8px;
+            color: white;
+        }
+        
+        .email {
+            font-size: 1em;
+            margin-top: 8px;
+            color: white;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .flyer {
+                box-shadow: none;
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo-icon">$</div>
+                <div class="company-name">ZWROT EKSPERT</div>
+                <div class="tagline">Twoje Finanse Nasza Pasja</div>
+            </div>
+        </div>
+        
+        <div class="main-title">
+            SPRAWDŹ ILE MOŻESZ ZYSKAĆ!
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">💰</div>
+                <div class="service-title">Zwroty Prowizji</div>
+                <div class="service-description">
+                    Średnio 8,500 zł zwrotu
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <div class="service-title">Sankcja Kredytu Darmowego</div>
+                <div class="service-description">
+                    100% zwrot odsetek
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <div class="service-title">Konsolidacje Kredytów</div>
+                <div class="service-description">
+                    Nawet 50% niższe raty
+                </div>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🏦</div>
+                <div class="service-title">Pożyczki i Kredyty</div>
+                <div class="service-description">
+                    Najkorzystniejsze oferty
+                </div>
+            </div>
+        </div>
+        
+        <div class="benefits-section">
+            <div class="benefits-title">DLACZEGO MY?</div>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <span>Ponad 15 lat doświadczenia</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <span>95% skuteczność</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <span>Pełna reprezentacja prawna</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <span>Darmowa konsultacja</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <span>Brak opłat z góry</span>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">✓</div>
+                    <span>Dostępność 8-20</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="stats-section">
+            <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Klientów</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">95%</span>
+                <span class="stat-label">Skuteczność</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">15+</span>
+                <span class="stat-label">Lat</span>
+            </div>
+        </div>
+        
+        <div class="guarantee-section">
+            <div class="guarantee-title">🎯 GWARANCJA JAKOŚCI</div>
+            <div class="guarantee-text">
+                Jeśli nie odzyskamy Twoich pieniędzy, nie płacisz za nasze usługi!
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <a href="tel:+48510441307" class="cta-button">📞 ZADZWOŃ TERAZ</a>
+            <a href="#kontakt" class="cta-button">💬 DARMOWA KONSULTACJA</a>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-title">KONTAKT</div>
+            <div class="phone">+48 510 441 307</div>
+            <div class="availability">Dostępni 8-20 od poniedziałku do soboty</div>
+            <div class="email">kontakt@zwrotekspert.pl</div>
+        </div>
+    </div>
+</body>
+</html>
