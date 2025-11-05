@@ -1,23 +1,22 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+// Supabase jest opcjonalny - funkcja tworząca klienta tylko gdy zmienne są dostępne
+// Używamy funkcji zamiast stałej, żeby uniknąć problemów podczas buildu
+export function getSupabaseClient(): SupabaseClient | null {
+  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+  const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
 
-// Supabase jest opcjonalny - nie rzucamy błędu podczas buildu
-let supabase: SupabaseClient | null = null
+  if (!supabaseUrl || !supabaseKey) {
+    return null
+  }
 
-if (supabaseUrl && supabaseKey) {
   try {
-    supabase = createClient(supabaseUrl, supabaseKey)
+    return createClient(supabaseUrl, supabaseKey)
   } catch (error) {
     console.warn('⚠️ Nie można utworzyć klienta Supabase:', error)
-    supabase = null
+    return null
   }
-} else {
-  console.warn('⚠️ Supabase nie jest skonfigurowany - zmienne środowiskowe nie są ustawione')
 }
-
-export { supabase }
 
 export interface ContactSubmission {
   id?: string

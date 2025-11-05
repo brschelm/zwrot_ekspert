@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { supabase, ContactSubmission } from '@/lib/supabase'
+import { getSupabaseClient, ContactSubmission } from '@/lib/supabase'
 import { Resend } from 'resend'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
@@ -39,6 +39,7 @@ export async function POST(request: NextRequest) {
     let submissionId = 'temp-' + Date.now()
     
     // Sprawdź czy Supabase jest skonfigurowany i dostępny
+    const supabase = getSupabaseClient()
     if (supabase) {
       try {
         const { data: dbData, error: dbError } = await supabase
