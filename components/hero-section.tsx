@@ -67,27 +67,6 @@ export default function HeroSection() {
                 </Button>
               </div>
 
-              {/* Social proof */}
-              <div className="flex items-center space-x-8 pt-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">500+</div>
-                  <div className="text-sm text-gray-600">Zadowolonych klientów</div>
-                </div>
-                <div className="w-px h-12 bg-gray-300"></div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-gray-900">95%</div>
-                  <div className="text-sm text-gray-600">Skuteczność</div>
-                </div>
-                <div className="w-px h-12 bg-gray-300"></div>
-                <div className="flex items-center space-x-1">
-                  <div className="flex space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-                    ))}
-                  </div>
-                  <span className="text-sm text-gray-600 ml-2">4.8/5</span>
-                </div>
-              </div>
             </div>
 
             {/* Right content - Professional Banker Image */}
@@ -117,15 +96,15 @@ export default function HeroSection() {
                 </div>
 
                 {/* Floating cards */}
-                <div className="absolute -top-4 -right-4 bg-gradient-to-r from-blue-800 to-blue-600 text-white p-4 rounded-2xl shadow-xl hover:scale-110 transition-transform duration-300 cursor-pointer">
-                  <div className="text-2xl font-bold">15+</div>
-                  <div className="text-sm opacity-90">lat doświadczenia</div>
+                <div className="absolute -top-4 -right-4 bg-gradient-to-r from-blue-800 to-blue-600 text-white p-3 sm:p-4 rounded-2xl shadow-xl hover:scale-110 transition-transform duration-300 cursor-pointer hidden sm:block">
+                  <div className="text-xl sm:text-2xl font-bold">15+</div>
+                  <div className="text-xs sm:text-sm opacity-90">lat doświadczenia</div>
                 </div>
 
-                <div className="absolute -bottom-8 -left-8 bg-gradient-to-r from-blue-800 to-blue-600 text-white rounded-2xl shadow-xl p-5 border border-blue-700 hover:scale-110 transition-transform duration-300 cursor-pointer">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-lg font-bold">Dostępni online</span>
+                <div className="absolute -bottom-8 -left-8 bg-gradient-to-r from-blue-800 to-blue-600 text-white rounded-2xl shadow-xl p-3 sm:p-5 border border-blue-700 hover:scale-110 transition-transform duration-300 cursor-pointer hidden sm:block">
+                  <div className="flex items-center space-x-2 sm:space-x-3">
+                    <div className="w-3 h-3 sm:w-4 sm:h-4 bg-green-400 rounded-full animate-pulse"></div>
+                    <span className="text-sm sm:text-lg font-bold">Dostępni online</span>
                   </div>
                 </div>
               </div>

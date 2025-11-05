@@ -8,6 +8,10 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
+  const closeMenu = () => {
+    setIsMenuOpen(false)
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
@@ -55,24 +59,28 @@ export function Header() {
             <nav className="hidden lg:flex items-center space-x-6">
               <a
                 href="#uslugi"
+                onClick={closeMenu}
                 className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
               >
                 Usługi
               </a>
               <a
                 href="#proces"
+                onClick={closeMenu}
                 className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
               >
                 Jak działamy
               </a>
               <a
                 href="#opinie"
+                onClick={closeMenu}
                 className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
               >
                 Opinie
               </a>
               <a
                 href="#kontakt"
+                onClick={closeMenu}
                 className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
               >
                 Kontakt
@@ -101,16 +109,16 @@ export function Header() {
         {isMenuOpen && (
           <div className="lg:hidden py-6 border-t bg-white/95 backdrop-blur-md">
             <nav className="flex flex-col space-y-4">
-              <a href="#uslugi" className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
+              <a href="#uslugi" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
                 Usługi
               </a>
-              <a href="#proces" className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
+              <a href="#proces" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
                 Jak działamy
               </a>
-              <a href="#opinie" className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
+              <a href="#opinie" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
                 Opinie
               </a>
-              <a href="#kontakt" className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
+              <a href="#kontakt" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
                 Kontakt
               </a>
               <div className="px-4 pt-4 border-t">
@@ -127,11 +135,11 @@ export function Header() {
                   <span className="font-medium">Działamy mobilnie</span>
                 </div>
                 <div className="space-y-2">
-                  <Button className="w-full bg-gradient-to-r from-green-600 to-green-500 text-white mb-2">
+                  <Button onClick={closeMenu} className="w-full bg-gradient-to-r from-green-600 to-green-500 text-white mb-2">
                     <MessageSquare className="h-4 w-4 mr-2" />
                     <a href="sms:+48510441307">Napisz SMS</a>
                   </Button>
-                  <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white">
+                  <Button onClick={closeMenu} className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white">
                     <a href="#kontakt">Umówmy się i przyjedziemy</a>
                   </Button>
                 </div>

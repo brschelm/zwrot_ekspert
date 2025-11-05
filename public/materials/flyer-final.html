@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulotka - Zwrot Ekspert</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            padding: 0;
+            margin: 0;
+        }
+
+        .flyer {
+            width: 210mm;
+            height: 297mm;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: none;
+            color: #fbbf24;
+        }
+
+        .flyer-content {
+            padding: 20px;
+            height: calc(100% - 180px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            color: #fbbf24;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .tagline {
+            font-size: 24px;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .location {
+            background: #3b82f6;
+            color: #000000;
+            padding: 15px 30px;
+            border-radius: 25px;
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 900;
+            border: 4px solid #1d4ed8;
+            box-shadow: 0 6px 12px rgba(59, 130, 246, 0.8);
+        }
+
+        .main-heading {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #000000;
+            margin: 15px 0;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .service {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        .service-desc {
+            font-size: 14px;
+            color: #000000;
+            line-height: 1.4;
+        }
+
+        .bottom-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .why-us, .contact {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact {
+            text-align: center;
+            padding-bottom: 0px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #000000;
+            margin-bottom: 15px;
+            text-decoration: underline;
+        }
+
+        .benefit {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            color: #000000;
+            font-size: 14px;
+        }
+
+        .checkmark {
+            color: #10b981;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+
+        .phone-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #000000;
+            text-align: center;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 15px;
+            margin-bottom: 5px;
+        }
+
+        .phone-number::before {
+            content: "📞";
+            color: #dc2626;
+            margin-right: 8px;
+        }
+
+        .email {
+            color: #dc2626;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .guarantee {
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .guarantee-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .consultation-banner {
+            background: #dc2626;
+            color: #000000;
+            padding: 12px 25px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 6px 12px rgba(220, 38, 38, 0.6);
+            border: 3px solid #ffd700;
+            text-align: center;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .tear-off-strips {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 180px;
+            background: #fbbf24;
+            border-top: 3px dashed #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0;
+            font-weight: bold;
+            color: #1e293b;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .tear-off-strip {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            border-right: 1px solid #1e293b;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            padding: 25px 15px;
+            min-width: 80px;
+            gap: 15px;
+        }
+
+        .tear-off-strip:last-child {
+            border-right: none;
+        }
+
+        .tear-off-strip:hover {
+            background-color: #f59e0b;
+        }
+
+        .company-name {
+            font-size: 16px;
+            font-weight: bold;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            line-height: 1.2;
+            text-align: center;
+            margin: 0;
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            color: #000000;
+        }
+
+        .phone-number-strip {
+            font-size: 18px;
+            font-weight: bold;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            transform: rotate(180deg);
+            line-height: 1.2;
+            text-align: center;
+            margin: 0;
+            white-space: nowrap;
+            letter-spacing: 0.2px;
+            color: #dc2626;
+        }
+
+        .tear-off-text {
+            display: none;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .flyer {
+                box-shadow: none;
+                margin: 0;
+            }
+            .tear-off-strips {
+                border-top: 2px dashed #000;
+            }
+            .tear-off-strip {
+                border-right: 1px solid #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="flyer">
+        <div class="flyer-content">
+            <div class="header">
+                <div class="logo">ZWROT EKSPERT</div>
+                <div class="tagline">Twoje Finanse Nasz Priorytet</div>
+                <div class="location">Mobilne Usługi Finansowe - Województwo Lubelskie</div>
+            </div>
+
+            <div class="main-heading">SPRAWDŹ ILE MOŻESZ ZYSKAĆ!</div>
+
+            <div class="services">
+                <div class="service">
+                    <div class="service-title">🏠 Pożyczki i Kredyty</div>
+                    <div class="service-desc">Pomoc w uzyskaniu najkorzystniejszych pożyczek dostosowanych do Twoich potrzeb finansowych. Najniższe stałe oprocentowanie na rynku!</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">💰 Zwroty Prowizji</div>
+                    <div class="service-desc">Odzyskanie nienależnie pobranych prowizji i opłat dodatkowych z kredytów i pożyczek.</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">⚖️ Sankcja Kredytu Darmowego</div>
+                    <div class="service-desc">Pomoc w uzyskaniu sankcji kredytu darmowego w przypadku naruszenia przepisów przez bank. 100% zwrot odsetek.</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">🔗 Konsolidacje Kredytów</div>
+                    <div class="service-desc">Połączenie wszystkich zobowiązań w jedną, korzystniejszą ratę miesięczną. Nawet 50% niższe raty.</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">🛡️ Ubezpieczenia Kredytów</div>
+                    <div class="service-desc">Kompleksowa obsługa ubezpieczeń związanych z kredytami i pożyczkami. Do 40% taniej.</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">📊 Doradztwo Finansowe</div>
+                    <div class="service-desc">Profesjonalne doradztwo w zakresie optymalizacji finansów osobistych i biznesowych.</div>
+                </div>
+            </div>
+
+            <div class="bottom-section">
+                <div class="why-us">
+                    <div class="section-title">DLACZEGO MY?</div>
+                    <div class="benefit">
+                        <span class="checkmark">✓</span>
+                        Ponad 15 lat doświadczenia
+                    </div>
+                    <div class="benefit">
+                        <span class="checkmark">✓</span>
+                        95% skuteczność
+                    </div>
+                    <div class="benefit">
+                        <span class="checkmark">✓</span>
+                        Pełna reprezentacja prawna
+                    </div>
+                    <div class="benefit">
+                        <span class="checkmark">✓</span>
+                        Darmowa konsultacja
+                    </div>
+                    <div class="benefit">
+                        <span class="checkmark">✓</span>
+                        Brak opłat z góry
+                    </div>
+                    <div class="benefit">
+                        <span class="checkmark">✓</span>
+                        Dostępność 8-20
+                    </div>
+                    <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 8px; margin-top: 15px; color: #ffffff; font-size: 12px;">
+                        
+                    </div>
+                </div>
+
+                <div class="contact">
+                    <div class="section-title">KONTAKT</div>
+                    <div class="phone-number">510 441 307</div>
+                    <div class="email">kontakt@zwrotekspert.pl</div>
+                    <div class="consultation-banner">DARMOWA KONSULTACJA</div>
+                </div>
+            </div>
+
+            <div class="guarantee">
+                <div class="guarantee-title">🎯 GWARANCJA JAKOŚCI</div>
+                <div class="guarantee-text">Zadzwoń sprawdź ile taniej możesz płacić za swoje raty!</div>
+            </div>
+
+            <div class="guarantee" style="margin-top: 10px;">
+                <div class="guarantee-title">💬 DARMOWA KONSULTACJA</div>
+                <div class="guarantee-text">Skontaktuj się z nami już dziś!</div>
+            </div>
+        </div>
+
+        <!-- Paski do odrywania -->
+        <div class="tear-off-strips">
+            <div class="tear-off-strip">
+                <div class="company-name">ZWROT EKSPERT</div>
+                <div class="phone-number-strip">510 441 307</div>
+            </div>
+            <div class="tear-off-strip">
+                <div class="company-name">ZWROT EKSPERT</div>
+                <div class="phone-number-strip">510 441 307</div>
+            </div>
+            <div class="tear-off-strip">
+                <div class="company-name">ZWROT EKSPERT</div>
+                <div class="phone-number-strip">510 441 307</div>
+            </div>
+            <div class="tear-off-strip">
+                <div class="company-name">ZWROT EKSPERT</div>
+                <div class="phone-number-strip">510 441 307</div>
+            </div>
+            <div class="tear-off-strip">
+                <div class="company-name">ZWROT EKSPERT</div>
+                <div class="phone-number-strip">510 441 307</div>
+            </div>
+            <div class="tear-off-strip">
+                <div class="company-name">ZWROT EKSPERT</div>
+                <div class="phone-number-strip">510 441 307</div>
+            </div>
+            <div class="tear-off-strip">
+                <div class="company-name">ZWROT EKSPERT</div>
+                <div class="phone-number-strip">510 441 307</div>
+            </div>
+            <div class="tear-off-strip">
+                <div class="company-name">ZWROT EKSPERT</div>
+                <div class="phone-number-strip">510 441 307</div>
+            </div>
+            <div class="tear-off-strip">
+                <div class="company-name">ZWROT EKSPERT</div>
+                <div class="phone-number-strip">510 441 307</div>
+            </div>
+        </div>
+        <div class="tear-off-text">ODRWIJ I ZACHOWAJ</div>
+    </div>
+</body>
+</html>

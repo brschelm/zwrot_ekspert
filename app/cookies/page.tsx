@@ -1,8 +1,21 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Polityka Cookies - Zwrot Ekspert",
-  description: "Informacje o plikach cookies używanych przez Zwrot Ekspert",
+  title: "Polityka Cookies",
+  description: "Informacje o plikach cookies używanych przez Zwrot Ekspert. Jak zarządzać cookies i jakie pliki używamy.",
+  alternates: {
+    canonical: 'https://www.zwrotekspert.pl/cookies',
+  },
+  openGraph: {
+    title: "Polityka Cookies - Zwrot Ekspert",
+    description: "Informacje o plikach cookies używanych przez Zwrot Ekspert",
+    url: 'https://www.zwrotekspert.pl/cookies',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function Cookies() {
@@ -118,6 +131,14 @@ export default function Cookies() {
     </div>
   )
 }
+
+
+
+
+
+
+
+
 
 
 

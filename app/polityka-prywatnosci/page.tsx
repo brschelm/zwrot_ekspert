@@ -1,8 +1,21 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Polityka Prywatności - Zwrot Ekspert",
-  description: "Polityka prywatności i ochrony danych osobowych Zwrot Ekspert",
+  title: "Polityka Prywatności",
+  description: "Polityka prywatności i ochrony danych osobowych Zwrot Ekspert. Informacje o przetwarzaniu danych zgodnie z RODO.",
+  alternates: {
+    canonical: 'https://www.zwrotekspert.pl/polityka-prywatnosci',
+  },
+  openGraph: {
+    title: "Polityka Prywatności - Zwrot Ekspert",
+    description: "Polityka prywatności i ochrony danych osobowych Zwrot Ekspert",
+    url: 'https://www.zwrotekspert.pl/polityka-prywatnosci',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function PolitykaPrywatnosci() {
@@ -95,6 +108,14 @@ export default function PolitykaPrywatnosci() {
     </div>
   )
 }
+
+
+
+
+
+
+
+
 
 
 

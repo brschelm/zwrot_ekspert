@@ -1,8 +1,21 @@
 import { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Regulamin - Zwrot Ekspert",
-  description: "Regulamin świadczenia usług przez Zwrot Ekspert",
+  title: "Regulamin",
+  description: "Regulamin świadczenia usług przez Zwrot Ekspert. Warunki współpracy, opłaty i odpowiedzialność.",
+  alternates: {
+    canonical: 'https://www.zwrotekspert.pl/regulamin',
+  },
+  openGraph: {
+    title: "Regulamin - Zwrot Ekspert",
+    description: "Regulamin świadczenia usług przez Zwrot Ekspert",
+    url: 'https://www.zwrotekspert.pl/regulamin',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function Regulamin() {
@@ -112,6 +125,14 @@ export default function Regulamin() {
     </div>
   )
 }
+
+
+
+
+
+
+
+
 
 
 

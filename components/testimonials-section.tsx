@@ -7,56 +7,74 @@ import { useState, useEffect } from "react"
 const testimonials = [
   {
     name: "Anna Kowalska",
-    location: "Warszawa",
+    location: "Lublin",
     service: "Zwrot prowizji",
     amount: "12,500 zł",
     rating: 5,
-    text: "Dzięki Zwrot Ekspert odzyskałam prowizję z kredytu hipotecznego. Profesjonalna obsługa, wszystko załatwione bez mojego udziału. Polecam każdemu!",
+    text: "Naprawdę polecam! Dzięki Zwrot Ekspert odzyskałam prowizję z kredytu hipotecznego. Wszystko załatwione bez mojego udziału - super profesjonalnie!",
     avatar: "/placeholder.svg?height=60&width=60",
   },
   {
     name: "Marek Nowak",
-    location: "Kraków",
+    location: "Chełm",
     service: "Konsolidacja kredytów",
     amount: "Oszczędność 800 zł/mies.",
     rating: 5,
-    text: "Miałem 4 kredyty, teraz płacę jedną ratę o 800 zł niższą miesięcznie. Zespół Zwrot Ekspert załatwił wszystko sprawnie i profesjonalnie.",
+    text: "Miałem 4 kredyty, teraz płacę jedną ratę o 800 zł niższą miesięcznie. Zespół załatwił wszystko sprawnie i profesjonalnie. Bardzo zadowolony.",
     avatar: "/placeholder.svg?height=60&width=60",
   },
   {
     name: "Katarzyna Wiśniewska",
-    location: "Gdańsk",
+    location: "Zamość",
     service: "Sankcja kredytu darmowego",
     amount: "45,000 zł",
     rating: 5,
-    text: "Bank naruszył przepisy przy udzielaniu kredytu. Dzięki Zwrot Ekspert otrzymałam sankcję kredytu darmowego - zwrot wszystkich odsetek!",
+    text: "Bank naruszył przepisy przy udzielaniu kredytu. Dzięki Zwrot Ekspert otrzymałam sankcję kredytu darmowego - zwrot wszystkich odsetek! Fantastyczne!",
     avatar: "/placeholder.svg?height=60&width=60",
   },
   {
     name: "Tomasz Zieliński",
-    location: "Wrocław",
+    location: "Puławy",
     service: "Zwrot prowizji",
     amount: "8,900 zł",
     rating: 5,
-    text: "Dzięki Zwrot Ekspert odzyskałem prowizję z kredytu konsumpcyjnego. Profesjonalna obsługa i szybki zwrot pieniędzy.",
+    text: "Profesjonalna obsługa i szybki zwrot pieniędzy. Dzięki Zwrot Ekspert odzyskałem prowizję z kredytu konsumpcyjnego. Naprawdę warto!",
     avatar: "/placeholder.svg?height=60&width=60",
   },
   {
     name: "Magdalena Kaczmarek",
-    location: "Poznań",
+    location: "Biała Podlaska",
     service: "Sankcja kredytu darmowego",
     amount: "32,000 zł",
     rating: 5,
-    text: "Bank nie poinformował mnie o prawach kredytobiorcy. Dzięki Zwrot Ekspert otrzymałam sankcję - zwrot wszystkich odsetek!",
+    text: "Bank nie poinformował mnie o prawach kredytobiorcy. Dzięki Zwrot Ekspert otrzymałam sankcję - zwrot wszystkich odsetek! Polecam serdecznie!",
     avatar: "/placeholder.svg?height=60&width=60",
   },
   {
     name: "Paweł Jankowski",
-    location: "Łódź",
+    location: "Świdnik",
     service: "Zwrot prowizji",
     amount: "8,200 zł",
     rating: 5,
-    text: "Sceptycznie podchodziłem do zwrotu prowizji, ale Zwrot Ekspert udowodnił, że to możliwe. Otrzymałem zwrot bez żadnych problemów.",
+    text: "Sceptycznie podchodziłem do zwrotu prowizji, ale Zwrot Ekspert udowodnił, że to możliwe. Otrzymałem zwrot bez żadnych problemów. Świetna robota!",
+    avatar: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    name: "Agnieszka Dąbrowska",
+    location: "Tomaszów Lubelski",
+    service: "Konsolidacja kredytów",
+    amount: "Oszczędność 650 zł/mies.",
+    rating: 5,
+    text: "Fantastyczna obsługa! Miałam problem z wieloma kredytami, a teraz płacę jedną ratę i oszczędzam 650 zł miesięcznie. Dziękuję!",
+    avatar: "/placeholder.svg?height=60&width=60",
+  },
+  {
+    name: "Robert Kowalczyk",
+    location: "Kraśnik",
+    service: "Zwrot prowizji",
+    amount: "15,200 zł",
+    rating: 5,
+    text: "Naprawdę się nie spodziewałem, że można odzyskać prowizję z kredytu hipotecznego. Zwrot Ekspert to zrobił! Profesjonalizm na najwyższym poziomie.",
     avatar: "/placeholder.svg?height=60&width=60",
   },
 ]
@@ -89,18 +107,6 @@ export function TestimonialsSection() {
           </p>
         </div>
 
-        {/* Overall rating */}
-        <div className="text-center mb-16">
-          <div className="inline-block bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
-            <div className="flex items-center justify-center space-x-2 mb-4">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-8 w-8 fill-yellow-400 text-yellow-400" />
-              ))}
-            </div>
-            <div className="text-4xl font-bold text-gray-900 mb-2">4.9/5</div>
-            <div className="text-gray-600">Średnia ocena z 500+ opinii</div>
-          </div>
-        </div>
 
         {/* Testimonials grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
