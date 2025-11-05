@@ -42,8 +42,9 @@ export function ContactSection() {
       })
 
       const result = await response.json()
+      console.log('📤 Odpowiedź z API:', { status: response.status, result })
 
-      if (response.ok) {
+      if (response.ok && result.success) {
         toast.success("Dziękujemy za wiadomość! Skontaktujemy się z Tobą w ciągu 2 godzin.")
         // Reset formularza
         setFormData({
@@ -57,11 +58,14 @@ export function ContactSection() {
         })
         setRodoRead(false)
       } else {
-        toast.error(result.error || "Wystąpił błąd podczas wysyłania formularza")
+        console.error('❌ Błąd formularza:', result)
+        toast.error(result.error || "Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie lub zadzwoń: +48 510 441 307")
+        // NIE resetujemy formularza przy błędzie
       }
     } catch (error) {
-      console.error('Błąd formularza:', error)
-      toast.error("Wystąpił błąd podczas wysyłania formularza")
+      console.error('❌ Błąd formularza (catch):', error)
+      toast.error("Wystąpił błąd podczas wysyłania formularza. Sprawdź konsolę przeglądarki (F12) lub zadzwoń: +48 510 441 307")
+      // NIE resetujemy formularza przy błędzie
     } finally {
       setIsSubmitting(false)
     }

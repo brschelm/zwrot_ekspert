@@ -71,8 +71,12 @@ export async function POST(request: NextRequest) {
     const notificationEmail = process.env.RESEND_NOTIFICATION_EMAIL || 'kontakt@zwrotekspert.pl'
     console.log('🚀 Próbuję wysłać email powiadomienia do:', notificationEmail)
     console.log('📧 Resend API Key obecny:', !!process.env.RESEND_API_KEY)
+    console.log('📧 RESEND_FROM_EMAIL:', process.env.RESEND_FROM_EMAIL || 'BRAK')
     
     const resend = getResendClient()
+    let emailNotificationSent = false
+    let emailConfirmationSent = false
+    
     if (resend) {
       try {
         // Używaj zweryfikowanej domeny lub fallback do testowej
@@ -120,8 +124,10 @@ export async function POST(request: NextRequest) {
       })
         if (emailResult.error) {
           console.error('❌ Błąd wysyłania email powiadomienia:', emailResult.error.message)
+          emailNotificationSent = false
         } else {
           console.log('✅ Email powiadomienia wysłany:', emailResult.data?.id)
+          emailNotificationSent = true
         }
       } catch (emailError: any) {
         console.error('❌ Błąd wysyłania email powiadomienia:', emailError)
@@ -193,8 +199,10 @@ export async function POST(request: NextRequest) {
       })
         if (confirmationResult.error) {
           console.error('❌ Błąd wysyłania email potwierdzenia:', confirmationResult.error.message)
+          emailConfirmationSent = false
         } else {
           console.log('✅ Email potwierdzenia wysłany:', confirmationResult.data?.id)
+          emailConfirmationSent = true
         }
       } catch (emailError: any) {
         console.error('❌ Błąd wysyłania email potwierdzenia:', emailError)
@@ -206,11 +214,46 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    // Sprawdź czy email został wysłany
+    const emailSent = emailNotificationSent || emailConfirmationSent
+    
+    if (!resend) {
+      console.error('⚠️ RESEND_API_KEY nie jest ustawiony - emaile nie będą wysyłane!')
+      return NextResponse.json({
+        success: false,
+        error: 'Email nie został wysłany - brak konfiguracji RESEND_API_KEY. Sprawdź zmienne środowiskowe w Vercel.',
+        submissionId,
+        emailSent: false
+      }, { status: 500 })
+    }
+    
+    // Jeśli email potwierdzenia został wysłany, ale powiadomienie nie - to jest OK (klient dostał potwierdzenie)
+    // Ale logujemy ostrzeżenie
+    if (!emailNotificationSent && emailConfirmationSent) {
+      console.warn('⚠️ Email powiadomienia nie został wysłany, ale email potwierdzenia tak - sprawdź logi powyżej')
+    }
+    
+    if (!emailNotificationSent && !emailConfirmationSent) {
+      console.error('⚠️ Żaden email nie został wysłany mimo obecności RESEND_API_KEY')
+      return NextResponse.json({
+        success: false,
+        error: 'Email nie został wysłany. Sprawdź logi w Vercel Dashboard → Functions → Logs.',
+        submissionId,
+        emailSent: false
+      }, { status: 500 })
+    }
+    
+    // Jeśli przynajmniej jeden email został wysłany, zwróć sukces
     return NextResponse.json({
       success: true,
-      message: 'Zgłoszenie zostało wysłane' + (submissionId.startsWith('temp-') ? ' (email wysłany, baza danych tymczasowo niedostępna)' : ' i zapisane'),
-      submissionId
-    })
+      message: emailNotificationSent 
+        ? 'Zgłoszenie zostało wysłane' + (submissionId.startsWith('temp-') ? ' (email wysłany, baza danych tymczasowo niedostępna)' : ' i zapisane')
+        : 'Zgłoszenie otrzymane (email potwierdzenia wysłany, ale powiadomienie nie - sprawdź logi Vercel)',
+      submissionId,
+      emailSent: true,
+      emailNotificationSent,
+      emailConfirmationSent
+    }, { status: 200 })
 
   } catch (error) {
     console.error('Błąd podczas przetwarzania formularza:', error)
