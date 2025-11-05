@@ -69,15 +69,18 @@ export async function POST(request: NextRequest) {
 
     // Wyślij powiadomienie email do Ciebie
     const notificationEmail = process.env.RESEND_NOTIFICATION_EMAIL || 'kontakt@zwrotekspert.pl'
+    console.log('📧 ========== EMAIL POWIADOMIENIA ==========')
     console.log('🚀 Próbuję wysłać email powiadomienia do:', notificationEmail)
     console.log('📧 Resend API Key obecny:', !!process.env.RESEND_API_KEY)
     console.log('📧 RESEND_FROM_EMAIL:', process.env.RESEND_FROM_EMAIL || 'BRAK')
     
     const resend = getResendClient()
+    console.log('📧 Resend client utworzony:', !!resend)
     let emailNotificationSent = false
     let emailConfirmationSent = false
     
     if (resend) {
+      console.log('📧 Wchodzę do bloku if (resend) - rozpoczynam wysyłanie powiadomienia')
       try {
         // Używaj zweryfikowanej domeny lub fallback do testowej
         const fromEmail = process.env.RESEND_FROM_EMAIL || 'noreply@zwrotekspert.pl'
@@ -122,23 +125,27 @@ export async function POST(request: NextRequest) {
           </div>
         `
       })
+        console.log('📧 Wynik wysyłania email powiadomienia:', JSON.stringify(emailResult, null, 2))
         if (emailResult.error) {
           console.error('❌ Błąd wysyłania email powiadomienia:', emailResult.error.message)
+          console.error('❌ Pełny błąd:', JSON.stringify(emailResult.error, null, 2))
           emailNotificationSent = false
         } else {
           console.log('✅ Email powiadomienia wysłany:', emailResult.data?.id)
           emailNotificationSent = true
         }
       } catch (emailError: any) {
-        console.error('❌ Błąd wysyłania email powiadomienia:', emailError)
+        console.error('❌ Błąd CATCH wysyłania email powiadomienia:', emailError)
         console.error('❌ Szczegóły błędu:', JSON.stringify(emailError, null, 2))
         if (emailError.message) {
           console.error('❌ Komunikat błędu:', emailError.message)
         }
         // Nie przerywamy procesu jeśli email się nie wyśle
       }
+      console.log('📧 ========== KONIEC EMAIL POWIADOMIENIA ==========')
     } else {
       console.warn('⚠️ Resend nie jest skonfigurowany - pomijam wysyłanie emaili')
+      console.log('📧 ========== KONIEC EMAIL POWIADOMIENIA (brak Resend) ==========')
     }
 
     // Wyślij potwierdzenie do klienta
