@@ -42,8 +42,13 @@ export async function POST(request: NextRequest) {
     // Zapisz do Supabase (opcjonalne - nie blokuje wysyłki emaili)
     let submissionId = 'temp-' + Date.now()
     
+    console.log('🗄️ ========== SUPABASE ==========')
+    console.log('📧 NEXT_PUBLIC_SUPABASE_URL obecny:', !!process.env.NEXT_PUBLIC_SUPABASE_URL)
+    console.log('📧 NEXT_PUBLIC_SUPABASE_ANON_KEY obecny:', !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY)
+    
     // Sprawdź czy Supabase jest skonfigurowany i dostępny
     const supabase = getSupabaseClient()
+    console.log('📧 Supabase client utworzony:', !!supabase)
     if (supabase) {
       try {
         const { data: dbData, error: dbError } = await supabase
@@ -52,19 +57,26 @@ export async function POST(request: NextRequest) {
           .select()
 
         if (dbError) {
-          console.error('⚠️ Błąd Supabase (kontynuuję wysyłanie emaili):', dbError.message)
+          console.error('❌ Błąd Supabase (kontynuuję wysyłanie emaili):', dbError.message)
+          console.error('❌ Pełny błąd:', JSON.stringify(dbError, null, 2))
           console.error('⚠️ Uwaga: Projekt może być zapauzowany - sprawdź w Supabase Dashboard')
         } else {
           submissionId = dbData[0].id
           console.log('✅ Zapisano do Supabase, ID:', submissionId)
         }
       } catch (supabaseError: any) {
-        console.error('⚠️ Błąd połączenia z Supabase (kontynuuję wysyłanie emaili):', supabaseError.message)
+        console.error('❌ Błąd CATCH połączenia z Supabase (kontynuuję wysyłanie emaili):', supabaseError.message)
+        console.error('❌ Szczegóły błędu:', JSON.stringify(supabaseError, null, 2))
         console.error('⚠️ Możliwe przyczyny: projekt zapauzowany, brak internetu, lub tabela nie istnieje')
         // Kontynuujemy - maile są ważniejsze niż zapis do bazy
       }
+      console.log('🗄️ ========== KONIEC SUPABASE ==========')
     } else {
       console.log('ℹ️ Supabase nie jest skonfigurowany - pomijam zapis do bazy')
+      console.log('💡 Aby włączyć Supabase, ustaw w Vercel:')
+      console.log('   - NEXT_PUBLIC_SUPABASE_URL')
+      console.log('   - NEXT_PUBLIC_SUPABASE_ANON_KEY')
+      console.log('🗄️ ========== KONIEC SUPABASE (brak konfiguracji) ==========')
     }
 
     // Wyślij powiadomienie email do Ciebie
