@@ -38,8 +38,8 @@ export async function POST(request: NextRequest) {
     // Zapisz do Supabase (opcjonalne - nie blokuje wysyłki emaili)
     let submissionId = 'temp-' + Date.now()
     
-    // Sprawdź czy Supabase jest skonfigurowany
-    if (process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
+    // Sprawdź czy Supabase jest skonfigurowany i dostępny
+    if (supabase) {
       try {
         const { data: dbData, error: dbError } = await supabase
           .from('contact_submissions')
