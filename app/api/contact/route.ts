@@ -2,10 +2,14 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getSupabaseClient, ContactSubmission } from '@/lib/supabase'
 import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
-
-if (!process.env.RESEND_API_KEY) {
-  console.warn('⚠️ UWAGA: RESEND_API_KEY nie jest ustawiony! Emails nie będą wysyłane.')
+// Lazy initialization - Resend tylko gdy jest potrzebny
+function getResendClient(): Resend | null {
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.warn('⚠️ UWAGA: RESEND_API_KEY nie jest ustawiony! Emails nie będą wysyłane.')
+    return null
+  }
+  return new Resend(apiKey)
 }
 
 export async function POST(request: NextRequest) {
@@ -67,12 +71,15 @@ export async function POST(request: NextRequest) {
     const notificationEmail = process.env.RESEND_NOTIFICATION_EMAIL || 'kontakt@zwrotekspert.pl'
     console.log('🚀 Próbuję wysłać email powiadomienia do:', notificationEmail)
     console.log('📧 Resend API Key obecny:', !!process.env.RESEND_API_KEY)
-    try {
-      // Używaj zweryfikowanej domeny lub fallback do testowej
-      const fromEmail = process.env.RESEND_FROM_EMAIL || 'noreply@zwrotekspert.pl'
-      console.log('📤 Wysyłam z adresu:', fromEmail)
-      
-      const emailResult = await resend.emails.send({
+    
+    const resend = getResendClient()
+    if (resend) {
+      try {
+        // Używaj zweryfikowanej domeny lub fallback do testowej
+        const fromEmail = process.env.RESEND_FROM_EMAIL || 'noreply@zwrotekspert.pl'
+        console.log('📤 Wysyłam z adresu:', fromEmail)
+        
+        const emailResult = await resend.emails.send({
         from: `Zwrot Ekspert <${fromEmail}>`,
         to: [notificationEmail],
         subject: `🚨 Nowe zgłoszenie kontaktowe - ${name}`,
@@ -111,27 +118,31 @@ export async function POST(request: NextRequest) {
           </div>
         `
       })
-      if (emailResult.error) {
-        console.error('❌ Błąd wysyłania email powiadomienia:', emailResult.error.message)
-      } else {
-        console.log('✅ Email powiadomienia wysłany:', emailResult.data?.id)
+        if (emailResult.error) {
+          console.error('❌ Błąd wysyłania email powiadomienia:', emailResult.error.message)
+        } else {
+          console.log('✅ Email powiadomienia wysłany:', emailResult.data?.id)
+        }
+      } catch (emailError: any) {
+        console.error('❌ Błąd wysyłania email powiadomienia:', emailError)
+        console.error('❌ Szczegóły błędu:', JSON.stringify(emailError, null, 2))
+        if (emailError.message) {
+          console.error('❌ Komunikat błędu:', emailError.message)
+        }
+        // Nie przerywamy procesu jeśli email się nie wyśle
       }
-    } catch (emailError: any) {
-      console.error('❌ Błąd wysyłania email powiadomienia:', emailError)
-      console.error('❌ Szczegóły błędu:', JSON.stringify(emailError, null, 2))
-      if (emailError.message) {
-        console.error('❌ Komunikat błędu:', emailError.message)
-      }
-      // Nie przerywamy procesu jeśli email się nie wyśle
+    } else {
+      console.warn('⚠️ Resend nie jest skonfigurowany - pomijam wysyłanie emaili')
     }
 
     // Wyślij potwierdzenie do klienta
     console.log('🚀 Próbuję wysłać email potwierdzenia do:', email)
-    try {
-      // Używaj zweryfikowanej domeny lub fallback do testowej
-      const fromEmail = process.env.RESEND_FROM_EMAIL || 'noreply@zwrotekspert.pl'
-      
-      const confirmationResult = await resend.emails.send({
+    if (resend) {
+      try {
+        // Używaj zweryfikowanej domeny lub fallback do testowej
+        const fromEmail = process.env.RESEND_FROM_EMAIL || 'noreply@zwrotekspert.pl'
+        
+        const confirmationResult = await resend.emails.send({
         from: `Zwrot Ekspert <${fromEmail}>`,
         to: [email],
         subject: '✅ Dziękujemy za zgłoszenie - Zwrot Ekspert',
@@ -180,18 +191,19 @@ export async function POST(request: NextRequest) {
           </div>
         `
       })
-      if (confirmationResult.error) {
-        console.error('❌ Błąd wysyłania email potwierdzenia:', confirmationResult.error.message)
-      } else {
-        console.log('✅ Email potwierdzenia wysłany:', confirmationResult.data?.id)
+        if (confirmationResult.error) {
+          console.error('❌ Błąd wysyłania email potwierdzenia:', confirmationResult.error.message)
+        } else {
+          console.log('✅ Email potwierdzenia wysłany:', confirmationResult.data?.id)
+        }
+      } catch (emailError: any) {
+        console.error('❌ Błąd wysyłania email potwierdzenia:', emailError)
+        console.error('❌ Szczegóły błędu:', JSON.stringify(emailError, null, 2))
+        if (emailError.message) {
+          console.error('❌ Komunikat błędu:', emailError.message)
+        }
+        // Nie przerywamy procesu jeśli email się nie wyśle
       }
-    } catch (emailError: any) {
-      console.error('❌ Błąd wysyłania email potwierdzenia:', emailError)
-      console.error('❌ Szczegóły błędu:', JSON.stringify(emailError, null, 2))
-      if (emailError.message) {
-        console.error('❌ Komunikat błędu:', emailError.message)
-      }
-      // Nie przerywamy procesu jeśli email się nie wyśle
     }
 
     return NextResponse.json({
