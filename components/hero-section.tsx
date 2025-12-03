@@ -32,18 +32,18 @@ export default function HeroSection() {
 
               <div className="space-y-6 mt-20">
                 <h1 className="text-2xl lg:text-3xl font-bold leading-tight">
-                  <span className="text-gray-900">Zwrot Prowizji Bankowej</span>
+                  <span className="text-gray-900">Kredyty gotówkowe i konsolidacyjne</span>
                   <br />
                   <span className="bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent">
-                    i Sankcja Kredytu Darmowego
+                    największych banków
                   </span>
                   <br />
-                  <span className="text-gray-900">- Profesjonalne Doradztwo Finansowe</span>
+                  <span className="text-gray-900">– najniższe oprocentowanie</span>
                 </h1>
 
                 <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
-                  Pomagamy odzyskać prowizje bankowe, uzyskać sankcję kredytu darmowego i skonsolidować kredyty. 
-                  <span className="font-semibold text-gray-800"> Ponad 15 lat doświadczenia w Chełmie i całym województwie Lubelskim.</span>
+                  Oferujemy korzystne kredyty gotówkowe i konsolidacyjne oraz bezpłatne porównanie ofert największych banków. Pomagamy także odzyskać prowizje ze spłaconych pożyczek i uzyskać Sankcję Kredytu Darmowego. 
+                  <span className="font-semibold text-gray-800"> 15 lat doświadczenia w Chełmie i woj. lubelskim.</span>
                 </p>
               </div>
 
