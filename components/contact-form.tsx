@@ -73,7 +73,7 @@ export function ContactForm() {
                   </div>
                   <div>
                     <p className="font-medium text-gray-900">Email</p>
-                    <p className="text-gray-600">kontakt@zwrotekspert.pl</p>
+                    <p className="text-gray-600">zwrotekspert@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-center space-x-3">
@@ -214,11 +214,11 @@ export function ContactForm() {
                               
                               <div className="space-y-3">
                                 <div className="bg-white/60 rounded-lg p-3 border-l-4 border-blue-500">
-                                  <p><strong className="text-blue-700">1.</strong> Administratorem Państwa danych osobowych jest <strong>Zwrot Ekspert</strong> (adres: 22-100 Chełm, ul. Zachodnia 43, tel.: 510-441-307 e-mail: kontakt@zwrotekspert.pl).</p>
+                                  <p><strong className="text-blue-700">1.</strong> Administratorem Państwa danych osobowych jest <strong>Zwrot Ekspert</strong> (adres: 22-100 Chełm, ul. Zachodnia 43, tel.: 510-441-307 e-mail: zwrotekspert@gmail.com).</p>
                                 </div>
                                 
                                 <div className="bg-white/60 rounded-lg p-3 border-l-4 border-purple-500">
-                                  <p><strong className="text-purple-700">2.</strong> Administrator wyznaczył <strong>Inspektora Ochrony Danych</strong>, z którym mogą się Państwo kontaktować we wszystkich sprawach dotyczących przetwarzania danych osobowych za pośrednictwem adresu e-mail: kontakt@zwrotekspert.pl lub pisemnie na adres siedziby Administratora.</p>
+                                  <p><strong className="text-purple-700">2.</strong> Administrator wyznaczył <strong>Inspektora Ochrony Danych</strong>, z którym mogą się Państwo kontaktować we wszystkich sprawach dotyczących przetwarzania danych osobowych za pośrednictwem adresu e-mail: zwrotekspert@gmail.com lub pisemnie na adres siedziby Administratora.</p>
                                 </div>
                                 
                                 <div className="bg-white/60 rounded-lg p-3 border-l-4 border-blue-500">

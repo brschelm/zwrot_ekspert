@@ -32,18 +32,18 @@ export default function HeroSection() {
 
               <div className="space-y-6 mt-20">
                 <h1 className="text-2xl lg:text-3xl font-bold leading-tight">
-                  <span className="text-gray-900">Twoje</span>
+                  <span className="text-gray-900">Zwrot Prowizji Bankowej</span>
                   <br />
                   <span className="bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent">
-                    Finanse
+                    i Sankcja Kredytu Darmowego
                   </span>
                   <br />
-                  <span className="text-gray-900">Nasz Priorytet</span>
+                  <span className="text-gray-900">- Profesjonalne Doradztwo Finansowe</span>
                 </h1>
 
                 <p className="text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-2xl">
-                  Profesjonalne doradztwo w zakresie zwrotów prowizji, sankcji kredytu darmowego i konsolidacji kredytów.
-                  <span className="font-semibold text-gray-800"> Ponad 15 lat doświadczenia.</span>
+                  Pomagamy odzyskać prowizje bankowe, uzyskać sankcję kredytu darmowego i skonsolidować kredyty. 
+                  <span className="font-semibold text-gray-800"> Ponad 15 lat doświadczenia w Chełmie i całym województwie Lubelskim.</span>
                 </p>
               </div>
 
@@ -81,7 +81,7 @@ export default function HeroSection() {
                     <div className="relative mx-auto">
                       <img
                         src="/c5217d4f-65da-4dcf-8c0c-b574c5341a95-size-400x400.webp"
-                        alt="Profesjonalny ekspert finansowy - Zwrot Ekspert"
+                        alt="Ekspert finansowy Zwrot Ekspert Chełm - zwrot prowizji bankowej, sankcja kredytu darmowego, konsolidacja kredytów"
                         className="w-80 h-80 rounded-3xl object-cover mx-auto shadow-2xl group-hover:shadow-3xl transition-all duration-500 group-hover:scale-110 transform"
                         style={{
                           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.1)',

@@ -86,7 +86,8 @@ export function StatsSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Liczby mówią same za siebie</h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Nasze doświadczenie i skuteczność potwierdzone przez zadowolonych klientów
+            Nasze doświadczenie i skuteczność potwierdzone przez zadowolonych klientów z Chełma, Lublina, Zamościa i całego województwa Lubelskiego. 
+            <a href="#opinie" className="text-white font-semibold underline hover:text-blue-200">Zobacz opinie naszych klientów</a>.
           </p>
         </div>
 

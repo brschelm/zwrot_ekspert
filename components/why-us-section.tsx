@@ -52,7 +52,9 @@ export function WhyUsSection() {
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Nie jesteśmy kolejną firmą finansową. Jesteśmy partnerem, który rzeczywiście dba o Twoje interesy i
-                maksymalizuje Twoje korzyści finansowe.
+                maksymalizuje Twoje korzyści finansowe. Specjalizujemy się w <a href="#uslugi" className="text-blue-600 hover:text-blue-800 font-semibold underline">zwrotach prowizji bankowych</a>, 
+                <a href="#uslugi" className="text-blue-600 hover:text-blue-800 font-semibold underline"> sankcji kredytu darmowego</a> i 
+                <a href="#uslugi" className="text-blue-600 hover:text-blue-800 font-semibold underline"> konsolidacji kredytów</a>.
               </p>
             </div>
 
@@ -67,7 +69,8 @@ export function WhyUsSection() {
                 </div>
               </div>
               <p className="text-gray-700">
-                Oferujemy pełną gwarancję satysfakcji. Nasze wynagrodzenie uzależnione jest od sukcesu w Twojej sprawie.
+                Oferujemy pełną gwarancję satysfakcji. Nasze wynagrodzenie uzależnione jest od sukcesu w Twojej sprawie. 
+                <a href="#kontakt" className="text-blue-600 hover:text-blue-800 font-semibold underline ml-1">Skontaktuj się z nami</a> już dziś i dowiedz się, ile możesz zyskać.
               </p>
             </div>
           </div>

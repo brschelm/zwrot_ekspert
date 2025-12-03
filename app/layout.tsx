@@ -9,8 +9,8 @@ export const metadata: Metadata = {
     default: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe',
     template: '%s | Zwrot Ekspert',
   },
-  description: 'Specjalizujemy się w zwrotach prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów. Ponad 15 lat doświadczenia. Zadzwoń: +48 510 441 307',
-  keywords: ['zwrot prowizji', 'kredyt darmowy', 'konsolidacja kredytów', 'doradztwo finansowe', 'zwrot ekspert', 'zwrot prowizji bankowej', 'sankcja kredytu', 'refinansowanie kredytu', 'Chełm', 'Lubelskie'],
+  description: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe od 2008 roku. Pomagamy odzyskać prowizje bankowe, uzyskać sankcję kredytu darmowego i skonsolidować kredyty. Darmowa konsultacja. Chełm, Lubelskie. Zadzwoń: +48 510 441 307',
+  keywords: ['zwrot prowizji', 'zwrot prowizji bankowej', 'zwrot prowizji z kredytu', 'kredyt darmowy', 'sankcja kredytu darmowego', 'konsolidacja kredytów', 'konsolidacja kredytów Chełm', 'doradztwo finansowe', 'zwrot ekspert', 'zwrot ekspert Chełm', 'refinansowanie kredytu', 'odzyskanie prowizji', 'zwrot prowizji bank', 'pomoc w zwrocie prowizji', 'doradca finansowy Chełm', 'konsolidacja zadłużenia', 'Chełm', 'Lubelskie', 'usługi finansowe Chełm', 'zwrot prowizji kredytowej', 'odzyskiwanie prowizji bankowej'],
   authors: [{ name: 'Zwrot Ekspert' }],
   creator: 'Zwrot Ekspert',
   publisher: 'Zwrot Ekspert',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     url: 'https://www.zwrotekspert.pl',
     siteName: 'Zwrot Ekspert',
     title: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe',
-    description: 'Specjalizujemy się w zwrotach prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów. Ponad 15 lat doświadczenia. Zadzwoń: +48 510 441 307',
+    description: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe od 2008 roku. Pomagamy odzyskać prowizje bankowe, uzyskać sankcję kredytu darmowego i skonsolidować kredyty. Darmowa konsultacja. Chełm, Lubelskie.',
     images: [
       {
         url: '/placeholder-logo.png',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe',
-    description: 'Specjalizujemy się w zwrotach prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów. Ponad 15 lat doświadczenia.',
+    description: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe od 2008 roku. Pomagamy odzyskać prowizje bankowe, uzyskać sankcję kredytu darmowego i skonsolidować kredyty. Darmowa konsultacja. Chełm, Lubelskie.',
     images: ['/placeholder-logo.png'],
   },
   alternates: {

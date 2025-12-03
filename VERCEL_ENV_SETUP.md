@@ -82,3 +82,4 @@
 - Vercel nie aktualizuje zmiennych w już wdrożonych wersjach automatycznie
 - Zmienne będą dostępne dopiero po następnym deploymencie
 
+

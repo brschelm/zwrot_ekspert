@@ -111,7 +111,7 @@ export function FAQSection() {
             <p className="text-lg mb-6 opacity-90">Skontaktuj się z nami - chętnie odpowiemy na wszystkie pytania</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+48123456789"
+                href="tel:+48510441307"
                 className="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
               >
                 📞 Zadzwoń teraz

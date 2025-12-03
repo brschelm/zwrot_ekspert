@@ -87,7 +87,7 @@ export default function Regulamin() {
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">§ 6. Reklamacje</h2>
             <p className="text-gray-600 mb-4">
-              6.1. Reklamacje można składać na adres email: kontakt@zwrotekspert.pl
+              6.1. Reklamacje można składać na adres email: zwrotekspert@gmail.com
             </p>
             <p className="text-gray-600 mb-4">
               6.2. Reklamacje są rozpatrywane w ciągu 14 dni roboczych.
@@ -112,7 +112,7 @@ export default function Regulamin() {
               Zwrot Ekspert<br/>
               ul. Zachodnia 43<br/>
               22-100 Chełm<br/>
-              Email: kontakt@zwrotekspert.pl<br/>
+              Email: zwrotekspert@gmail.com<br/>
               Telefon: +48 510 441 307
             </p>
 

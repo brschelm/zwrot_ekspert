@@ -37,7 +37,7 @@ export default function PolitykaPrywatnosci() {
               <strong>Zwrot Ekspert</strong><br/>
               ul. Zachodnia 43<br/>
               22-100 Chełm<br/>
-              Email: kontakt@zwrotekspert.pl<br/>
+              Email: zwrotekspert@gmail.com<br/>
               Telefon: +48 510 441 307
             </p>
 
@@ -94,7 +94,7 @@ export default function PolitykaPrywatnosci() {
               W sprawach dotyczących przetwarzania danych osobowych możesz skontaktować się z nami:
             </p>
             <p className="text-gray-600 mb-4">
-              Email: kontakt@zwrotekspert.pl<br/>
+              Email: zwrotekspert@gmail.com<br/>
               Telefon: +48 510 441 307<br/>
               Adres: ul. Zachodnia 43, 22-100 Chełm
             </p>

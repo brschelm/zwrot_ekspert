@@ -117,7 +117,7 @@ export default function Cookies() {
               Jeśli masz pytania dotyczące naszej Polityki Cookies, skontaktuj się z nami:
             </p>
             <p className="text-gray-600 mb-4">
-              Email: kontakt@zwrotekspert.pl<br/>
+              Email: zwrotekspert@gmail.com<br/>
               Telefon: +48 510 441 307<br/>
               Adres: ul. Zachodnia 43, 22-100 Chełm
             </p>

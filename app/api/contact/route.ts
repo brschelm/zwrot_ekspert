@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Wyślij powiadomienie email do Ciebie
-    const notificationEmail = process.env.RESEND_NOTIFICATION_EMAIL || 'kontakt@zwrotekspert.pl'
+    const notificationEmail = process.env.RESEND_NOTIFICATION_EMAIL || 'zwrotekspert@gmail.com'
     console.log('📧 ========== EMAIL POWIADOMIENIA ==========')
     console.log('🚀 Próbuję wysłać email powiadomienia do:', notificationEmail)
     console.log('📧 Resend API Key obecny:', !!process.env.RESEND_API_KEY)
@@ -210,7 +210,7 @@ export async function POST(request: NextRequest) {
               <p style="color: #6b7280; font-size: 14px;">
                 <strong>Zwrot Ekspert</strong><br>
                 Profesjonalne doradztwo w zwrotach prowizji<br>
-                📧 kontakt@zwrotekspert.pl | 📞 +48 510 441 307
+                📧 zwrotekspert@gmail.com | 📞 +48 510 441 307
               </p>
             </div>
           </div>

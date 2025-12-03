@@ -27,7 +27,7 @@ const services = [
   {
     icon: DollarSign,
     title: "Zwroty Prowizji",
-    description: "Odzyskanie nienależnie pobranych prowizji i opłat dodatkowych z kredytów i pożyczek.",
+    description: "Odzyskanie nienależnie pobranych prowizji bankowych i opłat dodatkowych z kredytów i pożyczek. Pomagamy odzyskać prowizję z kredytu hipotecznego, gotówkowego i innych produktów bankowych.",
     features: ["Analiza umów", "Wyliczenie zwrotów", "Procedury odwoławcze", "Reprezentacja prawna"],
     color: "from-purple-500 to-purple-600",
     bgColor: "bg-purple-50",
@@ -45,7 +45,7 @@ const services = [
   {
     icon: Scale,
     title: "Sankcja Kredytu Darmowego",
-    description: "Pomoc w uzyskaniu sankcji kredytu darmowego w przypadku naruszenia przepisów przez bank.",
+    description: "Pomoc w uzyskaniu sankcji kredytu darmowego w przypadku naruszenia przepisów ustawy o kredycie konsumenckim przez bank. Zwrot wszystkich zapłaconych odsetek.",
     features: ["Analiza prawna", "Wyliczenie korzyści", "Procedury sądowe", "Pełna reprezentacja"],
     color: "from-red-500 to-red-600",
     bgColor: "bg-red-50",
@@ -70,8 +70,7 @@ export function ServicesSection() {
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Oferujemy pełen zakres usług finansowych z gwarancją najwyższej jakości obsługi i maksymalnych korzyści dla
-            naszych klientów
+            Oferujemy pełen zakres usług finansowych w Chełmie i całym województwie Lubelskim. Specjalizujemy się w zwrotach prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów. Z gwarancją najwyższej jakości obsługi i maksymalnych korzyści dla naszych klientów.
           </p>
         </div>
 
