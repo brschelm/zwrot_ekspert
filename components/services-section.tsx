@@ -146,7 +146,22 @@ export function ServicesSection() {
                       variant="outline"
                       className={`w-full group-hover:bg-gradient-to-r ${service.color} group-hover:text-white group-hover:border-transparent group-hover:shadow-lg transition-all duration-500 bg-transparent border-2 border-gray-200 group-hover:scale-105`}
                     >
-                      <a href="#kontakt" className="flex items-center justify-center space-x-2">
+                      <a 
+                        href={
+                          service.title === "Pożyczki i Kredyty"
+                            ? "/uslugi/pozyczki-i-kredyty"
+                            : service.title === "Konsolidacje Kredytów"
+                            ? "/uslugi/konsolidacja-kredytow"
+                            : service.title === "Zwroty Prowizji" 
+                            ? "/uslugi/zwrot-prowizji"
+                            : service.title === "Ubezpieczenia Kredytów"
+                            ? "/uslugi/ubezpieczenia-kredytow"
+                            : service.title === "Sankcja Kredytu Darmowego"
+                            ? "/uslugi/sankcja-kredytu-darmowego"
+                            : "#kontakt"
+                        } 
+                        className="flex items-center justify-center space-x-2"
+                      >
                         <span className="font-semibold">Dowiedz się więcej</span>
                         <ArrowRight className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
                       </a>

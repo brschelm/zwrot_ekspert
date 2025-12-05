@@ -8,6 +8,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/', '/out/'],
       },
+      {
+        userAgent: 'Googlebot',
+        allow: '/',
+        disallow: ['/api/', '/out/'],
+      },
     ],
     sitemap: 'https://www.zwrotekspert.pl/sitemap.xml',
   }

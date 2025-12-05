@@ -31,7 +31,7 @@ export function Header() {
           {/* Pierwsza linia - Logo i kontakt */}
           <div className="flex items-center justify-between px-4 py-2">
             <div className="flex items-center space-x-6">
-              <a href="/" className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent hover:from-blue-900 hover:to-blue-700 transition-all duration-300 cursor-pointer hover:scale-105 transform">
+              <a href="/#uslugi" className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent hover:from-blue-900 hover:to-blue-700 transition-all duration-300 cursor-pointer hover:scale-105 transform">
                 Zwrot Ekspert
               </a>
               <div className="hidden lg:block w-px h-10 bg-gray-300"></div>
@@ -39,10 +39,10 @@ export function Header() {
             </div>
 
             <div className="flex items-center space-x-6">
-              <div className="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-105 transform cursor-pointer px-3 py-2">
+              <a href="/#lokalizacja" className="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-105 transform cursor-pointer px-3 py-2">
                 <MapPin className="h-4 w-4" />
                 <span className="font-medium text-sm">ul. Zachodnia 43, 22-100 Chełm</span>
-              </div>
+              </a>
               <div className="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-105 transform cursor-pointer px-3 py-2">
                 <Phone className="h-4 w-4" />
                 <span className="font-medium text-sm">+48 510 441 307</span>
@@ -58,28 +58,28 @@ export function Header() {
           <div className="flex items-center justify-between px-4 py-2">
             <nav className="hidden lg:flex items-center space-x-6">
               <a
-                href="#uslugi"
+                href="/#uslugi"
                 onClick={closeMenu}
                 className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
               >
                 Usługi
               </a>
               <a
-                href="#proces"
+                href="/#proces"
                 onClick={closeMenu}
                 className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
               >
                 Jak działamy
               </a>
               <a
-                href="#opinie"
+                href="/#opinie"
                 onClick={closeMenu}
                 className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
               >
                 Opinie
               </a>
               <a
-                href="#kontakt"
+                href="/#kontakt"
                 onClick={closeMenu}
                 className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
               >
@@ -109,23 +109,23 @@ export function Header() {
         {isMenuOpen && (
           <div className="lg:hidden py-6 border-t bg-white/95 backdrop-blur-md">
             <nav className="flex flex-col space-y-4">
-              <a href="#uslugi" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
+              <a href="/#uslugi" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
                 Usługi
               </a>
-              <a href="#proces" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
+              <a href="/#proces" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
                 Jak działamy
               </a>
-              <a href="#opinie" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
+              <a href="/#opinie" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
                 Opinie
               </a>
-              <a href="#kontakt" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
+              <a href="/#kontakt" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
                 Kontakt
               </a>
               <div className="px-4 pt-4 border-t">
-                <div className="flex items-center space-x-2 text-sm text-gray-600 mb-2">
+                <a href="/#lokalizacja" onClick={closeMenu} className="flex items-center space-x-2 text-sm text-gray-600 mb-2 hover:text-blue-600 transition-colors">
                   <MapPin className="h-4 w-4" />
                   <span>ul. Zachodnia 43, 22-100 Chełm</span>
-                </div>
+                </a>
                 <div className="flex items-center space-x-2 text-sm text-gray-600 mb-4">
                   <Phone className="h-4 w-4" />
                   <span>+48 510 441 307</span>

@@ -4,7 +4,7 @@ import { MapPin, Phone, Mail, Clock, Building2 } from "lucide-react"
 
 export function LocationSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="lokalizacja" className="py-24 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
@@ -73,7 +73,7 @@ export function LocationSection() {
                     <p className="font-semibold text-gray-900">Godziny pracy</p>
                     <p className="text-gray-600">Pon-Pt: 8:00-20:00</p>
                     <p className="text-gray-600">Sob: 9:00-15:00</p>
-                    <p className="text-gray-600">Niedz: 10:00-14:00</p>
+                    <p className="text-gray-600">Niedz: Nieczynne</p>
                   </div>
                 </div>
               </div>
@@ -100,8 +100,44 @@ export function LocationSection() {
             </div>
           </div>
 
-          {/* Right - SEO Content */}
+          {/* Right - Google Maps */}
           <div className="space-y-6">
+            <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Znajdź nas na mapie</h3>
+              <div className="rounded-xl overflow-hidden shadow-lg">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.147475347907!2d23.429150166564458!3d51.14263150953821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47239a29e7f01049%3A0x4feba763f509308f!2sZachodnia%2043!5e0!3m2!1spl!2spl!4v1764944082513!5m2!1spl!2spl"
+                  width="100%"
+                  height="400"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Zwrot Ekspert - ul. Zachodnia 43, Chełm"
+                  className="w-full"
+                ></iframe>
+              </div>
+              <div className="mt-4 space-y-2">
+                <p className="text-sm text-gray-600 text-center font-semibold">
+                  ul. Zachodnia 43, 22-100 Chełm
+                </p>
+                <p className="text-xs text-gray-500 text-center">
+                  Województwo Lubelskie
+                </p>
+                <div className="flex justify-center mt-4">
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=Zachodnia+43,+22-100+Chełm"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800 font-medium text-sm flex items-center"
+                  >
+                    Otwórz w Google Maps
+                    <MapPin className="h-4 w-4 ml-2" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            
             <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
                 Zwrot prowizji bankowej w Chełmie i Lubelskim

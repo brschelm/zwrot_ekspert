@@ -147,7 +147,7 @@ export function ContactSection() {
                       <br />
                       Sob: 9:00-15:00
                       <br />
-                      Niedz: 10:00-14:00
+                      Niedz: Nieczynne
                     </p>
                   </div>
                 </div>

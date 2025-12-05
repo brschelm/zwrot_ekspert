@@ -1,3 +1,5 @@
+"use client"
+
 import { Facebook, Twitter, Linkedin, Mail, Phone, MapPin, ArrowRight } from "lucide-react"
 
 export function Footer() {
@@ -27,10 +29,10 @@ export function Footer() {
                   <Mail className="h-4 w-4" />
                   <span>zwrotekspert@gmail.com</span>
                 </div>
-                <div className="flex items-center space-x-3 text-gray-300">
+                <a href="/#lokalizacja" className="flex items-center space-x-3 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">
                   <MapPin className="h-4 w-4" />
                   <span>ul. Zachodnia 43, 22-100 Chełm</span>
-                </div>
+                </a>
               </div>
 
               <div className="flex space-x-4">
@@ -51,20 +53,20 @@ export function Footer() {
               <h4 className="text-xl font-bold text-white">Nasze usługi</h4>
               <ul className="space-y-3">
                 {[
-                  "Pożyczki i kredyty",
-                  "Konsolidacje kredytów",
-                  "Zwroty prowizji",
-                  "Ubezpieczenia kredytów",
-                  "Sankcja kredytu darmowego",
-                  "Doradztwo finansowe",
+                  { name: "Pożyczki i kredyty", href: "/uslugi/pozyczki-i-kredyty" },
+                  { name: "Konsolidacje kredytów", href: "/uslugi/konsolidacja-kredytow" },
+                  { name: "Zwroty prowizji", href: "/uslugi/zwrot-prowizji" },
+                  { name: "Ubezpieczenia kredytów", href: "/uslugi/ubezpieczenia-kredytow" },
+                  { name: "Sankcja kredytu darmowego", href: "/uslugi/sankcja-kredytu-darmowego" },
+                  { name: "Doradztwo finansowe", href: "/#uslugi" },
                 ].map((service, index) => (
                   <li key={index}>
                     <a
-                      href="#uslugi"
+                      href={service.href}
                       className="text-gray-300 hover:text-blue-400 transition-colors flex items-center group"
                     >
                       <ArrowRight className="h-3 w-3 mr-2 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      {service}
+                      {service.name}
                     </a>
                   </li>
                 ))}
@@ -132,7 +134,7 @@ export function Footer() {
       <div className="border-t border-gray-800 py-8">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-gray-400 text-sm">© 2024 Zwrot Ekspert. Wszystkie prawa zastrzeżone.</div>
+            <div className="text-gray-400 text-sm">© {new Date().getFullYear()} Zwrot Ekspert. Wszystkie prawa zastrzeżone.</div>
 
             <div className="flex space-x-6 text-sm">
               <a href="/polityka-prywatnosci" className="text-gray-400 hover:text-blue-400 transition-colors">
