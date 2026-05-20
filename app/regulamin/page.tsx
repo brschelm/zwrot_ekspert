@@ -33,7 +33,7 @@ export default function Regulamin() {
 
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">§ 1. Postanowienia Ogólne</h2>
             <p className="text-gray-600 mb-4">
-              1.1. Usługodawcą jest Zwrot Ekspert z siedzibą w Chełmie, ul. Zachodnia 43, 22-100 Chełm.
+              1.1. Usługodawcą jest Zwrot Ekspert z siedzibą w Zamościu, ul. Kresowa 7D, 22-400 Zamość.
             </p>
             <p className="text-gray-600 mb-4">
               1.2. Regulamin określa warunki świadczenia usług doradczych w zakresie zwrotów prowizji, 
@@ -110,8 +110,8 @@ export default function Regulamin() {
             <h2 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">§ 8. Dane Kontaktowe</h2>
             <p className="text-gray-600 mb-4">
               Zwrot Ekspert<br/>
-              ul. Zachodnia 43<br/>
-              22-100 Chełm<br/>
+              ul. Kresowa 7D<br/>
+              22-400 Zamość<br/>
               Email: zwrotekspert@gmail.com<br/>
               Telefon: +48 510 441 307
             </p>

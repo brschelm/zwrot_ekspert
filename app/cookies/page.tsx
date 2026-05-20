@@ -119,7 +119,7 @@ export default function Cookies() {
             <p className="text-gray-600 mb-4">
               Email: zwrotekspert@gmail.com<br/>
               Telefon: +48 510 441 307<br/>
-              Adres: ul. Zachodnia 43, 22-100 Chełm
+              Adres: ul. Kresowa 7D, 22-400 Zamość
             </p>
 
             <p className="text-gray-500 text-sm mt-8">

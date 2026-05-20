@@ -24,9 +24,9 @@ export default function PozyczkiIKredytyPage() {
       "name": "Zwrot Ekspert",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "ul. Zachodnia 43",
-        "addressLocality": "Chełm",
-        "postalCode": "22-100",
+        "streetAddress": "ul. Kresowa 7D",
+        "addressLocality": "Zamość",
+        "postalCode": "22-400",
         "addressRegion": "Lubelskie",
         "addressCountry": "PL"
       },

@@ -129,9 +129,9 @@ export function ContactSection() {
                   <div>
                     <p className="font-semibold text-gray-900 mb-1">Adres biura</p>
                     <p className="text-gray-600">
-                      ul. Zachodnia 43
+                      ul. Kresowa 7D
                       <br />
-                      22-100 Chełm
+                      22-400 Zamość
                     </p>
                   </div>
                 </div>
@@ -296,7 +296,7 @@ export function ContactSection() {
                                 
                                 <div className="space-y-3">
                                   <div className="bg-white/60 rounded-lg p-3 border-l-4 border-blue-500">
-                                    <p><strong className="text-blue-700">1.</strong> Administratorem Państwa danych osobowych jest <strong>Zwrot Ekspert</strong> (adres: 22-100 Chełm, ul. Zachodnia 43, tel.: 510-441-307 e-mail: zwrotekspert@gmail.com).</p>
+                                    <p><strong className="text-blue-700">1.</strong> Administratorem Państwa danych osobowych jest <strong>Zwrot Ekspert</strong> (adres: 22-400 Zamość, ul. Kresowa 7D, tel.: 510-441-307 e-mail: zwrotekspert@gmail.com).</p>
                                   </div>
                                   
                                   <div className="bg-white/60 rounded-lg p-3 border-l-4 border-purple-500">

@@ -21,9 +21,9 @@ export default function HomePage() {
     "email": "zwrotekspert@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "ul. Zachodnia 43",
-      "addressLocality": "Chełm",
-      "postalCode": "22-100",
+      "streetAddress": "ul. Kresowa 7D",
+      "addressLocality": "Zamość",
+      "postalCode": "22-400",
       "addressRegion": "Lubelskie",
       "addressCountry": "PL"
     },
@@ -76,9 +76,9 @@ export default function HomePage() {
     "description": "Profesjonalne doradztwo finansowe w zakresie zwrotów prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów w Chełmie i całym województwie Lubelskim.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "ul. Zachodnia 43",
-      "addressLocality": "Chełm",
-      "postalCode": "22-100",
+        "streetAddress": "ul. Kresowa 7D",
+        "addressLocality": "Zamość",
+        "postalCode": "22-400",
       "addressRegion": "Lubelskie",
       "addressCountry": "PL"
     },

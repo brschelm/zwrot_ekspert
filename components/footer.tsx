@@ -31,7 +31,7 @@ export function Footer() {
                 </div>
                 <a href="/#lokalizacja" className="flex items-center space-x-3 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">
                   <MapPin className="h-4 w-4" />
-                  <span>ul. Zachodnia 43, 22-100 Chełm</span>
+                  <span>ul. Kresowa 7D, 22-400 Zamość</span>
                 </a>
               </div>
 

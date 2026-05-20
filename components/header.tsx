@@ -41,7 +41,7 @@ export function Header() {
             <div className="flex items-center space-x-6">
               <a href="/#lokalizacja" className="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-105 transform cursor-pointer px-3 py-2">
                 <MapPin className="h-4 w-4" />
-                <span className="font-medium text-sm">ul. Zachodnia 43, 22-100 Chełm</span>
+                <span className="font-medium text-sm">ul. Kresowa 7D, 22-400 Zamość</span>
               </a>
               <div className="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-105 transform cursor-pointer px-3 py-2">
                 <Phone className="h-4 w-4" />
@@ -124,7 +124,7 @@ export function Header() {
               <div className="px-4 pt-4 border-t">
                 <a href="/#lokalizacja" onClick={closeMenu} className="flex items-center space-x-2 text-sm text-gray-600 mb-2 hover:text-blue-600 transition-colors">
                   <MapPin className="h-4 w-4" />
-                  <span>ul. Zachodnia 43, 22-100 Chełm</span>
+                  <span>ul. Kresowa 7D, 22-400 Zamość</span>
                 </a>
                 <div className="flex items-center space-x-2 text-sm text-gray-600 mb-4">
                   <Phone className="h-4 w-4" />

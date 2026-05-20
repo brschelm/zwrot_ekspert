@@ -41,8 +41,8 @@ export function LocationSection() {
                   <MapPin className="h-6 w-6 text-green-600 mt-1 flex-shrink-0" />
                   <div>
                     <p className="font-semibold text-gray-900">Adres</p>
-                    <p className="text-gray-600">ul. Zachodnia 43</p>
-                    <p className="text-gray-600">22-100 Chełm</p>
+                    <p className="text-gray-600">ul. Kresowa 7D</p>
+                    <p className="text-gray-600">22-400 Zamość</p>
                     <p className="text-gray-600">Województwo Lubelskie</p>
                   </div>
                 </div>
@@ -113,13 +113,13 @@ export function LocationSection() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Zwrot Ekspert - ul. Zachodnia 43, Chełm"
+                  title="Zwrot Ekspert - ul. Kresowa 7D, Zamość"
                   className="w-full"
                 ></iframe>
               </div>
               <div className="mt-4 space-y-2">
                 <p className="text-sm text-gray-600 text-center font-semibold">
-                  ul. Zachodnia 43, 22-100 Chełm
+                  ul. Kresowa 7D, 22-400 Zamość
                 </p>
                 <p className="text-xs text-gray-500 text-center">
                   Województwo Lubelskie

@@ -35,8 +35,8 @@ export default function PolitykaPrywatnosci() {
             <p className="text-gray-600 mb-4">
               Administratorem danych osobowych jest:<br/>
               <strong>Zwrot Ekspert</strong><br/>
-              ul. Zachodnia 43<br/>
-              22-100 Chełm<br/>
+              ul. Kresowa 7D<br/>
+              22-400 Zamość<br/>
               Email: zwrotekspert@gmail.com<br/>
               Telefon: +48 510 441 307
             </p>
@@ -96,7 +96,7 @@ export default function PolitykaPrywatnosci() {
             <p className="text-gray-600 mb-4">
               Email: zwrotekspert@gmail.com<br/>
               Telefon: +48 510 441 307<br/>
-              Adres: ul. Zachodnia 43, 22-100 Chełm
+              Adres: ul. Kresowa 7D, 22-400 Zamość
             </p>
 
             <p className="text-gray-500 text-sm mt-8">
