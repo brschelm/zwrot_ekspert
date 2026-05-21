@@ -35,10 +35,6 @@ export default function HeroSection() {
                   finansowaniu, kredytach hipotecznych, konsolidacjach i rozwiązaniach dla firm. Działam lokalnie:{" "}
                   <span className="font-medium text-gray-900">Chełm, Zamość i okolice</span>.
                 </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Ludzie biorą kredyt od człowieka — dlatego wolę normalną rozmowę, przejrzyste warunki i uczciwe
-                  porównanie ofert zamiast obietnic z reklamy.
-                </p>
 
                 <h1 className="text-2xl lg:text-3xl font-bold leading-tight text-gray-900">
                   Pomagam dobrać i sprawdzić finansowanie:
@@ -90,12 +86,9 @@ export default function HeroSection() {
                   <img
                     src="/przemyslaw.png"
                     alt="Przemysław — doradca finansowy Zwrot Ekspert, Chełm i Zamość"
-                    className="w-full h-auto max-h-[520px] object-cover object-top rounded-2xl"
+                    className="w-full h-auto max-h-[560px] object-cover object-center rounded-2xl"
                   />
                 </div>
-                <p className="text-center text-sm text-gray-500 mt-4">
-                  Przemysław · doradztwo finansowe na miejscu i online
-                </p>
               </div>
             </div>
           </div>
