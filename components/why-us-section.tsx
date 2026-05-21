@@ -18,13 +18,13 @@ const reasons = [
   },
   {
     icon: Shield,
-    title: "100% bezpieczeństwo",
-    description: "Twoje dane są w pełni chronione, działamy zgodnie z RODO",
+    title: "Ochrona danych (RODO)",
+    description: "Twoje dane są chronione — działamy zgodnie z przepisami i bez zbędnego udostępniania",
   },
   {
     icon: TrendingUp,
-            title: "95% skuteczność",
-    description: "Niemal wszystkie nasze sprawy kończą się sukcesem dla klienta",
+    title: "Sprawdzona praktyka",
+    description: "Wiele spraw kończymy pozytywnie — na start zawsze oceniamy realne szanse w Twojej sytuacji",
   },
   {
     icon: CheckCircle,
@@ -45,9 +45,9 @@ export function WhyUsSection() {
                 DLACZEGO MY?
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Zaufało nam już
+                Dlaczego warto porozmawiać
                 <span className="block bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
-                  500+ klientów
+                  przed decyzją
                 </span>
               </h2>
               <p className="text-xl text-gray-600 leading-relaxed">

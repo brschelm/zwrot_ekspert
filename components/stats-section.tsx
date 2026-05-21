@@ -13,10 +13,10 @@ const stats = [
   },
   {
     icon: TrendingUp,
-    number: 95,
-    suffix: "%",
-    label: "Skuteczność",
-    description: "Pozytywnie rozpatrzonych spraw",
+    number: 2,
+    suffix: "",
+    label: "Główne miasta",
+    description: "Chełm · Zamość · obsługa całego Lubelskiego",
   },
   {
     icon: Award,
@@ -84,9 +84,9 @@ export function StatsSection() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Liczby mówią same za siebie</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Doświadczenie i dostępność</h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Nasze doświadczenie i skuteczność potwierdzone przez zadowolonych klientów z Chełma, Lublina, Zamościa i całego województwa Lubelskiego. 
+            Działam lokalnie — Chełm, Zamość i całe Lubelskie. Stawiam na kontakt, jasne warunki i uczciwe porównanie ofert. 
             <a href="#opinie" className="text-white font-semibold underline hover:text-blue-200">Zobacz opinie naszych klientów</a>.
           </p>
         </div>

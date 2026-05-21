@@ -1,57 +1,198 @@
 "use client"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { CreditCard, RefreshCw, DollarSign, Shield, Scale, ArrowRight } from "lucide-react"
+import {
+  Home,
+  RefreshCw,
+  Building2,
+  ArrowLeftRight,
+  DollarSign,
+  Scale,
+  Shield,
+  ArrowRight,
+  type LucideIcon,
+} from "lucide-react"
 import { useState } from "react"
 
-const services = [
+type ServiceItem = {
+  icon: LucideIcon
+  title: string
+  description: string
+  features: string[]
+  note: string
+  color: string
+  bgColor: string
+  href: string
+}
+
+const primaryServices: ServiceItem[] = [
   {
-    icon: CreditCard,
-    title: "Pożyczki i Kredyty",
-    description: "Pomoc w uzyskaniu najkorzystniejszych pożyczek dostosowanych do Twoich potrzeb finansowych.",
-    features: ["Pożyczki gotówkowe", "Kredyty hipoteczne", "Kredyty samochodowe", "Pożyczki dla firm"],
+    icon: Home,
+    title: "Hipoteki",
+    description:
+      "Pomagam przejrzeć warunki i porównać oferty banków, żeby wybrać kredyt hipoteczny dopasowany do Twojej sytuacji.",
+    features: ["Analiza zdolności", "Porównanie banków", "Wsparcie w dokumentach", "Kontakt z bankiem"],
+    note: "Pomagam porównać dostępne możliwości finansowania",
     color: "from-blue-500 to-blue-600",
     bgColor: "bg-blue-50",
-    savings: "Do 30% niższe oprocentowanie",
+    href: "/uslugi/pozyczki-i-kredyty",
   },
   {
     icon: RefreshCw,
-    title: "Konsolidacje Kredytów",
-    description: "Połączenie wszystkich zobowiązań w jedną, korzystniejszą ratę miesięczną.",
-    features: ["Konsolidacja kredytów", "Refinansowanie", "Obniżenie rat", "Uproszczenie spłat"],
+    title: "Konsolidacje",
+    description:
+      "Gdy masz kilka zobowiązań, sprawdzamy, czy da się je uporządkować w jedną, przejrzystą strukturę spłat.",
+    features: ["Przegląd zobowiązań", "Porównanie wariantów", "Jedna rata", "Plan spłaty"],
+    note: "Sprawdzamy możliwości uporządkowania zobowiązań",
     color: "from-green-500 to-green-600",
     bgColor: "bg-green-50",
-    savings: "Nawet 50% niższe raty",
+    href: "/uslugi/konsolidacja-kredytow",
   },
+  {
+    icon: Building2,
+    title: "Kredyty firmowe",
+    description:
+      "Dla przedsiębiorców — dobór finansowania inwestycji, obrotówki i rozwoju firmy z uwzględnieniem realnych warunków banków.",
+    features: ["Kredyt inwestycyjny", "Linia obrotowa", "Leasing", "Dokumentacja firmy"],
+    note: "Dobór finansowania pod profil działalności",
+    color: "from-indigo-500 to-indigo-600",
+    bgColor: "bg-indigo-50",
+    href: "/uslugi/pozyczki-i-kredyty",
+  },
+  {
+    icon: ArrowLeftRight,
+    title: "Refinansowanie",
+    description:
+      "Gdy obecny kredyt jest niekorzystny, sprawdzamy, czy refinansowanie ma sens — bez obiecania konkretnego procentu obniżki.",
+    features: ["Analiza umowy", "Koszty zmiany", "Nowe oferty", "Rekomendacja krok po kroku"],
+    note: "Ocena sensu zmiany warunków kredytu",
+    color: "from-teal-500 to-teal-600",
+    bgColor: "bg-teal-50",
+    href: "/uslugi/konsolidacja-kredytow",
+  },
+]
+
+const additionalServices: ServiceItem[] = [
   {
     icon: DollarSign,
-    title: "Zwroty Prowizji",
-    description: "Odzyskanie nienależnie pobranych prowizji bankowych i opłat dodatkowych z kredytów i pożyczek. Pomagamy odzyskać prowizję z kredytu hipotecznego, gotówkowego i innych produktów bankowych.",
-    features: ["Analiza umów", "Wyliczenie zwrotów", "Procedury odwoławcze", "Reprezentacja prawna"],
+    title: "Zwroty prowizji",
+    description:
+      "Sprawdzamy umowę kredytową pod kątem prowizji i opłat — jeśli są podstawy, pomagamy w procedurze odzyskania.",
+    features: ["Analiza umowy", "Wyliczenie kwot", "Pisma do banku", "Wsparcie w sprawie"],
+    note: "Analiza umowy i możliwe działania",
     color: "from-purple-500 to-purple-600",
     bgColor: "bg-purple-50",
-    savings: "Średnio 8,500 zł zwrotu",
-  },
-  {
-    icon: Shield,
-    title: "Ubezpieczenia Kredytów",
-    description: "Kompleksowa obsługa ubezpieczeń związanych z kredytami i pożyczkami.",
-    features: ["Ubezpieczenia kredytów", "Ochrona spłat", "Ubezpieczenia życiowe", "Doradztwo ubezpieczeniowe"],
-    color: "from-orange-500 to-orange-600",
-    bgColor: "bg-orange-50",
-    savings: "Do 40% taniej",
+    href: "/uslugi/zwrot-prowizji",
   },
   {
     icon: Scale,
-    title: "Sankcja Kredytu Darmowego",
-    description: "Pomoc w uzyskaniu sankcji kredytu darmowego w przypadku naruszenia przepisów ustawy o kredycie konsumenckim przez bank. Zwrot wszystkich zapłaconych odsetek.",
-    features: ["Analiza prawna", "Wyliczenie korzyści", "Procedury sądowe", "Pełna reprezentacja"],
+    title: "SKD",
+    description:
+      "Sankcja kredytu darmowego — gdy bank naruszył przepisy, omawiamy sytuację i możliwe kroki prawne.",
+    features: ["Ocena umowy", "Podstawy prawne", "Strategia działania", "Wsparcie w procesie"],
+    note: "Ocena sytuacji i możliwych rozwiązań",
     color: "from-red-500 to-red-600",
     bgColor: "bg-red-50",
-    savings: "100% zwrot odsetek",
+    href: "/uslugi/sankcja-kredytu-darmowego",
+  },
+  {
+    icon: Shield,
+    title: "Ubezpieczenia",
+    description:
+      "Pomagamy zrozumieć ubezpieczenia przy kredycie i dobrać ochronę adekwatną do potrzeb — bez presji na „najdroższy pakiet”.",
+    features: ["Ubezpieczenie kredytu", "Ochrona spłat", "Porównanie ofert", "Doradztwo"],
+    note: "Dobór ochrony do Twojej sytuacji",
+    color: "from-orange-500 to-orange-600",
+    bgColor: "bg-orange-50",
+    href: "/uslugi/ubezpieczenia-kredytow",
   },
 ]
+
+function ServiceCard({
+  service,
+  hoveredIndex,
+  index,
+  onHover,
+}: {
+  service: ServiceItem
+  hoveredIndex: number | null
+  index: number
+  onHover: (i: number | null) => void
+}) {
+  return (
+    <div
+      className={`group relative transition-all duration-500 ${hoveredIndex === index ? "scale-[1.02] z-10" : ""}`}
+      onMouseEnter={() => onHover(index)}
+      onMouseLeave={() => onHover(null)}
+    >
+      <div className="relative bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
+        <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+
+        <div className="relative p-8 h-full flex flex-col">
+          <div className={`w-16 h-16 ${service.bgColor} rounded-2xl flex items-center justify-center mb-5`}>
+            <service.icon className={`h-8 w-8 bg-gradient-to-r ${service.color} bg-clip-text text-transparent`} />
+          </div>
+
+          <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+
+          <p className={`text-sm font-medium bg-gradient-to-r ${service.color} bg-clip-text text-transparent mb-4`}>
+            {service.note}
+          </p>
+
+          <p className="text-gray-600 text-base leading-relaxed mb-5 flex-grow">{service.description}</p>
+
+          <ul className="space-y-2 mb-6">
+            {service.features.map((feature) => (
+              <li key={feature} className="flex items-center text-gray-700 text-sm">
+                <span className={`w-1.5 h-1.5 rounded-full bg-gradient-to-r ${service.color} mr-2 flex-shrink-0`}></span>
+                {feature}
+              </li>
+            ))}
+          </ul>
+
+          <Button
+            variant="outline"
+            className={`w-full mt-auto border-2 border-gray-200 hover:border-transparent hover:bg-gradient-to-r ${service.color} hover:text-white transition-all duration-300`}
+          >
+            <a href={service.href} className="flex items-center justify-center space-x-2 w-full">
+              <span className="font-semibold">Więcej informacji</span>
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </Button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function ServiceGrid({
+  services,
+  hoveredOffset,
+  hoveredIndex,
+  setHoveredIndex,
+}: {
+  services: ServiceItem[]
+  hoveredOffset: number
+  hoveredIndex: number | null
+  setHoveredIndex: (i: number | null) => void
+}) {
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      {services.map((service, index) => {
+        const globalIndex = hoveredOffset + index
+        return (
+          <ServiceCard
+            key={service.title}
+            service={service}
+            index={globalIndex}
+            hoveredIndex={hoveredIndex}
+            onHover={setHoveredIndex}
+          />
+        )
+      })}
+    </div>
+  )
+}
 
 export function ServicesSection() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
@@ -59,172 +200,53 @@ export function ServicesSection() {
   return (
     <section id="uslugi" className="py-24 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-20">
+        <div className="text-center mb-14">
           <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-            NASZE USŁUGI
+            USŁUGI
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Kompleksowe rozwiązania
-            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              finansowe
-            </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Finansowanie i dodatkowe sprawy — przejrzyście opisane
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Oferujemy pełen zakres usług finansowych w Chełmie i całym województwie Lubelskim. Specjalizujemy się w zwrotach prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów. Z gwarancją najwyższej jakości obsługi i maksymalnych korzyści dla naszych klientów.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Najpierw kredyty i finansowanie na co dzień. Poniżej usługi dodatkowe, w których też pomagam — bez
+            wygórowanych obietnic z billboardu.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`group relative transition-all duration-700 ease-out ${
-                hoveredIndex === index ? "scale-105 z-10" : ""
-              }`}
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-              style={{
-                transformStyle: 'preserve-3d',
-                perspective: '1000px'
-              }}
-            >
-              {/* Main card with enhanced styling */}
-              <div className="relative bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden h-full transform transition-all duration-700 group-hover:shadow-2xl group-hover:-translate-y-2">
-                
-                {/* Animated background gradient */}
-                <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-0 group-hover:opacity-10 transition-all duration-700`}></div>
-                
-                {/* Floating particles effect */}
-                <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-700"></div>
-                <div className="absolute top-8 right-8 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-700 delay-100"></div>
-                <div className="absolute top-12 right-6 w-1.5 h-1.5 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-700 delay-200"></div>
-
-                <div className="relative p-8 h-full flex flex-col">
-                  {/* Icon with enhanced animation */}
-                  <div className="relative mb-6">
-                    <div className={`w-20 h-20 ${service.bgColor} rounded-3xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 shadow-lg group-hover:shadow-xl`}>
-                      <service.icon className={`h-10 w-10 bg-gradient-to-r ${service.color} bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300`} />
-                    </div>
-                    
-                    {/* Glow effect */}
-                    <div className={`absolute inset-0 w-20 h-20 bg-gradient-to-r ${service.color} rounded-3xl opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-500`}></div>
-                  </div>
-
-                  {/* Title with enhanced typography */}
-                  <div className="mb-4">
-                    <h3 className="text-2xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300 mb-2">
-                      {service.title}
-                    </h3>
-                    
-                    {/* Savings badge with enhanced styling */}
-                    <div className={`inline-flex items-center bg-gradient-to-r ${service.color} text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105`}>
-                      <span className="mr-2">💰</span>
-                      {service.savings}
-                    </div>
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-gray-600 text-base leading-relaxed mb-6 flex-grow">
-                    {service.description}
-                  </p>
-
-                  {/* Features list with enhanced styling */}
-                  <div className="mb-8">
-                    <ul className="space-y-3">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-gray-700 group-hover:text-gray-900 transition-colors duration-300">
-                          <div className={`w-2 h-2 bg-gradient-to-r ${service.color} rounded-full mr-3 flex-shrink-0 group-hover:scale-125 transition-transform duration-300`}></div>
-                          <span className="font-medium">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Enhanced CTA button */}
-                  <div className="mt-auto">
-                    <Button
-                      variant="outline"
-                      className={`w-full group-hover:bg-gradient-to-r ${service.color} group-hover:text-white group-hover:border-transparent group-hover:shadow-lg transition-all duration-500 bg-transparent border-2 border-gray-200 group-hover:scale-105`}
-                    >
-                      <a 
-                        href={
-                          service.title === "Pożyczki i Kredyty"
-                            ? "/uslugi/pozyczki-i-kredyty"
-                            : service.title === "Konsolidacje Kredytów"
-                            ? "/uslugi/konsolidacja-kredytow"
-                            : service.title === "Zwroty Prowizji" 
-                            ? "/uslugi/zwrot-prowizji"
-                            : service.title === "Ubezpieczenia Kredytów"
-                            ? "/uslugi/ubezpieczenia-kredytow"
-                            : service.title === "Sankcja Kredytu Darmowego"
-                            ? "/uslugi/sankcja-kredytu-darmowego"
-                            : "#kontakt"
-                        } 
-                        className="flex items-center justify-center space-x-2"
-                      >
-                        <span className="font-semibold">Dowiedz się więcej</span>
-                        <ArrowRight className="h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-
-                {/* Bottom accent line */}
-                <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${service.color} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
-              </div>
-
-              {/* Floating shadow effect */}
-              <div className="absolute inset-0 bg-gray-200 rounded-3xl transform translate-y-2 -z-10 opacity-0 group-hover:opacity-30 transition-opacity duration-700"></div>
-            </div>
-          ))}
+        <div className="max-w-6xl mx-auto mb-16">
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Główne usługi</h3>
+          <p className="text-gray-600 mb-8">Dobór i sprawdzenie finansowania — to, z czym najczęściej dzwonisz.</p>
+          <ServiceGrid
+            services={primaryServices}
+            hoveredOffset={0}
+            hoveredIndex={hoveredIndex}
+            setHoveredIndex={setHoveredIndex}
+          />
         </div>
 
-        {/* Enhanced CTA Section */}
-        <div className="text-center mt-20">
-          <div className="relative bg-gradient-to-r from-blue-800 via-blue-600 to-blue-800 rounded-3xl p-12 text-white overflow-hidden">
-            {/* Animated background elements */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-10">
-              <div className="absolute top-4 left-4 w-20 h-20 bg-white rounded-full animate-pulse"></div>
-              <div className="absolute top-8 right-8 w-16 h-16 bg-white rounded-full animate-pulse delay-1000"></div>
-              <div className="absolute bottom-4 left-8 w-12 h-12 bg-white rounded-full animate-pulse delay-500"></div>
-              <div className="absolute bottom-8 right-4 w-24 h-24 bg-white rounded-full animate-pulse delay-1500"></div>
-            </div>
-            
-            <div className="relative z-10">
-              <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-sm font-bold mb-6">
-                🎯 DARMOWA KONSULTACJA
-              </div>
-              
-              <h3 className="text-4xl font-bold mb-6 leading-tight">
-                Nie jesteś pewien, która usługa jest dla Ciebie?
-              </h3>
-              
-              <p className="text-xl mb-10 opacity-90 max-w-2xl mx-auto leading-relaxed">
-                Skorzystaj z darmowej konsultacji z naszym ekspertem. Przeanalizujemy Twoją sytuację i znajdziemy najlepsze rozwiązanie.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button 
-                  size="lg" 
-                  className="bg-white text-blue-600 hover:bg-gray-100 px-10 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-                >
-                  <a href="#kontakt" className="flex items-center space-x-3">
-                    <span>📞 Umów bezpłatną konsultację</span>
-                  </a>
-                </Button>
-                
-                <div className="flex items-center space-x-4 text-white/80">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-sm font-medium">Dostępni 24/7</span>
-                  </div>
-                  <div className="w-px h-4 bg-white/30"></div>
-                  <div className="flex items-center space-x-2">
-                    <span className="text-sm font-medium">+48 510 441 307</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-2xl font-bold text-gray-900 mb-2">Dodatkowe usługi</h3>
+          <p className="text-gray-600 mb-8">Zwroty prowizji, SKD i ubezpieczenia — gdy trzeba coś „docisnąć” w umowie.</p>
+          <ServiceGrid
+            services={additionalServices}
+            hoveredOffset={primaryServices.length}
+            hoveredIndex={hoveredIndex}
+            setHoveredIndex={setHoveredIndex}
+          />
+        </div>
+
+        <div className="text-center mt-16 max-w-3xl mx-auto">
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
+            <h3 className="text-2xl font-bold text-gray-900 mb-3">Nie wiesz, od czego zacząć?</h3>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Napisz lub zadzwoń — opowiesz krótko o sytuacji, a ja powiem, czy i jak mogę pomóc. Bez zobowiązań.
+            </p>
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-blue-800 to-blue-600 hover:from-blue-900 hover:to-blue-700 text-white px-8 py-4 rounded-full font-semibold"
+            >
+              <a href="#kontakt">Porozmawiajmy — +48 510 441 307</a>
+            </Button>
           </div>
         </div>
       </div>
