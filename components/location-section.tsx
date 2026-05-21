@@ -11,7 +11,7 @@ export function LocationSection() {
             LOKALIZACJA
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Zwrot Ekspert w Zamości
+            Zwrot Ekspert w Zamościu
             <span className="block bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
               i całym województwie Lubelskim
             </span>
@@ -31,7 +31,7 @@ export function LocationSection() {
                   <Building2 className="h-7 w-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Biuro w Zamości</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Biuro w Zamościu</h3>
                   <p className="text-gray-600">Główna siedziba Zwrot Ekspert</p>
                 </div>
               </div>
@@ -106,7 +106,7 @@ export function LocationSection() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Znajdź nas na mapie</h3>
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://maps.google.com/maps?q=ul.+Kresowa+7D,+22-400+Zamo%C5%9B%C4%87,+Polska&hl=pl&z=16&output=embed"
+                  src="https://maps.google.com/maps?q=50.7092837,23.2866884&hl=pl&z=17&output=embed"
                   width="100%"
                   height="400"
                   style={{ border: 0 }}
@@ -126,7 +126,7 @@ export function LocationSection() {
                 </p>
                 <div className="flex justify-center mt-4">
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Kresowa+7D,+22-400+Zamo%C5%9B%C4%87"
+                    href="https://www.google.com/maps/search/?api=1&query=50.7092837,23.2866884"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-800 font-medium text-sm flex items-center"
@@ -140,16 +140,16 @@ export function LocationSection() {
             
             <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Zwrot prowizji bankowej w Zamości i Lubelskim
+                Zwrot prowizji bankowej w Zamościu i Lubelskim
               </h3>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  <strong>Zwrot Ekspert</strong> to profesjonalne biuro doradztwa finansowego z siedzibą w Zamości, 
+                  <strong>Zwrot Ekspert</strong> to profesjonalne biuro doradztwa finansowego z siedzibą w Zamościu, 
                   specjalizujące się w zwrotach prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów. 
                   Obsługujemy klientów z całego województwa Lubelskiego, w tym z Chełma, Lublina, Puław, Włodawy i innych miast.
                 </p>
                 <p>
-                  Jeśli szukasz pomocy w <strong>odzyskaniu prowizji z kredytu</strong> w Zamości, Chełmie lub okolicach, 
+                  Jeśli szukasz pomocy w <strong>odzyskaniu prowizji z kredytu</strong> w Zamościu, Chełmie lub okolicach, 
                   nasi eksperci pomogą Ci przeanalizować umowę kredytową i dochodzić zwrotu nienależnie pobranych opłat. 
                   Działamy również dla klientów z Lublina, Włodawy i całego regionu Lubelskiego.
                 </p>
@@ -159,7 +159,7 @@ export function LocationSection() {
                   gdy bank naruszył przepisy ustawy o kredycie konsumenckim.
                 </p>
                 <p>
-                  Oferujemy również <strong>konsolidację kredytów w Zamości</strong> i całym województwie Lubelskim, 
+                  Oferujemy również <strong>konsolidację kredytów w Zamościu</strong> i całym województwie Lubelskim, 
                   pomagając połączyć wszystkie zobowiązania w jedną, korzystniejszą ratę miesięczną.
                 </p>
               </div>
