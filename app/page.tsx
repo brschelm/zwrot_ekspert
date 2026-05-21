@@ -15,7 +15,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "FinancialService",
     "name": "Zwrot Ekspert",
-    "description": "Profesjonalne doradztwo finansowe w zakresie zwrotów prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów w Chełmie i całym województwie Lubelskim. Ponad 15 lat doświadczenia. Darmowa konsultacja.",
+    "description": "Profesjonalne doradztwo finansowe w zakresie zwrotów prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów w Zamości i całym województwie Lubelskim. Ponad 15 lat doświadczenia. Darmowa konsultacja.",
     "url": "https://www.zwrotekspert.pl",
     "telephone": "+48510441307",
     "email": "zwrotekspert@gmail.com",
@@ -73,7 +73,7 @@ export default function HomePage() {
     "@id": "https://www.zwrotekspert.pl",
     "name": "Zwrot Ekspert",
     "image": "https://www.zwrotekspert.pl/placeholder-logo.png",
-    "description": "Profesjonalne doradztwo finansowe w zakresie zwrotów prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów w Chełmie i całym województwie Lubelskim.",
+    "description": "Profesjonalne doradztwo finansowe w zakresie zwrotów prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów w Zamości i całym województwie Lubelskim.",
     "address": {
       "@type": "PostalAddress",
         "streetAddress": "ul. Kresowa 7D",
@@ -84,8 +84,8 @@ export default function HomePage() {
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "51.1287",
-      "longitude": "23.4715"
+      "latitude": "50.7093",
+      "longitude": "23.2867"
     },
     "url": "https://www.zwrotekspert.pl",
     "telephone": "+48510441307",
@@ -107,7 +107,7 @@ export default function HomePage() {
     ],
     "areaServed": {
       "@type": "City",
-      "name": "Chełm"
+      "name": "Zamość"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",

@@ -11,14 +11,14 @@ export function LocationSection() {
             LOKALIZACJA
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Zwrot Ekspert w Chełmie
+            Zwrot Ekspert w Zamości
             <span className="block bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
               i całym województwie Lubelskim
             </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Świadczymy usługi doradztwa finansowego w zakresie zwrotów prowizji bankowych, sankcji kredytu darmowego 
-            i konsolidacji kredytów dla klientów z Chełma, Lublina, Zamościa i całego województwa Lubelskiego.
+            i konsolidacji kredytów dla klientów z Zamościa, Chełma, Lublina i całego województwa Lubelskiego.
           </p>
         </div>
 
@@ -31,7 +31,7 @@ export function LocationSection() {
                   <Building2 className="h-7 w-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">Biuro w Chełmie</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Biuro w Zamości</h3>
                   <p className="text-gray-600">Główna siedziba Zwrot Ekspert</p>
                 </div>
               </div>
@@ -84,7 +84,7 @@ export function LocationSection() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">Obsługujemy klientów z:</h3>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  "Chełm", "Lublin", "Zamość", "Puławy",
+                  "Zamość", "Chełm", "Lublin", "Puławy",
                   "Świdnik", "Kraśnik", "Biała Podlaska", "Tomaszów Lubelski",
                   "Biłgoraj", "Hrubieszów", "Łuków", "Lubartów", "Włodawa"
                 ].map((city, index) => (
@@ -106,7 +106,7 @@ export function LocationSection() {
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Znajdź nas na mapie</h3>
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.147475347907!2d23.429150166564458!3d51.14263150953821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47239a29e7f01049%3A0x4feba763f509308f!2sZachodnia%2043!5e0!3m2!1spl!2spl!4v1764944082513!5m2!1spl!2spl"
+                  src="https://maps.google.com/maps?q=ul.+Kresowa+7D,+22-400+Zamo%C5%9B%C4%87,+Polska&hl=pl&z=16&output=embed"
                   width="100%"
                   height="400"
                   style={{ border: 0 }}
@@ -126,7 +126,7 @@ export function LocationSection() {
                 </p>
                 <div className="flex justify-center mt-4">
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Zachodnia+43,+22-100+Chełm"
+                    href="https://www.google.com/maps/search/?api=1&query=Kresowa+7D,+22-400+Zamo%C5%9B%C4%87"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:text-blue-800 font-medium text-sm flex items-center"
@@ -140,26 +140,26 @@ export function LocationSection() {
             
             <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Zwrot prowizji bankowej w Chełmie i Lubelskim
+                Zwrot prowizji bankowej w Zamości i Lubelskim
               </h3>
               <div className="space-y-4 text-gray-700 leading-relaxed">
                 <p>
-                  <strong>Zwrot Ekspert</strong> to profesjonalne biuro doradztwa finansowego z siedzibą w Chełmie, 
+                  <strong>Zwrot Ekspert</strong> to profesjonalne biuro doradztwa finansowego z siedzibą w Zamości, 
                   specjalizujące się w zwrotach prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów. 
-                  Obsługujemy klientów z całego województwa Lubelskiego, w tym z Lublina, Zamościa, Puław, Włodawy i innych miast.
+                  Obsługujemy klientów z całego województwa Lubelskiego, w tym z Chełma, Lublina, Puław, Włodawy i innych miast.
                 </p>
                 <p>
-                  Jeśli szukasz pomocy w <strong>odzyskaniu prowizji z kredytu</strong> w Chełmie lub okolicach, 
+                  Jeśli szukasz pomocy w <strong>odzyskaniu prowizji z kredytu</strong> w Zamości, Chełmie lub okolicach, 
                   nasi eksperci pomogą Ci przeanalizować umowę kredytową i dochodzić zwrotu nienależnie pobranych opłat. 
-                  Działamy również dla klientów z Lublina, Zamościa, Włodawy i całego regionu Lubelskiego.
+                  Działamy również dla klientów z Lublina, Włodawy i całego regionu Lubelskiego.
                 </p>
                 <p>
                   <strong>Sankcja kredytu darmowego</strong> to kolejna z naszych specjalności. Pomagamy klientom 
-                  z Chełma i całego województwa Lubelskiego w uzyskaniu zwrotu wszystkich zapłaconych odsetek, 
+                  z Zamościa, Chełma i całego województwa Lubelskiego w uzyskaniu zwrotu wszystkich zapłaconych odsetek, 
                   gdy bank naruszył przepisy ustawy o kredycie konsumenckim.
                 </p>
                 <p>
-                  Oferujemy również <strong>konsolidację kredytów w Chełmie</strong> i całym województwie Lubelskim, 
+                  Oferujemy również <strong>konsolidację kredytów w Zamości</strong> i całym województwie Lubelskim, 
                   pomagając połączyć wszystkie zobowiązania w jedną, korzystniejszą ratę miesięczną.
                 </p>
               </div>
@@ -174,7 +174,7 @@ export function LocationSection() {
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-green-600 font-bold">✓</span>
-                  <span>Obsługa klientów z Chełma, Lublina, Zamościa, Włodawy i całego województwa Lubelskiego</span>
+                  <span>Obsługa klientów z Zamościa, Chełma, Lublina, Włodawy i całego województwa Lubelskiego</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <span className="text-green-600 font-bold">✓</span>
