@@ -53,6 +53,7 @@ export function Footer() {
               <h4 className="text-xl font-bold text-white">Nasze usługi</h4>
               <ul className="space-y-3">
                 {[
+                  { name: "Hipoteki", href: "/uslugi/hipoteki" },
                   { name: "Pożyczki i kredyty", href: "/uslugi/pozyczki-i-kredyty" },
                   { name: "Konsolidacje kredytów", href: "/uslugi/konsolidacja-kredytow" },
                   { name: "Zwroty prowizji", href: "/uslugi/zwrot-prowizji" },

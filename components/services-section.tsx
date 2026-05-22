@@ -30,7 +30,7 @@ const primaryServices: ServiceItem[] = [
       "Pomagam przejrzeć warunki i porównać oferty banków, żeby wybrać kredyt hipoteczny dopasowany do Twojej sytuacji.",
     features: ["Analiza zdolności", "Porównanie banków", "Wsparcie w dokumentach", "Kontakt z bankiem"],
     note: "Pomagam porównać dostępne możliwości finansowania",
-    href: "/uslugi/pozyczki-i-kredyty",
+    href: "/uslugi/hipoteki",
   },
   {
     icon: RefreshCw,
