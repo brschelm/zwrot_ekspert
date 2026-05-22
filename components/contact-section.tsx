@@ -82,14 +82,12 @@ export function ContactSection() {
           <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
             KONTAKT
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Rozpocznij swoją
-            <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              drogę do sukcesu
-            </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+            Porozmawiajmy o
+            <span className="block text-blue-800 mt-1">Twoim finansowaniu</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Skontaktuj się z nami już dziś i dowiedz się, ile możesz zyskać dzięki naszym usługom
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed pb-1">
+            Napisz lub zadzwoń — opowiesz krótko o sytuacji, a odpowiem, czy i jak mogę pomóc.
           </p>
         </div>
 
