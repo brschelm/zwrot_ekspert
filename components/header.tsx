@@ -1,21 +1,30 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Menu, X, Phone, MessageSquare, MapPin, Car, Shield, Clock } from "lucide-react"
+import { Menu, X, Phone, MapPin, MapPinned, User, Handshake } from "lucide-react"
 import { Button } from "@/components/ui/button"
+
+const navLinks = [
+  { href: "/#uslugi", label: "Usługi" },
+  { href: "/#proces", label: "Jak działamy" },
+  { href: "/#opinie", label: "Opinie" },
+  { href: "/#kontakt", label: "Kontakt" },
+]
+
+const trustPoints = [
+  { icon: MapPinned, label: "Obsługa lokalna" },
+  { icon: User, label: "Indywidualne podejście" },
+  { icon: Handshake, label: "Pomoc na każdym etapie" },
+]
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
-  const closeMenu = () => {
-    setIsMenuOpen(false)
-  }
+  const closeMenu = () => setIsMenuOpen(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -23,131 +32,105 @@ export function Header() {
   return (
     <header
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-gray-200/50" : "bg-transparent"
+        isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-200" : "bg-white/80 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex flex-col space-y-4 py-4">
-          {/* Pierwsza linia - Logo i kontakt */}
-          <div className="flex items-center justify-between px-4 py-2">
-            <div className="flex items-center space-x-6">
-              <a href="/#uslugi" className="text-4xl lg:text-5xl font-bold bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent hover:from-blue-900 hover:to-blue-700 transition-all duration-300 cursor-pointer hover:scale-105 transform">
-                Zwrot Ekspert
-              </a>
-              <div className="hidden lg:block w-px h-10 bg-gray-300"></div>
-              <div className="hidden lg:block text-base text-gray-600 font-medium hover:text-blue-600 transition-colors duration-300 cursor-pointer">Profesjonalne Doradztwo</div>
-            </div>
+        <div className="flex items-center justify-between gap-4 py-3">
+          <a
+            href="/"
+            className="text-2xl lg:text-3xl font-bold text-blue-800 hover:text-blue-900 transition-colors shrink-0"
+          >
+            Zwrot Ekspert
+          </a>
 
-            <div className="flex items-center space-x-6">
-              <a href="/#lokalizacja" className="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-105 transform cursor-pointer px-3 py-2">
-                <MapPin className="h-4 w-4" />
-                <span className="font-medium text-sm">ul. Kresowa 7D, 22-400 Zamość</span>
+          <nav className="hidden lg:flex items-center gap-6">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-gray-700 hover:text-blue-800 font-medium text-sm transition-colors"
+              >
+                {link.label}
               </a>
-              <div className="hidden lg:flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition-all duration-300 hover:scale-105 transform cursor-pointer px-3 py-2">
-                <Phone className="h-4 w-4" />
-                <span className="font-medium text-sm">+48 510 441 307</span>
-              </div>
-              {/* Mobile menu button */}
-              <Button variant="ghost" size="icon" className="lg:hidden hover:scale-110 transform transition-all duration-300" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </Button>
-            </div>
+            ))}
+          </nav>
+
+          <div className="hidden lg:flex items-center gap-5">
+            <a
+              href="tel:+48510441307"
+              className="flex items-center gap-2 text-gray-600 hover:text-blue-800 text-sm font-medium"
+            >
+              <Phone className="h-4 w-4" />
+              +48 510 441 307
+            </a>
+            <Button
+              asChild
+              className="bg-blue-800 hover:bg-blue-900 text-white rounded-lg px-5 font-semibold shadow-sm"
+            >
+              <a href="/#kontakt">Umów rozmowę</a>
+            </Button>
           </div>
 
-          {/* Druga linia - Nawigacja i dodatkowe elementy */}
-          <div className="flex items-center justify-between px-4 py-2">
-            <nav className="hidden lg:flex items-center space-x-6">
-              <a
-                href="/#uslugi"
-                onClick={closeMenu}
-                className="bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
-              >
-                Usługi
-              </a>
-              <a
-                href="/#proces"
-                onClick={closeMenu}
-                className="bg-gradient-to-r from-green-600 to-green-500 hover:from-green-700 hover:to-green-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
-              >
-                Jak działamy
-              </a>
-              <a
-                href="/#opinie"
-                onClick={closeMenu}
-                className="bg-gradient-to-r from-purple-600 to-purple-500 hover:from-purple-700 hover:to-purple-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
-              >
-                Opinie
-              </a>
-              <a
-                href="/#kontakt"
-                onClick={closeMenu}
-                className="bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600 text-white font-bold text-lg px-6 py-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 transform h-14 flex items-center justify-center"
-              >
-                Kontakt
-              </a>
-            </nav>
-
-            <div className="flex items-center space-x-4">
-              <div className="hidden lg:flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-full hover:bg-blue-100 transition-colors duration-300 cursor-pointer">
-                <Car className="h-4 w-4 text-blue-600" />
-                <span className="text-sm text-blue-700 font-medium">Działamy mobilnie</span>
-              </div>
-              <div className="hidden lg:flex items-center space-x-2 bg-green-50 px-4 py-2 rounded-full hover:bg-green-100 transition-colors duration-300 cursor-pointer">
-                <Shield className="h-4 w-4 text-green-600" />
-                <span className="text-sm text-green-700 font-medium">Gwarancja Sukcesu</span>
-              </div>
-              <div className="hidden lg:flex items-center space-x-2 bg-orange-50 px-4 py-2 rounded-full hover:bg-orange-100 transition-colors duration-300 cursor-pointer">
-                <Clock className="h-4 w-4 text-orange-600" />
-                <span className="text-sm text-orange-700 font-medium">Szybka Realizacja</span>
-              </div>
-            </div>
-          </div>
-
+          <Button
+            variant="ghost"
+            size="icon"
+            className="lg:hidden"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Menu"
+          >
+            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </Button>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden py-6 border-t bg-white/95 backdrop-blur-md">
-            <nav className="flex flex-col space-y-4">
-              <a href="/#uslugi" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
-                Usługi
-              </a>
-              <a href="/#proces" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
-                Jak działamy
-              </a>
-              <a href="/#opinie" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
-                Opinie
-              </a>
-              <a href="/#kontakt" onClick={closeMenu} className="text-gray-700 hover:text-blue-600 transition-colors font-medium px-4 py-2 hover:scale-105 transform">
-                Kontakt
-              </a>
-              <div className="px-4 pt-4 border-t">
-                <a href="/#lokalizacja" onClick={closeMenu} className="flex items-center space-x-2 text-sm text-gray-600 mb-2 hover:text-blue-600 transition-colors">
-                  <MapPin className="h-4 w-4" />
-                  <span>ul. Kresowa 7D, 22-400 Zamość</span>
-                </a>
-                <div className="flex items-center space-x-2 text-sm text-gray-600 mb-4">
-                  <Phone className="h-4 w-4" />
-                  <span>+48 510 441 307</span>
-                </div>
-                <div className="flex items-center space-x-2 text-sm text-blue-600 mb-4">
-                  <Car className="h-4 w-4" />
-                  <span className="font-medium">Działamy mobilnie</span>
-                </div>
-                <div className="space-y-2">
-                  <Button onClick={closeMenu} className="w-full bg-gradient-to-r from-green-600 to-green-500 text-white mb-2">
-                    <MessageSquare className="h-4 w-4 mr-2" />
-                    <a href="sms:+48510441307">Napisz SMS</a>
-                  </Button>
-                  <Button onClick={closeMenu} className="w-full bg-gradient-to-r from-blue-600 to-blue-500 text-white">
-                    <a href="#kontakt">Umówmy się i przyjedziemy</a>
-                  </Button>
-                </div>
-              </div>
-            </nav>
+        <div className="hidden lg:flex items-center justify-between gap-4 pb-3 border-t border-gray-100 pt-2">
+          <div className="flex items-center gap-6">
+            {trustPoints.map(({ icon: Icon, label }) => (
+              <span key={label} className="flex items-center gap-1.5 text-xs text-gray-600">
+                <Icon className="h-3.5 w-3.5 text-blue-700" />
+                {label}
+              </span>
+            ))}
           </div>
-        )}
+          <a
+            href="/#lokalizacja"
+            className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-blue-800"
+          >
+            <MapPin className="h-3.5 w-3.5" />
+            Chełm · Zamość · ul. Kresowa 7D
+          </a>
+        </div>
       </div>
+
+      {isMenuOpen && (
+        <div className="lg:hidden border-t bg-white py-4 px-4">
+          <nav className="flex flex-col gap-3 mb-4">
+            {navLinks.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={closeMenu}
+                className="text-gray-800 font-medium py-2"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+          <div className="space-y-2 text-sm text-gray-600 mb-4">
+            {trustPoints.map(({ label }) => (
+              <p key={label}>✓ {label}</p>
+            ))}
+          </div>
+          <Button asChild className="w-full bg-blue-800 hover:bg-blue-900 text-white mb-2">
+            <a href="/#kontakt" onClick={closeMenu}>
+              Umów rozmowę
+            </a>
+          </Button>
+          <a href="tel:+48510441307" className="block text-center text-blue-800 font-medium">
+            +48 510 441 307
+          </a>
+        </div>
+      )}
     </header>
   )
 }
