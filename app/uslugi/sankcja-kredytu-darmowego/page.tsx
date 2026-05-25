@@ -6,9 +6,9 @@ import { ArrowLeft, Scale, Gavel, DollarSign, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: 'Sankcja Kredytu Darmowego - Zwrot Ekspert Chełm',
-  description: 'Sankcja kredytu darmowego - zwrot wszystkich zapłaconych odsetek. Pomagamy gdy bank naruszył przepisy. Chełm, Lubelskie. +48 510 441 307',
-  keywords: ['sankcja kredytu darmowego', 'kredyt darmowy', 'zwrot odsetek', 'naruszenie przepisów', 'Chełm', 'Lubelskie'],
+  title: 'Sankcja Kredytu Darmowego - Zwrot Ekspert',
+  description: 'Sankcja kredytu darmowego przy pożyczkach konsumenckich — gdy bank naruszył przepisy. Pomoc w zwrocie odsetek. Zamość, Lubelskie. +48 510 441 307',
+  keywords: ['sankcja kredytu darmowego', 'kredyt darmowy', 'zwrot odsetek z pożyczki', 'pożyczka konsumencka', 'naruszenie przepisów', 'Zamość', 'Lubelskie'],
   alternates: {
     canonical: 'https://www.zwrotekspert.pl/uslugi/sankcja-kredytu-darmowego',
   },
@@ -36,7 +36,7 @@ export default function SankcjaKredytuDarmowegoPage() {
       "@type": "State",
       "name": "Lubelskie"
     },
-    "description": "Pomoc w uzyskaniu sankcji kredytu darmowego - zwrot wszystkich zapłaconych odsetek gdy bank naruszył przepisy."
+    "description": "Pomoc w uzyskaniu sankcji kredytu darmowego przy pożyczkach konsumenckich, gdy bank naruszył przepisy ustawy o kredycie konsumenckim."
   }
 
   return (
@@ -62,13 +62,14 @@ export default function SankcjaKredytuDarmowegoPage() {
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Sankcja kredytu darmowego
-                <span className="block bg-gradient-to-r from-red-600 to-orange-600 bg-clip-text text-transparent">
-                  100% zwrot wszystkich odsetek
+                <span className="block text-red-700">
+                  przy pożyczkach konsumenckich
                 </span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Jeśli bank naruszył przepisy ustawy o kredycie konsumenckim, możesz żądać zwrotu wszystkich zapłaconych odsetek. 
-                To może oznaczać <strong>tysiące złotych</strong> zwrotu.
+                Gdy bank naruszył przepisy ustawy o kredycie konsumenckim przy pożyczce, można dochodzić zwrotu zapłaconych
+                odsetek. W udanych sprawach średnio to <strong>około 4 500 zł</strong> — dokładna kwota zależy od umowy i
+                przebiegu postępowania.
               </p>
             </div>
           </div>
@@ -81,18 +82,18 @@ export default function SankcjaKredytuDarmowegoPage() {
               <h2 className="text-3xl font-bold mb-8">Co to jest sankcja kredytu darmowego?</h2>
               <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-8 border border-red-100 mb-8">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Sankcja kredytu darmowego to konsekwencja naruszenia przez bank przepisów ustawy o kredycie konsumenckim. 
-                  W takim przypadku kredytobiorca może żądać zwrotu <strong>wszystkich zapłaconych odsetek</strong>, 
-                  co oznacza, że kredyt staje się praktycznie darmowy.
+                  Sankcja kredytu darmowego dotyczy pożyczek konsumenckich — gdy bank naruszył przepisy ustawy o kredycie
+                  konsumenckim, pożyczkobiorca może żądać zwrotu zapłaconych odsetek. Nie każda umowa się kwalifikuje; na
+                  początku sprawdzamy, czy w Twojej sprawie są realne podstawy.
                 </p>
               </div>
               <h3 className="text-2xl font-bold mb-6">Kiedy można żądać sankcji?</h3>
               <div className="space-y-4">
                 {[
-                  "Bank nie poinformował prawidłowo o kosztach kredytu",
+                  "Bank nie poinformował prawidłowo o kosztach pożyczki",
                   "Naruszenie przepisów dotyczących formy umowy",
                   "Nieprawidłowe wyliczenie RRSO (Rzeczywista Roczna Stopa Oprocentowania)",
-                  "Brak wymaganych informacji w umowie",
+                  "Brak wymaganych informacji w umowie pożyczki",
                   "Naruszenie przepisów dotyczących wcześniejszej spłaty"
                 ].map((reason, index) => (
                   <div key={index} className="flex items-start space-x-3 bg-gray-50 rounded-lg p-4">
@@ -114,17 +115,17 @@ export default function SankcjaKredytuDarmowegoPage() {
                 {
                   icon: Scale,
                   title: "Analiza prawna",
-                  description: "Przeanalizujemy Twoją umowę kredytową pod kątem naruszeń przepisów."
+                  description: "Przeanalizujemy umowę pożyczki pod kątem naruszeń przepisów."
                 },
                 {
                   icon: Gavel,
                   title: "Działania prawne",
-                  description: "Podejmujemy odpowiednie kroki prawne - negocjacje, postępowania sądowe."
+                  description: "Podejmujemy odpowiednie kroki prawne — negocjacje lub postępowanie sądowe."
                 },
                 {
                   icon: DollarSign,
                   title: "Zwrot odsetek",
-                  description: "Otrzymujesz zwrot wszystkich zapłaconych odsetek na swoje konto."
+                  description: "Przy pozytywnym wyniku — zwrot należnych odsetek na Twoje konto."
                 },
                 {
                   icon: CheckCircle,

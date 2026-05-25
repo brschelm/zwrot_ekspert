@@ -75,7 +75,7 @@ const additionalServices: ServiceItem[] = [
     icon: Scale,
     title: "SKD",
     description:
-      "Sankcja kredytu darmowego — gdy bank naruszył przepisy, omawiamy sytuację i możliwe kroki prawne.",
+      "Sankcja przy pożyczce konsumenckiej — gdy bank naruszył przepisy, sprawdzamy umowę i możliwe kroki.",
     features: ["Ocena umowy", "Podstawy prawne", "Strategia działania", "Wsparcie w procesie"],
     note: "Ocena sytuacji i możliwych rozwiązań",
     href: "/uslugi/sankcja-kredytu-darmowego",
