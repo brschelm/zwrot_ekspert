@@ -66,7 +66,7 @@ const additionalServices: ServiceItem[] = [
     icon: DollarSign,
     title: "Zwroty prowizji",
     description:
-      "Sprawdzamy umowę kredytową pod kątem prowizji i opłat — jeśli są podstawy, pomagamy w procedurze odzyskania.",
+      "Sprawdzamy umowę pożyczki pod kątem prowizji i opłat — głównie pożyczki gotówkowe i konsumenckie.",
     features: ["Analiza umowy", "Wyliczenie kwot", "Pisma do banku", "Wsparcie w sprawie"],
     note: "Analiza umowy i możliwe działania",
     href: "/uslugi/zwrot-prowizji",

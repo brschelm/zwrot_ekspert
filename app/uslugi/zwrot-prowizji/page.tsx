@@ -6,9 +6,9 @@ import { ArrowLeft, CreditCard, FileText, Gavel, CheckCircle, DollarSign } from 
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: 'Zwrot Prowizji Bankowej - Zwrot Ekspert Chełm',
-  description: 'Pomagamy odzyskać prowizje bankowe z kredytów hipotecznych, gotówkowych i innych produktów bankowych. Darmowa konsultacja. Chełm, Lubelskie. +48 510 441 307',
-  keywords: ['zwrot prowizji', 'zwrot prowizji bankowej', 'zwrot prowizji z kredytu', 'odzyskanie prowizji', 'zwrot prowizji kredyt hipoteczny', 'Chełm', 'Lubelskie'],
+  title: 'Zwrot Prowizji z Pożyczki - Zwrot Ekspert',
+  description: 'Pomagamy odzyskać nienależnie pobrane prowizje z pożyczek gotówkowych i innych pożyczek konsumenckich. Darmowa konsultacja. Zamość, Lubelskie. +48 510 441 307',
+  keywords: ['zwrot prowizji', 'zwrot prowizji z pożyczki', 'zwrot prowizji bankowej', 'odzyskanie prowizji', 'pożyczka gotówkowa', 'Zamość', 'Lubelskie'],
   alternates: {
     canonical: 'https://www.zwrotekspert.pl/uslugi/zwrot-prowizji',
   },
@@ -36,7 +36,7 @@ export default function ZwrotProwizjiPage() {
       "@type": "State",
       "name": "Lubelskie"
     },
-    "description": "Profesjonalna pomoc w odzyskaniu prowizji bankowych z kredytów hipotecznych, gotówkowych i innych produktów bankowych."
+    "description": "Profesjonalna pomoc w odzyskaniu prowizji z pożyczek gotówkowych i innych pożyczek konsumenckich."
   }
 
   return (
@@ -61,14 +61,15 @@ export default function ZwrotProwizjiPage() {
                 ZWROT PROWIZJI BANKOWEJ
               </div>
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Odzyskaj prowizję z kredytu
-                <span className="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  nawet do 15,000 zł zwrotu
+                Odzyskaj prowizję z pożyczki
+                <span className="block text-blue-700">
+                  często kilka tysięcy złotych zwrotu
                 </span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Pomagamy odzyskać nienależnie pobrane prowizje bankowe z kredytów hipotecznych, gotówkowych i innych produktów bankowych. 
-                Średnio odzyskujemy <strong>8,500 zł</strong> dla naszych klientów.
+                Pomagamy odzyskać nienależnie pobrane prowizje i opłaty z pożyczek — głównie gotówkowych i innych
+                pożyczek konsumenckich. Średnio odzyskujemy <strong>około 4 500 zł</strong> — dokładna kwota zależy od
+                umowy.
               </p>
             </div>
           </div>
@@ -83,7 +84,7 @@ export default function ZwrotProwizjiPage() {
                 {
                   icon: FileText,
                   title: "Analiza umowy",
-                  description: "Przeanalizujemy Twoją umowę kredytową i wyliczymy możliwe do odzyskania prowizje."
+                  description: "Przeanalizujemy umowę pożyczki i wyliczymy możliwe do odzyskania prowizje oraz opłaty."
                 },
                 {
                   icon: Gavel,
@@ -117,28 +118,37 @@ export default function ZwrotProwizjiPage() {
         <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8">Z jakich kredytów można odzyskać prowizję?</h2>
+              <h2 className="text-3xl font-bold mb-8">Z jakich pożyczek można odzyskać prowizję?</h2>
               <div className="space-y-6 text-gray-700 leading-relaxed">
                 <div className="bg-white rounded-xl p-6 border border-gray-100">
                   <h3 className="text-xl font-bold mb-3 flex items-center">
                     <CreditCard className="h-6 w-6 mr-2 text-blue-600" />
-                    Kredyty hipoteczne
+                    Pożyczki gotówkowe
                   </h3>
-                  <p>Najczęściej odzyskujemy prowizje z kredytów hipotecznych. Średnia kwota zwrotu wynosi 10,000-15,000 zł.</p>
+                  <p>
+                    To najczęstszy przypadek — sprawdzamy umowę i pomagamy w procedurze zwrotu prowizji oraz innych
+                    nienależnych opłat. Średnia kwota zwrotu to zwykle około 4 000–5 000 zł.
+                  </p>
                 </div>
                 <div className="bg-white rounded-xl p-6 border border-gray-100">
                   <h3 className="text-xl font-bold mb-3 flex items-center">
                     <CreditCard className="h-6 w-6 mr-2 text-green-600" />
-                    Kredyty gotówkowe
+                    Pożyczki już spłacone
                   </h3>
-                  <p>Możliwe jest odzyskanie prowizji z kredytów gotówkowych, nawet jeśli zostały spłacone kilka lat temu.</p>
+                  <p>
+                    Często można dochodzić zwrotu także z pożyczek spłaconych kilka lat temu — pod warunkiem, że
+                    przedawnienie jeszcze nie upłynęło.
+                  </p>
                 </div>
                 <div className="bg-white rounded-xl p-6 border border-gray-100">
                   <h3 className="text-xl font-bold mb-3 flex items-center">
                     <CreditCard className="h-6 w-6 mr-2 text-purple-600" />
-                    Pożyczki i inne produkty
+                    Inne pożyczki konsumenckie
                   </h3>
-                  <p>Pomagamy również w odzyskaniu prowizji z pożyczek i innych produktów bankowych.</p>
+                  <p>
+                    Bankowe pożyczki na dowolny cel, pożyczki w sklepach czy u pośredników — jeśli w umowie są
+                    podstawy, pomagamy przejść przez odzyskanie.
+                  </p>
                 </div>
               </div>
             </div>
