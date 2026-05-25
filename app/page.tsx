@@ -10,7 +10,8 @@ import { FAQSection } from "@/components/faq-section"
 import { LocalSeoSection } from "@/components/local-seo-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
-import { areaServedJsonLd, homeMetadata, LOCAL_FAQ } from "@/lib/local-seo"
+import { FAQ_ITEMS } from "@/lib/faq-content"
+import { areaServedJsonLd, homeMetadata } from "@/lib/local-seo"
 
 export const metadata: Metadata = homeMetadata
 
@@ -220,64 +221,14 @@ export default function HomePage() {
   const faqData = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Czy konsultacja jest rzeczywiście bezpłatna?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tak, pierwsza konsultacja jest całkowicie bezpłatna i bez zobowiązań. Podczas rozmowy omówimy Twoją sytuację finansową i przedstawimy możliwe rozwiązania."
-        }
+    mainEntity: FAQ_ITEMS.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
       },
-      {
-        "@type": "Question",
-        "name": "Ile kosztują Wasze usługi?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nasze wynagrodzenie uzależnione jest od sukcesu w sprawie. Płacisz tylko wtedy, gdy osiągniemy pozytywny rezultat. Prowizja wynosi od 15% do 30% odzyskanej kwoty, w zależności od rodzaju sprawy."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Jak długo trwa proces odzyskania prowizji?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Proces zwrotu prowizji trwa zazwyczaj od 2 do 6 miesięcy, w zależności od skomplikowania sprawy i współpracy banku. W przypadku konieczności postępowania sądowego może to potrwać dłużej."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Czy mogę odzyskać prowizję ze starego kredytu?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tak, możesz odzyskać prowizję z kredytów zaciągniętych nawet kilka lat temu. Istnieją określone terminy przedawnienia, ale w większości przypadków można skutecznie dochodzić zwrotu."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Co to jest sankcja kredytu darmowego?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sankcja kredytu darmowego to konsekwencja naruszenia przez bank przepisów ustawy kredytu konsumenckiego. W takim przypadku kredytobiorca może żądać zwrotu wszystkich zapłaconych odsetek."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Czy konsolidacja kredytów zawsze się opłaca?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nie zawsze. Dlatego zawsze przeprowadzamy szczegółową analizę Twojej sytuacji finansowej. Konsolidacja opłaca się, gdy pozwala obniżyć miesięczne raty lub całkowity koszt kredytu."
-        }
-      },
-      ...LOCAL_FAQ.map((item) => ({
-        "@type": "Question" as const,
-        name: item.question,
-        acceptedAnswer: {
-          "@type": "Answer" as const,
-          text: item.answer,
-        },
-      }))
-    ]
+    })),
   }
 
   return (
