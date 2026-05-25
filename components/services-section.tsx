@@ -84,9 +84,9 @@ const additionalServices: ServiceItem[] = [
     icon: Shield,
     title: "Ubezpieczenia",
     description:
-      "Pomagamy zrozumieć ubezpieczenia przy kredycie i dobrać ochronę adekwatną do potrzeb — bez presji na „najdroższy pakiet”.",
-    features: ["Ubezpieczenie kredytu", "Ochrona spłat", "Porównanie ofert", "Doradztwo"],
-    note: "Dobór ochrony do Twojej sytuacji",
+      "Rezygnacja z zbędnego ubezpieczenia przy pożyczce lub zwrot składek — bez sprzedaży nowych polis.",
+    features: ["Analiza umowy", "Rezygnacja z polisy", "Zwrot składek", "Procedura w banku"],
+    note: "Gdy ubezpieczenie przy pożyczce nie jest potrzebne",
     href: "/uslugi/ubezpieczenia-kredytow",
   },
 ]

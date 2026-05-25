@@ -1,42 +1,85 @@
-import { Metadata } from 'next'
+import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
-import { ArrowLeft, Shield, Heart, Home, Car, TrendingDown } from "lucide-react"
+import { ArrowLeft, Shield, Check, FileText, Ban, RotateCcw } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: 'Ubezpieczenia Kredytów - Zwrot Ekspert Chełm',
-  description: 'Kompleksowa obsługa ubezpieczeń związanych z kredytami i pożyczkami w Chełmie. Ubezpieczenia kredytów, ochrona spłat, ubezpieczenia życiowe. Do 40% taniej. +48 510 441 307',
-  keywords: ['ubezpieczenia kredytów', 'ochrona spłat', 'ubezpieczenia życiowe', 'doradztwo ubezpieczeniowe', 'Chełm', 'Lubelskie'],
+  title: "Ubezpieczenie przy pożyczce — zwrot i rezygnacja | Zwrot Ekspert",
+  description:
+    "Pomoc przy ubezpieczeniu dołączonym do pożyczki: analiza umowy, rezygnacja z niepotrzebnej polisy, dochodzenie zwrotu składek. Zamość, Lubelskie. +48 510 441 307",
+  keywords: [
+    "rezygnacja z ubezpieczenia kredytu",
+    "zwrot składki ubezpieczenia",
+    "ubezpieczenie pożyczki",
+    "ubezpieczenie kredytu konsumenckiego",
+    "odstąpienie od ubezpieczenia",
+    "Zamość",
+    "Lubelskie",
+  ],
   alternates: {
-    canonical: 'https://www.zwrotekspert.pl/uslugi/ubezpieczenia-kredytow',
+    canonical: "https://www.zwrotekspert.pl/uslugi/ubezpieczenia-kredytow",
   },
 }
+
+const processSteps = [
+  "przejrzenia umowy pożyczki i dokumentów ubezpieczenia",
+  "oceny, czy polisa była potrzebna i czy bank spełnił obowiązki informacyjne",
+  "omówienia rezygnacji lub zwrotu — jeśli są podstawy",
+  "procedury w banku lub u ubezpieczyciela (reklamacja, wypowiedzenie)",
+]
+
+const helpItems = [
+  "rezygnacja z ubezpieczenia nienależnie dołączonego do pożyczki",
+  "zwrot zapłaconych składek lub kosztów ubezpieczenia",
+  "wyjaśnienie, czy polisa jest obowiązkowa czy dobrowolna",
+  "pomoc przy pisemnym odstąpieniu lub wypowiedzeniu",
+  "kontakt z bankiem i przejście przez formalności",
+]
+
+const situations = [
+  {
+    icon: Ban,
+    title: "Ubezpieczenie, którego nie potrzebujesz",
+    text: "Przy pożyczce często proponuje się pakiet ubezpieczeniowy — nie zawsze jest konieczny. Sprawdzamy umowę i pomagamy zrezygnować, gdy polisa nie ma sensu w Twojej sytuacji.",
+  },
+  {
+    icon: RotateCcw,
+    title: "Zwrot już zapłaconych składek",
+    text: "Gdy ubezpieczenie było sprzedane niezgodnie z przepisami lub można z niego odstąpić, dochodzimy zwrotu kosztów, które bank doliczył do pożyczki.",
+  },
+  {
+    icon: FileText,
+    title: "Brak jasnej informacji przy podpisaniu",
+    text: "Jeśli nie poinformowano Cię prawidłowo o kosztach, dobrowolności polisy lub prawie odstąpienia — to może być podstawa do działań, także w powiązaniu ze sprawą o zwrot prowizji lub SKD.",
+  },
+]
 
 export default function UbezpieczeniaKredytowPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Ubezpieczenia kredytów",
-    "provider": {
+    serviceType: "Rezygnacja i zwrot kosztów ubezpieczenia przy pożyczce",
+    provider: {
       "@type": "LocalBusiness",
-      "name": "Zwrot Ekspert",
-      "address": {
+      name: "Zwrot Ekspert",
+      address: {
         "@type": "PostalAddress",
-        "streetAddress": "ul. Kresowa 7D",
-        "addressLocality": "Zamość",
-        "postalCode": "22-400",
-        "addressRegion": "Lubelskie",
-        "addressCountry": "PL"
+        streetAddress: "ul. Kresowa 7D",
+        addressLocality: "Zamość",
+        postalCode: "22-400",
+        addressRegion: "Lubelskie",
+        addressCountry: "PL",
       },
-      "telephone": "+48510441307"
+      telephone: "+48510441307",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "State",
-      "name": "Lubelskie"
+      name: "Lubelskie",
     },
-    "description": "Kompleksowa obsługa ubezpieczeń związanych z kredytami i pożyczkami."
+    description:
+      "Pomoc przy rezygnacji z niepotrzebnego ubezpieczenia do pożyczki oraz dochodzeniu zwrotu składek — bez sprzedaży nowych polis.",
   }
 
   return (
@@ -47,129 +90,123 @@ export default function UbezpieczeniaKredytowPage() {
       />
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="pt-48 pb-20 bg-gradient-to-b from-orange-50 to-white">
+        <section className="pt-40 pb-16 lg:pt-44 bg-gradient-to-b from-slate-50 to-white">
           <div className="container mx-auto px-4">
             <div className="mb-8">
-              <Link href="/#uslugi" className="inline-flex items-center bg-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl text-orange-600 hover:text-orange-800 transition-all hover:scale-105 border-2 border-orange-200 font-semibold z-10 relative">
-                <ArrowLeft className="h-5 w-5 mr-2" />
+              <Link
+                href="/#uslugi"
+                className="inline-flex items-center bg-white px-5 py-2.5 rounded-lg shadow-sm hover:shadow text-blue-800 hover:text-blue-900 transition-all border border-gray-200 font-medium text-sm"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
                 Powrót do usług
               </Link>
             </div>
-            <div className="max-w-4xl">
-              <div className="inline-block bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                UBEZPIECZENIA KREDYTÓW
+            <div className="max-w-3xl">
+              <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                UBEZPIECZENIE PRZY POŻYCZCE
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Ubezpieczenia kredytów
-                <span className="block bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                  do 40% taniej
-                </span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                Rezygnacja lub zwrot — gdy ubezpieczenie nie jest potrzebne
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Kompleksowa obsługa ubezpieczeń związanych z kredytami i pożyczkami. 
-                Pomagamy znaleźć najlepsze ubezpieczenia nawet o 40% tańsze niż standardowe oferty banków.
+              <p className="text-xl text-blue-800 font-semibold mb-6 leading-snug pb-0.5">
+                Nie sprzedaję nowych polis — pomagam wyjść z zbędnego ubezpieczenia przy pożyczce
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed mb-6">
+                Banki i firmy pożyczkowe często dołączają do pożyczki ubezpieczenie na życie, utratę pracy lub inne
+                pakiety. Czasem można z tego zrezygnować albo odzyskać już zapłacone składki — jeśli polisa była
+                zbędna lub sprzedana z naruszeniem przepisów.
+              </p>
+              <p className="text-lg text-gray-800 font-medium mb-3">Na początku wspólnie przechodzimy przez:</p>
+              <ul className="space-y-2 mb-8">
+                {processSteps.map((step) => (
+                  <li key={step} className="flex items-center gap-3 text-gray-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-700 flex-shrink-0" />
+                    {step}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-lg text-gray-600 leading-relaxed pb-1">
+                Nie obiecuję „tańszego ubezpieczenia w banku” — skupiam się na tym, żebyś nie płacił za coś, czego
+                realnie nie potrzebujesz, albo żebyś odzyskał nadpłaconą składkę tam, gdzie prawo na to pozwala.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Services Types Section */}
-        <section className="py-20 bg-white">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Rodzaje ubezpieczeń</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-              {[
-                {
-                  icon: Shield,
-                  title: "Ubezpieczenia kredytów",
-                  description: "Ochrona kredytu w przypadku utraty pracy, choroby lub innych zdarzeń losowych. Pomagamy wybrać najlepszą polisę."
-                },
-                {
-                  icon: Heart,
-                  title: "Ubezpieczenia życiowe",
-                  description: "Ubezpieczenie na życie związane z kredytem hipotecznym. Znajdziemy najkorzystniejszą ofertę dopasowaną do Twoich potrzeb."
-                },
-                {
-                  icon: Home,
-                  title: "Ubezpieczenia nieruchomości",
-                  description: "Ochrona nieruchomości będącej zabezpieczeniem kredytu. Pomagamy wybrać odpowiednią polisę."
-                },
-                {
-                  icon: Car,
-                  title: "Ubezpieczenia pojazdów",
-                  description: "Ubezpieczenia OC i AC dla pojazdów finansowanych kredytem. Negocjujemy najlepsze warunki."
-                }
-              ].map((service, index) => (
-                <div key={index} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center mb-4">
-                    <service.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                  <p className="text-gray-600">{service.description}</p>
+            <div className="max-w-3xl mx-auto">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                  <Shield className="h-6 w-6 text-blue-800" />
                 </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section */}
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8">Dlaczego warto skorzystać z naszej pomocy?</h2>
-              <div className="space-y-6">
-                <div className="bg-white rounded-xl p-6 border border-gray-100">
-                  <div className="flex items-start space-x-4">
-                    <TrendingDown className="h-8 w-8 text-orange-600 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">Niższe koszty</h3>
-                      <p className="text-gray-600">Dzięki naszym kontaktom możemy znaleźć ubezpieczenia nawet o 40% tańsze niż standardowe oferty banków.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-white rounded-xl p-6 border border-gray-100">
-                  <div className="flex items-start space-x-4">
-                    <Shield className="h-8 w-8 text-green-600 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">Szersza ochrona</h3>
-                      <p className="text-gray-600">Pomagamy wybrać polisy, które oferują lepszą ochronę niż standardowe ubezpieczenia bankowe.</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="bg-white rounded-xl p-6 border border-gray-100">
-                  <div className="flex items-start space-x-4">
-                    <Heart className="h-8 w-8 text-red-600 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">Profesjonalne doradztwo</h3>
-                      <p className="text-gray-600">Nasi eksperci pomogą Ci wybrać najlepszą polisę ubezpieczeniową dopasowaną do Twojej sytuacji.</p>
-                    </div>
-                  </div>
-                </div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Kiedy to ma sens?</h2>
               </div>
+              <div className="space-y-5">
+                {situations.map((item) => (
+                  <div
+                    key={item.title}
+                    className="bg-white border border-gray-100 rounded-xl p-6 shadow-sm"
+                  >
+                    <div className="flex items-start gap-4">
+                      <div className="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <item.icon className="h-5 w-5 text-blue-800" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                        <p className="text-gray-600 leading-relaxed">{item.text}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-gray-500 mt-8 leading-relaxed">
+                Ubezpieczenie bywa powiązane ze{" "}
+                <Link href="/uslugi/zwrot-prowizji" className="text-blue-800 font-medium underline">
+                  zwrotem prowizji
+                </Link>{" "}
+                lub{" "}
+                <Link href="/uslugi/sankcja-kredytu-darmowego" className="text-blue-800 font-medium underline">
+                  sankcją kredytu darmowego
+                </Link>{" "}
+                — po analizie umowy powiem, która ścieżka pasuje do Twojej sprawy.
+              </p>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Znajdź najlepsze ubezpieczenie</h2>
-            <p className="text-xl mb-8 opacity-90">Skontaktuj się z nami - pierwsza konsultacja jest bezpłatna</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+48510441307"
-                className="bg-white text-orange-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors"
-              >
-                📞 +48 510 441 307
-              </a>
-              <a
-                href="#kontakt"
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-orange-600 transition-colors"
-              >
-                Formularz kontaktowy
-              </a>
+        <section className="py-16 bg-slate-50 border-y border-gray-100">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">W czym pomagam</h2>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {helpItems.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 bg-white border border-gray-100 rounded-xl px-4 py-3 shadow-sm"
+                  >
+                    <Check className="h-5 w-5 text-blue-700 flex-shrink-0" strokeWidth={2.5} />
+                    <span className="text-gray-800 font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-blue-50 border-y border-blue-100">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Masz ubezpieczenie przy pożyczce?</h2>
+            <p className="text-gray-600 mb-8 max-w-xl mx-auto leading-relaxed">
+              Prześlij umowę lub zadzwoń — sprawdzimy, czy można zrezygnować lub dochodzić zwrotu. Konsultacja bez
+              zobowiązania.
+            </p>
+            <a
+              href="#kontakt"
+              className="inline-flex items-center justify-center bg-blue-800 hover:bg-blue-900 text-white px-8 py-4 rounded-lg font-semibold text-base shadow-sm transition-colors"
+            >
+              Umów bezpłatną konsultację
+            </a>
           </div>
         </section>
 
@@ -179,4 +216,3 @@ export default function UbezpieczeniaKredytowPage() {
     </div>
   )
 }
-
