@@ -54,6 +54,7 @@ export function Footer() {
               <ul className="space-y-3">
                 {[
                   { name: "Hipoteki", href: "/uslugi/hipoteki" },
+                  { name: "Kredyty firmowe", href: "/uslugi/kredyty-firmowe" },
                   { name: "Pożyczki i kredyty", href: "/uslugi/pozyczki-i-kredyty" },
                   { name: "Konsolidacje kredytów", href: "/uslugi/konsolidacja-kredytow" },
                   { name: "Zwroty prowizji", href: "/uslugi/zwrot-prowizji" },

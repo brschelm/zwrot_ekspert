@@ -48,7 +48,7 @@ const primaryServices: ServiceItem[] = [
       "Dla przedsiębiorców — dobór finansowania inwestycji, obrotówki i rozwoju firmy z uwzględnieniem realnych warunków banków.",
     features: ["Kredyt inwestycyjny", "Linia obrotowa", "Leasing", "Dokumentacja firmy"],
     note: "Dobór finansowania pod profil działalności",
-    href: "/uslugi/pozyczki-i-kredyty",
+    href: "/uslugi/kredyty-firmowe",
   },
   {
     icon: ArrowLeftRight,
