@@ -1,42 +1,67 @@
-import { Metadata } from 'next'
+import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
-import { ArrowLeft, RefreshCw, Calculator, TrendingDown, Shield } from "lucide-react"
+import { ArrowLeft, RefreshCw, Check } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: 'Konsolidacja Kredytów - Zwrot Ekspert Chełm',
-  description: 'Konsolidacja kredytów w Chełmie i Lubelskim. Połącz wszystkie zobowiązania w jedną, niższą ratę miesięczną. Darmowa konsultacja. +48 510 441 307',
-  keywords: ['konsolidacja kredytów', 'konsolidacja kredytów Chełm', 'refinansowanie kredytu', 'obniżenie rat', 'Chełm', 'Lubelskie'],
+  title: "Konsolidacja kredytów - Zwrot Ekspert | Chełm, Zamość",
+  description:
+    "Konsolidacja kredytów: jedna rata miesięcznie, porównanie ofert w kilkunastu bankach. Chełm, Zamość i okolice. Bezpłatna konsultacja. +48 510 441 307",
+  keywords: [
+    "konsolidacja kredytów",
+    "refinansowanie kredytu",
+    "jedna rata miesięcznie",
+    "porównanie banków",
+    "Chełm",
+    "Zamość",
+    "Lubelskie",
+  ],
   alternates: {
-    canonical: 'https://www.zwrotekspert.pl/uslugi/konsolidacja-kredytow',
+    canonical: "https://www.zwrotekspert.pl/uslugi/konsolidacja-kredytow",
   },
 }
+
+const processSteps = [
+  "przeglądu wszystkich zobowiązań",
+  "porównania ofert w bankach",
+  "wyboru wspólnie najlepszego wariantu",
+  "uporządkowania spłat w jedną ratę miesięcznie",
+]
+
+const helpItems = [
+  "analiza zobowiązań i rat",
+  "porównanie ofert w kilkunastu bankach",
+  "wybór rozwiązania dopasowanego do Ciebie",
+  "pomoc przy dokumentach",
+  "kontakt z bankiem i przejście przez proces",
+]
 
 export default function KonsolidacjaKredytowPage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "serviceType": "Konsolidacja kredytów",
-    "provider": {
+    serviceType: "Konsolidacja kredytów",
+    provider: {
       "@type": "LocalBusiness",
-      "name": "Zwrot Ekspert",
-      "address": {
+      name: "Zwrot Ekspert",
+      address: {
         "@type": "PostalAddress",
-        "streetAddress": "ul. Kresowa 7D",
-        "addressLocality": "Zamość",
-        "postalCode": "22-400",
-        "addressRegion": "Lubelskie",
-        "addressCountry": "PL"
+        streetAddress: "ul. Kresowa 7D",
+        addressLocality: "Zamość",
+        postalCode: "22-400",
+        addressRegion: "Lubelskie",
+        addressCountry: "PL",
       },
-      "telephone": "+48510441307"
+      telephone: "+48510441307",
     },
-    "areaServed": {
+    areaServed: {
       "@type": "State",
-      "name": "Lubelskie"
+      name: "Lubelskie",
     },
-    "description": "Profesjonalna konsolidacja kredytów - połączenie wszystkich zobowiązań w jedną, korzystniejszą ratę miesięczną."
+    description:
+      "Doradztwo w konsolidacji kredytów — porównanie ofert banków i dobór rozwiązania z jedną ratą miesięcznie.",
   }
 
   return (
@@ -47,118 +72,115 @@ export default function KonsolidacjaKredytowPage() {
       />
       <Header />
       <main>
-        {/* Hero Section */}
-        <section className="pt-48 pb-20 bg-gradient-to-b from-green-50 to-white">
+        <section className="pt-40 pb-16 lg:pt-44 bg-gradient-to-b from-slate-50 to-white">
           <div className="container mx-auto px-4">
             <div className="mb-8">
-              <Link href="/#uslugi" className="inline-flex items-center bg-white px-6 py-3 rounded-full shadow-lg hover:shadow-xl text-green-600 hover:text-green-800 transition-all hover:scale-105 border-2 border-green-200 font-semibold z-10 relative">
-                <ArrowLeft className="h-5 w-5 mr-2" />
+              <Link
+                href="/#uslugi"
+                className="inline-flex items-center bg-white px-5 py-2.5 rounded-lg shadow-sm hover:shadow text-blue-800 hover:text-blue-900 transition-all border border-gray-200 font-medium text-sm"
+              >
+                <ArrowLeft className="h-4 w-4 mr-2" />
                 Powrót do usług
               </Link>
             </div>
-            <div className="max-w-4xl">
-              <div className="inline-block bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <div className="max-w-3xl">
+              <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
                 KONSOLIDACJA KREDYTÓW
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                Konsolidacja kredytów
-                <span className="block bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-                  nawet 50% niższe raty miesięczne
-                </span>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+                Konsolidacja kredytów dopasowana do Twojej sytuacji
               </h1>
-              <p className="text-xl text-gray-600 leading-relaxed mb-8">
-                Połącz wszystkie swoje zobowiązania w jedną, korzystniejszą ratę miesięczną. 
-                Uprość spłaty i obniż swoje miesięczne wydatki nawet o 50%.
+              <p className="text-xl text-blue-800 font-semibold mb-6 leading-snug pb-0.5">
+                Jedna rata miesięcznie — przejrzyście i bez chaosu w spłatach
+              </p>
+              <p className="text-lg text-gray-800 font-medium mb-3">
+                Pomagam przejść przez proces:
+              </p>
+              <ul className="space-y-2 mb-8">
+                {processSteps.map((step) => (
+                  <li key={step} className="flex items-center gap-3 text-gray-700">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-700 flex-shrink-0" />
+                    {step}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-lg text-gray-600 leading-relaxed pb-1">
+                Porównuję oferty w kilkunastu bankach, a potem wspólnie wybieramy rozwiązanie dopasowane do
+                Twojej sytuacji — bez obietnic typu „obniżka o X%”, dopóki nie zobaczymy realnych warunków.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
-        <section className="py-20 bg-white">
+        <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">Korzyści z konsolidacji</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {[
-                {
-                  icon: TrendingDown,
-                  title: "Niższe raty",
-                  description: "Obniżamy Twoje miesięczne raty nawet o 50% poprzez konsolidację wszystkich zobowiązań."
-                },
-                {
-                  icon: RefreshCw,
-                  title: "Jedna rata",
-                  description: "Zamiast kilku różnych rat, płacisz jedną, łatwiejszą do zarządzania."
-                },
-                {
-                  icon: Calculator,
-                  title: "Lepsze oprocentowanie",
-                  description: "Negocjujemy lepsze warunki kredytu, co przekłada się na niższe koszty."
-                },
-                {
-                  icon: Shield,
-                  title: "Bezpieczeństwo",
-                  description: "Chronimy Cię przed problemami z płatnościami i negatywnymi konsekwencjami."
-                }
-              ].map((benefit, index) => (
-                <div key={index} className="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-                  <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center mb-4">
-                    <benefit.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
-                  <p className="text-gray-600">{benefit.description}</p>
+            <div className="max-w-3xl mx-auto">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                  <RefreshCw className="h-6 w-6 text-blue-800" />
                 </div>
-              ))}
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900">W czym pomagam</h2>
+              </div>
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {helpItems.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-3 bg-white border border-gray-100 rounded-xl px-4 py-3 shadow-sm"
+                  >
+                    <Check className="h-5 w-5 text-blue-700 flex-shrink-0" strokeWidth={2.5} />
+                    <span className="text-gray-800 font-medium">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </section>
 
-        {/* Process Section */}
-        <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-16 bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8">Jak działa konsolidacja?</h2>
-              <div className="space-y-6">
-                <div className="bg-white rounded-xl p-6 border border-gray-100">
-                  <h3 className="text-xl font-bold mb-3">1. Analiza sytuacji</h3>
-                  <p className="text-gray-600">Przeanalizujemy wszystkie Twoje zobowiązania i znajdziemy najlepsze rozwiązanie.</p>
-                </div>
-                <div className="bg-white rounded-xl p-6 border border-gray-100">
-                  <h3 className="text-xl font-bold mb-3">2. Negocjacje</h3>
-                  <p className="text-gray-600">Negocjujemy najlepsze warunki kredytu konsolidacyjnego z bankami.</p>
-                </div>
-                <div className="bg-white rounded-xl p-6 border border-gray-100">
-                  <h3 className="text-xl font-bold mb-3">3. Spłata starych kredytów</h3>
-                  <p className="text-gray-600">Nowy kredyt spłaca wszystkie stare zobowiązania automatycznie.</p>
-                </div>
-                <div className="bg-white rounded-xl p-6 border border-gray-100">
-                  <h3 className="text-xl font-bold mb-3">4. Jedna niska rata</h3>
-                  <p className="text-gray-600">Zaczynasz płacić jedną, niższą ratę miesięczną.</p>
-                </div>
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-2xl font-bold text-gray-900 mb-8">Jak to wygląda krok po kroku</h2>
+              <div className="space-y-4">
+                {[
+                  {
+                    title: "1. Rozmowa i lista zobowiązań",
+                    text: "Zbieramy informacje o kredytach, ratach i terminach — widzisz pełny obraz.",
+                  },
+                  {
+                    title: "2. Porównanie banków",
+                    text: "Sprawdzam oferty w kilkunastu bankach pod kątem raty miesięcznej, kosztów i warunków.",
+                  },
+                  {
+                    title: "3. Wspólny wybór oferty",
+                    text: "Omawiamy warianty prostym językiem — decyzja należy do Ciebie, ja pomagam ją podjąć świadomie.",
+                  },
+                  {
+                    title: "4. Formalności i jedna rata",
+                    text: "Pomagam przejść przez dokumenty i kontakt z bankiem. Docelowo — jedna rata miesięcznie.",
+                  },
+                ].map((step) => (
+                  <div key={step.title} className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{step.text}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+        <section className="py-16 bg-blue-50 border-y border-blue-100">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">Gotowy na konsolidację?</h2>
-            <p className="text-xl mb-8 opacity-90">Skontaktuj się z nami - pierwsza konsultacja jest bezpłatna</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+48510441307"
-                className="bg-white text-green-600 px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-colors"
-              >
-                📞 +48 510 441 307
-              </a>
-              <a
-                href="#kontakt"
-                className="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-green-600 transition-colors"
-              >
-                Formularz kontaktowy
-              </a>
-            </div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Chcesz uporządkować raty miesięcznie?</h2>
+            <p className="text-gray-600 mb-8 max-w-xl mx-auto leading-relaxed">
+              Umów bezpłatną rozmowę — sprawdzimy, czy konsolidacja ma sens w Twoim przypadku.
+            </p>
+            <a
+              href="#kontakt"
+              className="inline-flex items-center justify-center bg-blue-800 hover:bg-blue-900 text-white px-8 py-4 rounded-lg font-semibold text-base shadow-sm transition-colors"
+            >
+              Umów bezpłatną konsultację
+            </a>
           </div>
         </section>
 
@@ -168,4 +190,3 @@ export default function KonsolidacjaKredytowPage() {
     </div>
   )
 }
-
