@@ -29,7 +29,7 @@ export function Footer() {
                   <Mail className="h-4 w-4" />
                   <span>zwrotekspert@gmail.com</span>
                 </div>
-                <a href="/#lokalizacja" className="flex items-center space-x-3 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">
+                <a href="/#kontakt" className="flex items-center space-x-3 text-gray-300 hover:text-blue-400 transition-colors cursor-pointer">
                   <MapPin className="h-4 w-4" />
                   <span>ul. Kresowa 7D, 22-400 Zamość</span>
                 </a>

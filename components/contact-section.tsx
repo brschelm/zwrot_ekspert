@@ -75,19 +75,49 @@ export function ContactSection() {
     setFormData((prev) => ({ ...prev, [field]: value }))
   }
 
+  const contactItems = [
+    {
+      icon: Phone,
+      label: "Telefon",
+      value: "+48 510 441 307",
+      href: "tel:+48510441307",
+      note: "Najszybciej odpowiadam telefonicznie",
+    },
+    {
+      icon: Mail,
+      label: "E-mail",
+      value: "zwrotekspert@gmail.com",
+      href: "mailto:zwrotekspert@gmail.com",
+      note: "Odpowiadam zwykle tego samego dnia",
+    },
+    {
+      icon: MapPin,
+      label: "Biuro",
+      value: "ul. Kresowa 7D, 22-400 Zamość",
+      note: "Spotkanie na miejscu lub online",
+    },
+    {
+      icon: Clock,
+      label: "Godziny",
+      value: "Pon–Pt 8:00–20:00 · Sob 9:00–15:00",
+      note: "Niedziela: nieczynne",
+    },
+  ]
+
   return (
-    <section id="kontakt" className="py-24 bg-gradient-to-b from-gray-50 to-white">
+    <section id="kontakt" className="py-24 bg-gradient-to-b from-slate-50 to-white scroll-mt-28">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-20">
+        <div className="text-center mb-16 max-w-3xl mx-auto">
           <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
             KONTAKT
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Porozmawiajmy o
-            <span className="block text-blue-800 mt-1">Twoim finansowaniu</span>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            Umów rozmowę lub napisz
+            <span className="block text-blue-800 mt-1">Zamość i okolice — także online</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed pb-1">
-            Napisz lub zadzwoń — opowiesz krótko o sytuacji, a odpowiem, czy i jak mogę pomóc.
+          <p className="text-lg text-gray-600 leading-relaxed pb-1">
+            Opowiesz krótko o sprawie — zwrot prowizji, SKD, pożyczka, konsolidacja — a odpowiem, czy i jak mogę
+            pomóc. Pierwsza konsultacja bez zobowiązania.
           </p>
         </div>
 
@@ -95,60 +125,27 @@ export function ContactSection() {
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">Skontaktuj się z nami</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-6">Dane kontaktowe</h3>
 
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4 group">
-                  <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Phone className="h-6 w-6 text-white" />
+              <div className="space-y-5">
+                {contactItems.map((item) => (
+                  <div key={item.label} className="flex items-start gap-4">
+                    <div className="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <item.icon className="h-5 w-5 text-blue-800" />
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-900 mb-0.5">{item.label}</p>
+                      {item.href ? (
+                        <a href={item.href} className="text-gray-700 hover:text-blue-800 transition-colors">
+                          {item.value}
+                        </a>
+                      ) : (
+                        <p className="text-gray-700">{item.value}</p>
+                      )}
+                      <p className="text-sm text-gray-500 mt-1">{item.note}</p>
+                    </div>
                   </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 mb-1">Telefon</p>
-                    <p className="text-gray-600">+48 510 441 307</p>
-                    <p className="text-sm text-blue-600 mt-1">Dostępni 24/7</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4 group">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Mail className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 mb-1">Email</p>
-                    <p className="text-gray-600">zwrotekspert@gmail.com</p>
-                    <p className="text-sm text-blue-600 mt-1">Odpowiedź w ciągu 2h</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4 group">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <MapPin className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 mb-1">Adres biura</p>
-                    <p className="text-gray-600">
-                      ul. Kresowa 7D
-                      <br />
-                      22-400 Zamość
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4 group">
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <Clock className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 mb-1">Godziny pracy</p>
-                    <p className="text-gray-600">
-                      Pon-Pt: 8:00-20:00
-                      <br />
-                      Sob: 9:00-15:00
-                      <br />
-                      Niedz: Nieczynne
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
 
               <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
@@ -174,26 +171,23 @@ export function ContactSection() {
               </div>
             </div>
 
-            {/* Quick contact cards */}
-            <div className="space-y-4">
-              <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-2xl p-6 border border-green-100">
-                <div className="flex items-center space-x-3 mb-3">
-                  <CheckCircle className="h-6 w-6 text-green-600" />
-                  <h4 className="font-bold text-gray-900">Darmowa konsultacja</h4>
+            <div className="space-y-3">
+              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-2 mb-2">
+                  <CheckCircle className="h-5 w-5 text-blue-700" />
+                  <h4 className="font-semibold text-gray-900">Bezpłatna pierwsza rozmowa</h4>
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Pierwsza konsultacja jest całkowicie bezpłatna. Omówimy Twoją sytuację i przedstawimy możliwe
-                  rozwiązania.
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Na początku omawiamy sytuację — bez presji i bez zobowiązania do współpracy.
                 </p>
               </div>
-
-              <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-100">
-                <div className="flex items-center space-x-3 mb-3">
-                  <CheckCircle className="h-6 w-6 text-blue-600" />
-                  <h4 className="font-bold text-gray-900">Płacisz tylko za sukces</h4>
+              <div className="bg-white rounded-xl p-5 border border-gray-100 shadow-sm">
+                <div className="flex items-center gap-2 mb-2">
+                  <CheckCircle className="h-5 w-5 text-blue-700" />
+                  <h4 className="font-semibold text-gray-900">Płatność za sukces</h4>
                 </div>
-                <p className="text-gray-700 text-sm leading-relaxed">
-                  Nasze wynagrodzenie uzależnione jest od osiągnięcia pozytywnego rezultatu w Twojej sprawie.
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Przy sprawach o zwrot — wynagrodzenie po pozytywnym wyniku, warunki omawiamy wcześniej.
                 </p>
               </div>
             </div>
@@ -201,11 +195,11 @@ export function ContactSection() {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <Card className="shadow-2xl border-0 bg-white">
-              <CardHeader className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
-                <CardTitle className="text-2xl">Wyślij wiadomość</CardTitle>
-                <CardDescription className="text-blue-100">
-                  Wypełnij formularz, a nasz ekspert skontaktuje się z Tobą w ciągu 2 godzin
+            <Card className="shadow-sm border border-gray-100 bg-white">
+              <CardHeader className="border-b border-gray-100 bg-white rounded-t-lg pb-4">
+                <CardTitle className="text-2xl text-gray-900">Wyślij wiadomość</CardTitle>
+                <CardDescription className="text-gray-600">
+                  Odpowiem najszybciej jak to możliwe — zwykle tego samego dnia roboczego
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-8">
@@ -264,11 +258,13 @@ export function ContactSection() {
                         <SelectValue placeholder="Wybierz usługę" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="pozyczki">Pożyczki i kredyty</SelectItem>
-                        <SelectItem value="konsolidacje">Konsolidacje kredytów</SelectItem>
-                        <SelectItem value="zwroty-prowizji">Zwroty prowizji</SelectItem>
-                        <SelectItem value="ubezpieczenia">Ubezpieczenia kredytów</SelectItem>
-                        <SelectItem value="sankcja-kredytu">Sankcja kredytu darmowego</SelectItem>
+                        <SelectItem value="hipoteki">Kredyt hipoteczny</SelectItem>
+                        <SelectItem value="konsolidacje">Konsolidacja kredytów</SelectItem>
+                        <SelectItem value="kredyty-firmowe">Kredyt firmowy</SelectItem>
+                        <SelectItem value="kredyty-gotowkowe">Kredyt gotówkowy</SelectItem>
+                        <SelectItem value="zwroty-prowizji">Zwrot prowizji z pożyczki</SelectItem>
+                        <SelectItem value="sankcja-kredytu">Sankcja kredytu darmowego (SKD)</SelectItem>
+                        <SelectItem value="ubezpieczenia">Rezygnacja / zwrot ubezpieczenia</SelectItem>
                         <SelectItem value="konsultacja">Ogólna konsultacja</SelectItem>
                       </SelectContent>
                     </Select>

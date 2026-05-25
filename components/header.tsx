@@ -93,7 +93,7 @@ export function Header() {
             ))}
           </div>
           <a
-            href="/#lokalizacja"
+            href="/#kontakt"
             className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-blue-800"
           >
             <MapPin className="h-3.5 w-3.5" />
