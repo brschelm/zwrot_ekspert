@@ -7,7 +7,6 @@ import { ProcessSection } from "@/components/process-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { FAQSection } from "@/components/faq-section"
 import { ContactSection } from "@/components/contact-section"
-import { LocationSection } from "@/components/location-section"
 import { Footer } from "@/components/footer"
 
 export default function HomePage() {
@@ -311,7 +310,6 @@ export default function HomePage() {
         <ProcessSection />
         <TestimonialsSection />
         <FAQSection />
-        <LocationSection />
         <ContactSection />
       </main>
       <Footer />

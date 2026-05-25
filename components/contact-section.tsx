@@ -150,6 +150,28 @@ export function ContactSection() {
                   </div>
                 </div>
               </div>
+
+              <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                <iframe
+                  src="https://maps.google.com/maps?q=50.7092837,23.2866884&hl=pl&z=16&output=embed"
+                  width="100%"
+                  height="220"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Zwrot Ekspert — ul. Kresowa 7D, Zamość"
+                  className="w-full"
+                />
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=50.7092837,23.2866884"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center text-sm text-blue-800 font-medium py-3 bg-gray-50 hover:bg-gray-100 transition-colors"
+                >
+                  Otwórz w Google Maps
+                </a>
+              </div>
             </div>
 
             {/* Quick contact cards */}
