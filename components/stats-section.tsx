@@ -16,7 +16,7 @@ const stats = [
     number: 2,
     suffix: "",
     label: "Główne miasta",
-    description: "Chełm · Zamość · obsługa całego Lubelskiego",
+    description: "Chełm · Zamość · całe woj. lubelskie",
   },
   {
     icon: Award,
@@ -86,7 +86,7 @@ export function StatsSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Doświadczenie i dostępność</h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Działam lokalnie — Chełm, Zamość i całe Lubelskie. Stawiam na kontakt, jasne warunki i uczciwe porównanie ofert. 
+            Działam lokalnie — Chełm, Zamość i całe województwo lubelskie. Stawiam na kontakt, jasne warunki i uczciwe porównanie ofert. 
             <a href="#opinie" className="text-white font-semibold underline hover:text-blue-200">Zobacz opinie naszych klientów</a>.
           </p>
         </div>

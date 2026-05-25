@@ -22,11 +22,11 @@ export function FAQSection() {
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
             Najczęstsze pytania
-            <span className="block text-blue-800 mt-1">o usługi na Lubelskim</span>
+            <span className="block text-blue-800 mt-1">o usługi w województwie lubelskim</span>
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed">
             Zwrot prowizji, SKD, konsolidacja, kredyt gotówkowy lub hipoteczny — krótko wyjaśniam, jak to u mnie wygląda.
-            Biuro w Zamościu, obsługa też Chełm, Lublin i całe województwo.
+            Biuro w Zamościu, obsługa też Chełm, Lublin i całe województwo lubelskie.
           </p>
         </div>
 

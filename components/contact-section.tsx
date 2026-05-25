@@ -113,7 +113,7 @@ export function ContactSection() {
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
             Umów rozmowę lub napisz
-            <span className="block text-blue-800 mt-1">Zamość i okolice — także online</span>
+            <span className="block text-blue-800 mt-1">województwo lubelskie — także online</span>
           </h2>
           <p className="text-lg text-gray-600 leading-relaxed pb-1">
             Opowiesz krótko o sprawie — zwrot prowizji, SKD, pożyczka, konsolidacja — a odpowiem, czy i jak mogę

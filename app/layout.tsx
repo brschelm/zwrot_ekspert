@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     locale: 'pl_PL',
     url: 'https://www.zwrotekspert.pl',
     siteName: 'Zwrot Ekspert',
-    title: 'Zwrot Ekspert | Zamość, Lubelskie',
+    title: 'Zwrot Ekspert | Zamość, woj. lubelskie',
     description: defaultDescription,
     images: [
       {
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zwrot Ekspert | Zamość, Lubelskie',
+    title: 'Zwrot Ekspert | Zamość, woj. lubelskie',
     description: defaultDescription,
     images: ['/placeholder-logo.png'],
   },

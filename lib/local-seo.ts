@@ -42,7 +42,7 @@ export const LOCAL_KEYWORDS = [
 
 export function localAreaPhrase(short = false): string {
   return short
-    ? "Zamość, Chełm, Lublin i całe Lubelskie"
+    ? "Zamość, Chełm, Lublin i całe województwo lubelskie"
     : "Zamościa, Chełma, Lublina, Puław, Kraśnika i całego województwa lubelskiego"
 }
 
@@ -79,13 +79,13 @@ export function buildServiceMetadata(opts: {
 export const homeMetadata: Metadata = {
   title: "Zwrot prowizji, SKD, kredyty i konsolidacja | Zamość, Lubelskie",
   description:
-    "Zwrot Ekspert — doradztwo finansowe od 2009 roku. Zwrot prowizji z pożyczki, sankcja kredytu darmowego, konsolidacja, kredyty gotówkowe i hipoteczne. Biuro w Zamości, obsługa całego woj. lubelskiego i online.",
+    "Zwrot Ekspert — doradztwo finansowe od 2009 roku. Zwrot prowizji z pożyczki, sankcja kredytu darmowego, konsolidacja, kredyty gotówkowe i hipoteczne. Biuro w Zamościu, obsługa całego województwa lubelskiego i online.",
   keywords: LOCAL_KEYWORDS,
   alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "Zwrot Ekspert | Zamość i województwo Lubelskie",
+    title: "Zwrot Ekspert | Zamość, województwo lubelskie",
     description:
-      "Zwroty prowizji, SKD, konsolidacja kredytów i doradztwo przy pożyczkach. Zamość, Chełm, Lublin — także konsultacje online.",
+      "Zwroty prowizji, SKD, konsolidacja kredytów i doradztwo przy pożyczkach. Biuro w Zamościu — Chełm, Lublin i całe woj. lubelskie, także online.",
     url: SITE_URL,
     locale: "pl_PL",
     type: "website",
@@ -96,7 +96,7 @@ export const LOCAL_FAQ = [
   {
     question: "Czy obsługujecie klientów z całego województwa lubelskiego?",
     answer:
-      "Tak. Biuro jest w Zamości (ul. Kresowa 7D), ale pomagam klientom z Chełma, Lublina, Puław, Kraśnika i innych miejsc na Lubelskim. Spotkanie na miejscu, telefonicznie lub online — jak Ci wygodniej.",
+      "Tak. Biuro jest w Zamościu (ul. Kresowa 7D), ale pomagam klientom z Chełma, Lublina, Puław, Kraśnika i innych miejsc w województwie lubelskim. Spotkanie na miejscu, telefonicznie lub online — jak Ci wygodniej.",
   },
   {
     question: "Jakich usług szukają najczęściej klienci z regionu?",

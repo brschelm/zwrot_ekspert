@@ -17,13 +17,13 @@ export function LocalSeoSection() {
           <div>
             <p className="text-sm font-semibold text-blue-800 uppercase tracking-wide">Obsługa regionalna</p>
             <h2 id="local-seo-heading" className="text-2xl md:text-3xl font-bold text-gray-900">
-              Doradztwo finansowe na Lubelskim
+              Doradztwo finansowe w całym województwie lubelskim
             </h2>
           </div>
         </div>
 
         <p className="text-gray-600 leading-relaxed mb-6">
-          <strong className="text-gray-900">Zwrot Ekspert</strong> — biuro w Zamości przy ul. Kresowej 7D. Pomagam
+          <strong className="text-gray-900">Zwrot Ekspert</strong> — biuro w Zamościu przy ul. Kresowej 7D. Pomagam
           klientom z {localAreaPhrase()}: przy zwrocie prowizji z pożyczki, sankcji kredytu darmowego, konsolidacji
           zobowiązań, kredycie gotówkowym lub hipotecznym oraz rezygnacji ze zbędnego ubezpieczenia przy pożyczce.
           Konsultacje także online dla osób z innych regionów Polski.
