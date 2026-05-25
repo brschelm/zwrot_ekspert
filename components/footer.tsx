@@ -55,7 +55,7 @@ export function Footer() {
                 {[
                   { name: "Hipoteki", href: "/uslugi/hipoteki" },
                   { name: "Kredyty firmowe", href: "/uslugi/kredyty-firmowe" },
-                  { name: "Pożyczki i kredyty", href: "/uslugi/pozyczki-i-kredyty" },
+                  { name: "Kredyty gotówkowe", href: "/uslugi/kredyty-gotowkowe" },
                   { name: "Konsolidacje kredytów", href: "/uslugi/konsolidacja-kredytow" },
                   { name: "Zwroty prowizji", href: "/uslugi/zwrot-prowizji" },
                   { name: "Ubezpieczenia kredytów", href: "/uslugi/ubezpieczenia-kredytow" },

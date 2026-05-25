@@ -32,7 +32,7 @@ export default function HeroSection() {
               </h1>
 
               <p className="text-lg sm:text-xl text-blue-800 font-semibold tracking-tight">
-                Hipoteki • Konsolidacje • Kredyty firmowe • Refinansowanie
+                Hipoteki • Konsolidacje • Kredyty firmowe • Kredyty gotówkowe
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">

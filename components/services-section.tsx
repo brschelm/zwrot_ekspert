@@ -5,7 +5,7 @@ import {
   Home,
   RefreshCw,
   Building2,
-  ArrowLeftRight,
+  CreditCard,
   DollarSign,
   Scale,
   Shield,
@@ -51,13 +51,13 @@ const primaryServices: ServiceItem[] = [
     href: "/uslugi/kredyty-firmowe",
   },
   {
-    icon: ArrowLeftRight,
-    title: "Refinansowanie",
+    icon: CreditCard,
+    title: "Kredyty gotówkowe",
     description:
-      "Gdy obecny kredyt jest niekorzystny, sprawdzamy, czy refinansowanie ma sens — bez obiecania konkretnego procentu obniżki.",
-    features: ["Analiza umowy", "Koszty zmiany", "Nowe oferty", "Rekomendacja krok po kroku"],
-    note: "Ocena sensu zmiany warunków kredytu",
-    href: "/uslugi/konsolidacja-kredytow",
+      "Pożyczka na wybrany cel — porównuję oferty banków i pomagam wybrać warunki dopasowane do Twojej sytuacji.",
+    features: ["Analiza zdolności", "Porównanie banków", "Wyjaśnienie kosztów", "Pomoc w formalnościach"],
+    note: "Porównanie ofert kredytu gotówkowego",
+    href: "/uslugi/kredyty-gotowkowe",
   },
 ]
 

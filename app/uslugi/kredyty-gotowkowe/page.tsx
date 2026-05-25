@@ -2,47 +2,47 @@ import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
-import { ArrowLeft, RefreshCw, Check } from "lucide-react"
+import { ArrowLeft, CreditCard, Check } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Konsolidacja kredytów - Zwrot Ekspert | Chełm, Zamość",
+  title: "Kredyty gotówkowe - Zwrot Ekspert | Chełm, Zamość",
   description:
-    "Konsolidacja kredytów: jedna rata miesięcznie, porównanie ofert w kilkunastu bankach. Chełm, Zamość i okolice. Bezpłatna konsultacja. +48 510 441 307",
+    "Kredyty gotówkowe: porównanie ofert w bankach, dobór warunków do sytuacji. Chełm, Zamość i okolice. Bezpłatna konsultacja. +48 510 441 307",
   keywords: [
-    "konsolidacja kredytów",
-    "refinansowanie kredytu",
-    "jedna rata miesięcznie",
+    "kredyt gotówkowy",
+    "pożyczka gotówkowa",
+    "kredyt konsumencki",
     "porównanie banków",
     "Chełm",
     "Zamość",
     "Lubelskie",
   ],
   alternates: {
-    canonical: "https://www.zwrotekspert.pl/uslugi/konsolidacja-kredytow",
+    canonical: "https://www.zwrotekspert.pl/uslugi/kredyty-gotowkowe",
   },
 }
 
 const processSteps = [
-  "przeglądu wszystkich zobowiązań",
-  "porównania ofert w bankach",
-  "wyboru wspólnie najlepszego wariantu",
-  "uporządkowania spłat w jedną ratę miesięcznie",
+  "omówienia, na co potrzebujesz środków",
+  "sprawdzenia zdolności i kosztów",
+  "porównania ofert w kilkunastu bankach",
+  "wspólnego wyboru kredytu dopasowanego do Ciebie",
 ]
 
 const helpItems = [
-  "analiza zobowiązań i rat",
+  "analiza zdolności kredytowej",
   "porównanie ofert w kilkunastu bankach",
-  "wybór rozwiązania dopasowanego do Ciebie",
+  "wyjaśnienie kosztów (oprocentowanie, prowizje)",
   "pomoc przy dokumentach",
   "kontakt z bankiem i przejście przez proces",
 ]
 
-export default function KonsolidacjaKredytowPage() {
+export default function KredytyGotowkowePage() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Service",
-    serviceType: "Konsolidacja kredytów",
+    serviceType: "Kredyt gotówkowy",
     provider: {
       "@type": "LocalBusiness",
       name: "Zwrot Ekspert",
@@ -61,7 +61,7 @@ export default function KonsolidacjaKredytowPage() {
       name: "Lubelskie",
     },
     description:
-      "Doradztwo w konsolidacji kredytów — porównanie ofert banków i dobór rozwiązania z jedną ratą miesięcznie.",
+      "Doradztwo przy kredycie gotówkowym — porównanie ofert banków i dobór warunków dopasowanych do klienta.",
   }
 
   return (
@@ -85,13 +85,13 @@ export default function KonsolidacjaKredytowPage() {
             </div>
             <div className="max-w-3xl">
               <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                KONSOLIDACJA KREDYTÓW
+                KREDYTY GOTÓWKOWE
               </div>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
-                Konsolidacja kredytów dopasowana do Twojej sytuacji
+                Kredyt gotówkowy dopasowany do Twojej sytuacji
               </h1>
               <p className="text-xl text-blue-800 font-semibold mb-6 leading-snug pb-0.5">
-                Jedna rata miesięcznie — przejrzyście i bez chaosu w spłatach
+                Pożyczka na wybrany cel — z przejrzystymi warunkami
               </p>
               <p className="text-lg text-gray-800 font-medium mb-3">
                 Pomagam przejść przez proces:
@@ -105,10 +105,15 @@ export default function KonsolidacjaKredytowPage() {
                 ))}
               </ul>
               <p className="text-lg text-gray-600 leading-relaxed pb-1">
-                Porównuję oferty w kilkunastu bankach, a potem wspólnie wybieramy rozwiązanie dopasowane do
-                Twojej sytuacji — bez obietnic typu „obniżka o X%”, dopóki nie zobaczymy realnych warunków. Tu
-                również refinansowanie: gdy chcesz zmienić warunki obecnego kredytu lub połączyć kilka zobowiązań w
-                jedną ratę miesięcznie.
+                Porównuję oferty w kilkunastu bankach, a potem wspólnie wybieramy rozwiązanie dopasowane do Twoich
+                potrzeb — bez obietnic typu „najniższe oprocentowanie”, dopóki nie zobaczymy realnych warunków.
+              </p>
+              <p className="text-sm text-gray-500 mt-4">
+                Chcesz połączyć kilka kredytów w jedną ratę? Zajrzyj do{" "}
+                <Link href="/uslugi/konsolidacja-kredytow" className="text-blue-800 font-medium underline">
+                  konsolidacji kredytów
+                </Link>
+                .
               </p>
             </div>
           </div>
@@ -119,7 +124,7 @@ export default function KonsolidacjaKredytowPage() {
             <div className="max-w-3xl mx-auto">
               <div className="flex items-center gap-3 mb-8">
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-                  <RefreshCw className="h-6 w-6 text-blue-800" />
+                  <CreditCard className="h-6 w-6 text-blue-800" />
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-gray-900">W czym pomagam</h2>
               </div>
@@ -138,44 +143,11 @@ export default function KonsolidacjaKredytowPage() {
           </div>
         </section>
 
-        <section className="py-16 bg-gray-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold text-gray-900 mb-8">Jak to wygląda krok po kroku</h2>
-              <div className="space-y-4">
-                {[
-                  {
-                    title: "1. Rozmowa i lista zobowiązań",
-                    text: "Zbieramy informacje o kredytach, ratach i terminach — widzisz pełny obraz.",
-                  },
-                  {
-                    title: "2. Porównanie banków",
-                    text: "Sprawdzam oferty w kilkunastu bankach pod kątem raty miesięcznej, kosztów i warunków.",
-                  },
-                  {
-                    title: "3. Wspólny wybór oferty",
-                    text: "Omawiamy warianty prostym językiem — decyzja należy do Ciebie, ja pomagam ją podjąć świadomie.",
-                  },
-                  {
-                    title: "4. Formalności i jedna rata",
-                    text: "Pomagam przejść przez dokumenty i kontakt z bankiem. Docelowo — jedna rata miesięcznie.",
-                  },
-                ].map((step) => (
-                  <div key={step.title} className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{step.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="py-16 bg-blue-50 border-y border-blue-100">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">Chcesz uporządkować raty miesięcznie?</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">Chcesz porównać kredyt gotówkowy?</h2>
             <p className="text-gray-600 mb-8 max-w-xl mx-auto leading-relaxed">
-              Umów bezpłatną rozmowę — sprawdzimy, czy konsolidacja ma sens w Twoim przypadku.
+              Umów bezpłatną rozmowę — sprawdzimy możliwości bez zobowiązania.
             </p>
             <a
               href="#kontakt"
