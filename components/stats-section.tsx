@@ -20,10 +20,10 @@ const stats = [
   },
   {
     icon: Award,
-    number: 15,
-    suffix: "+",
+    number: 17,
+    suffix: "",
     label: "Lat doświadczenia",
-    description: "Na rynku usług finansowych",
+    description: "Od 2009 roku na rynku",
   },
   {
     icon: Clock,

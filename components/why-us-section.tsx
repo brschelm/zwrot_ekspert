@@ -3,8 +3,8 @@ import { CheckCircle, Award, Users, Clock, Shield, MapPinned, Handshake } from "
 const reasons = [
   {
     icon: Award,
-    title: "15+ lat doświadczenia",
-    description: "Na rynku od 2008 roku — znamy procedury banków i typowe pułapki w umowach.",
+    title: "17 lat doświadczenia",
+    description: "Na rynku od 2009 roku — znamy procedury banków i typowe pułapki w umowach.",
   },
   {
     icon: MapPinned,

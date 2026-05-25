@@ -14,7 +14,7 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@type": "FinancialService",
     "name": "Zwrot Ekspert",
-    "description": "Profesjonalne doradztwo finansowe w zakresie zwrotów prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów w Zamościu i całym województwie Lubelskim. Ponad 15 lat doświadczenia. Darmowa konsultacja.",
+    "description": "Profesjonalne doradztwo finansowe w zakresie zwrotów prowizji bankowych, sankcji kredytu darmowego i konsolidacji kredytów w Zamościu i całym województwie Lubelskim. 17 lat doświadczenia (od 2009 roku). Darmowa konsultacja.",
     "url": "https://www.zwrotekspert.pl",
     "telephone": "+48510441307",
     "email": "zwrotekspert@gmail.com",

@@ -56,7 +56,7 @@ export function Footer() {
                 Zwrot Ekspert
               </a>
               <p className="text-gray-600 leading-relaxed text-sm max-w-md">
-                Doradztwo finansowe w Zamościu od 2008 roku — pożyczki i kredyty, zwroty prowizji, SKD oraz pomoc przy
+                Doradztwo finansowe w Zamościu od 2009 roku — pożyczki i kredyty, zwroty prowizji, SKD oraz pomoc przy
                 zbędnym ubezpieczeniu przy pożyczce. Spotkanie na miejscu lub online.
               </p>
               <div className="space-y-2.5 text-sm">
