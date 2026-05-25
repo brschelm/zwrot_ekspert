@@ -54,7 +54,7 @@ export function FAQSection() {
   }
 
   return (
-    <section className="py-24 bg-white">
+    <section id="faq" className="py-24 bg-white scroll-mt-28">
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
           <div className="inline-block bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
