@@ -1,29 +1,16 @@
-import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
 import { ArrowLeft, Building2, Check } from "lucide-react"
 import Link from "next/link"
+import { buildServiceMetadata } from "@/lib/local-seo"
 
-export const metadata: Metadata = {
-  title: "Kredyty firmowe - Zwrot Ekspert | Chełm, Zamość",
-  description:
-    "Kredyty firmowe: inwestycje, linia obrotowa, leasing. Porównanie ofert w bankach. Chełm, Zamość i okolice. Bezpłatna konsultacja. +48 510 441 307",
-  keywords: [
-    "kredyt firmowy",
-    "kredyt dla firm",
-    "linia obrotowa",
-    "kredyt inwestycyjny",
-    "leasing",
-    "finansowanie firm",
-    "Chełm",
-    "Zamość",
-    "Lubelskie",
-  ],
-  alternates: {
-    canonical: "https://www.zwrotekspert.pl/uslugi/kredyty-firmowe",
-  },
-}
+export const metadata = buildServiceMetadata({
+  title: "Kredyt firmowy",
+  description: "Kredyt firmowy — inwestycje, obroty, leasing. Porównanie ofert banków dla przedsiębiorców.",
+  path: "/uslugi/kredyty-firmowe",
+  extraKeywords: ["finansowanie firm Lubelskie"],
+})
 
 const processSteps = [
   "omówienia potrzeb firmy (inwestycja, obrót, rozwój)",

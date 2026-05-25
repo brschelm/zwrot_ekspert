@@ -1,29 +1,17 @@
-import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
 import { ArrowLeft, Home, Check } from "lucide-react"
 import Link from "next/link"
+import { buildServiceMetadata } from "@/lib/local-seo"
 
-export const metadata: Metadata = {
-  title: "Kredyt hipoteczny - Zwrot Ekspert | Chełm, Zamość",
+export const metadata = buildServiceMetadata({
+  title: "Kredyt hipoteczny",
   description:
-    "Pomoc w kredycie hipotecznym: zakup mieszkania lub domu, refinansowanie hipoteki, analiza zdolności. Chełm, Zamość i okolice. Bezpłatna konsultacja. +48 510 441 307",
-  keywords: [
-    "kredyt hipoteczny",
-    "hipoteka",
-    "zakup mieszkania",
-    "zakup domu",
-    "refinansowanie hipoteki",
-    "zdolność kredytowa",
-    "Chełm",
-    "Zamość",
-    "Lubelskie",
-  ],
-  alternates: {
-    canonical: "https://www.zwrotekspert.pl/uslugi/hipoteki",
-  },
-}
+    "Kredyt hipoteczny na zakup mieszkania lub domu, refinansowanie — porównanie banków i analiza zdolności.",
+  path: "/uslugi/hipoteki",
+  extraKeywords: ["hipoteka Zamość", "kredyt na mieszkanie Lubelskie"],
+})
 
 const processSteps = [
   "zakupu mieszkania",

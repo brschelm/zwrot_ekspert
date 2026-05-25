@@ -1,27 +1,16 @@
-import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
 import { ArrowLeft, CreditCard, Check } from "lucide-react"
 import Link from "next/link"
+import { buildServiceMetadata } from "@/lib/local-seo"
 
-export const metadata: Metadata = {
-  title: "Kredyty gotówkowe - Zwrot Ekspert | Chełm, Zamość",
-  description:
-    "Kredyty gotówkowe: porównanie ofert w bankach, dobór warunków do sytuacji. Chełm, Zamość i okolice. Bezpłatna konsultacja. +48 510 441 307",
-  keywords: [
-    "kredyt gotówkowy",
-    "pożyczka gotówkowa",
-    "kredyt konsumencki",
-    "porównanie banków",
-    "Chełm",
-    "Zamość",
-    "Lubelskie",
-  ],
-  alternates: {
-    canonical: "https://www.zwrotekspert.pl/uslugi/kredyty-gotowkowe",
-  },
-}
+export const metadata = buildServiceMetadata({
+  title: "Kredyt gotówkowy",
+  description: "Kredyt gotówkowy — porównanie ofert banków i dobór warunków dopasowanych do sytuacji.",
+  path: "/uslugi/kredyty-gotowkowe",
+  extraKeywords: ["pożyczka gotówkowa Lubelskie"],
+})
 
 const processSteps = [
   "omówienia, na co potrzebujesz środków",

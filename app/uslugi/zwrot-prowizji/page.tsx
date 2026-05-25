@@ -1,18 +1,16 @@
-import { Metadata } from 'next'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
 import { ArrowLeft, CreditCard, FileText, Gavel, CheckCircle, DollarSign } from "lucide-react"
 import Link from "next/link"
+import { buildServiceMetadata } from "@/lib/local-seo"
 
-export const metadata: Metadata = {
-  title: 'Zwrot Prowizji z Pożyczki - Zwrot Ekspert',
-  description: 'Pomagamy odzyskać nienależnie pobrane prowizje z pożyczek gotówkowych i innych pożyczek konsumenckich. Darmowa konsultacja. Zamość, Lubelskie. +48 510 441 307',
-  keywords: ['zwrot prowizji', 'zwrot prowizji z pożyczki', 'zwrot prowizji bankowej', 'odzyskanie prowizji', 'pożyczka gotówkowa', 'Zamość', 'Lubelskie'],
-  alternates: {
-    canonical: 'https://www.zwrotekspert.pl/uslugi/zwrot-prowizji',
-  },
-}
+export const metadata = buildServiceMetadata({
+  title: "Zwrot prowizji z pożyczki",
+  description: "Pomoc w odzyskaniu prowizji i opłat z pożyczek gotówkowych i innych pożyczek konsumenckich.",
+  path: "/uslugi/zwrot-prowizji",
+  extraKeywords: ["zwrot prowizji pożyczka", "odzyskanie prowizji"],
+})
 
 export default function ZwrotProwizjiPage() {
   const structuredData = {

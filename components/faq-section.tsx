@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ChevronDown, ChevronUp } from "lucide-react"
+import { LOCAL_FAQ } from "@/lib/local-seo"
 
 const faqs = [
   {
@@ -44,6 +45,7 @@ const faqs = [
     answer:
       "Tak, możesz wypowiedzieć umowę w dowolnym momencie. Jeśli proces nie został jeszcze zakończony sukcesem, nie ponosisz żadnych kosztów naszych usług.",
   },
+  ...LOCAL_FAQ,
 ]
 
 export function FAQSection() {

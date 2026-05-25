@@ -1,27 +1,17 @@
-import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
 import { ArrowLeft, Shield, Check, FileText, Ban, RotateCcw } from "lucide-react"
 import Link from "next/link"
+import { buildServiceMetadata } from "@/lib/local-seo"
 
-export const metadata: Metadata = {
-  title: "Ubezpieczenie przy pożyczce — zwrot i rezygnacja | Zwrot Ekspert",
+export const metadata = buildServiceMetadata({
+  title: "Zwrot lub rezygnacja z ubezpieczenia przy pożyczce",
   description:
-    "Pomoc przy ubezpieczeniu dołączonym do pożyczki: analiza umowy, rezygnacja z niepotrzebnej polisy, dochodzenie zwrotu składek. Zamość, Lubelskie. +48 510 441 307",
-  keywords: [
-    "rezygnacja z ubezpieczenia kredytu",
-    "zwrot składki ubezpieczenia",
-    "ubezpieczenie pożyczki",
-    "ubezpieczenie kredytu konsumenckiego",
-    "odstąpienie od ubezpieczenia",
-    "Zamość",
-    "Lubelskie",
-  ],
-  alternates: {
-    canonical: "https://www.zwrotekspert.pl/uslugi/ubezpieczenia-kredytow",
-  },
-}
+    "Rezygnacja ze zbędnego ubezpieczenia przy pożyczce lub zwrot składek — analiza umowy, bez sprzedaży nowych polis.",
+  path: "/uslugi/ubezpieczenia-kredytow",
+  extraKeywords: ["rezygnacja ubezpieczenie kredyt"],
+})
 
 const processSteps = [
   "przejrzenia umowy pożyczki i dokumentów ubezpieczenia",

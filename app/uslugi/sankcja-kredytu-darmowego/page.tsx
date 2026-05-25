@@ -1,28 +1,18 @@
-import { Metadata } from 'next'
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
 import { ArrowLeft, Scale, Gavel, DollarSign, CheckCircle } from "lucide-react"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  title: 'Sankcja Kredytu Darmowego - Zwrot Ekspert',
+import { buildServiceMetadata } from "@/lib/local-seo"
+
+export const metadata = buildServiceMetadata({
+  title: "Sankcja kredytu darmowego (SKD)",
   description:
-    'Sankcja kredytu darmowego (art. 45 u.k.k.) — przy naruszeniu przepisów możliwy zwrot odsetek i innych kosztów pożyczki. Analiza umowy. Zamość, Lubelskie. +48 510 441 307',
-  keywords: [
-    'sankcja kredytu darmowego',
-    'kredyt darmowy',
-    'zwrot kosztów kredytu',
-    'zwrot odsetek z pożyczki',
-    'art 45 kredyt konsumencki',
-    'pożyczka konsumencka',
-    'Zamość',
-    'Lubelskie',
-  ],
-  alternates: {
-    canonical: 'https://www.zwrotekspert.pl/uslugi/sankcja-kredytu-darmowego',
-  },
-}
+    "Sankcja kredytu darmowego art. 45 u.k.k. — zwrot kosztów i odsetek przy pożyczce, gdy bank naruszył przepisy.",
+  path: "/uslugi/sankcja-kredytu-darmowego",
+  extraKeywords: ["SKD Zamość", "zwrot odsetek pożyczka"],
+})
 
 export default function SankcjaKredytuDarmowegoPage() {
   const structuredData = {

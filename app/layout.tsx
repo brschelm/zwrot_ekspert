@@ -1,16 +1,20 @@
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import { LOCAL_KEYWORDS, SITE_URL, localAreaPhrase } from '@/lib/local-seo'
 import './globals.css'
 
+const defaultDescription =
+  `Zwrot Ekspert — doradztwo finansowe od 2009 roku. Zwrot prowizji z pożyczki, SKD, konsolidacja kredytów, kredyty gotówkowe i hipoteczne. Biuro w Zamościu, obsługa ${localAreaPhrase(true)}. Tel. +48 510 441 307`
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.zwrotekspert.pl'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe',
+    default: 'Zwrot Ekspert | Zamość, woj. lubelskie',
     template: '%s | Zwrot Ekspert',
   },
-  description: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe od 2009 roku. Pomagamy odzyskać prowizje bankowe, uzyskać sankcję kredytu darmowego i skonsolidować kredyty. Darmowa konsultacja. Chełm, Lubelskie. Zadzwoń: +48 510 441 307',
-  keywords: ['zwrot prowizji', 'zwrot prowizji bankowej', 'zwrot prowizji z kredytu', 'kredyt darmowy', 'sankcja kredytu darmowego', 'konsolidacja kredytów', 'konsolidacja kredytów Chełm', 'doradztwo finansowe', 'zwrot ekspert', 'zwrot ekspert Chełm', 'refinansowanie kredytu', 'odzyskanie prowizji', 'zwrot prowizji bank', 'pomoc w zwrocie prowizji', 'doradca finansowy Chełm', 'konsolidacja zadłużenia', 'Chełm', 'Lubelskie', 'usługi finansowe Chełm', 'zwrot prowizji kredytowej', 'odzyskiwanie prowizji bankowej'],
+  description: defaultDescription,
+  keywords: LOCAL_KEYWORDS,
   authors: [{ name: 'Zwrot Ekspert' }],
   creator: 'Zwrot Ekspert',
   publisher: 'Zwrot Ekspert',
@@ -30,8 +34,8 @@ export const metadata: Metadata = {
     locale: 'pl_PL',
     url: 'https://www.zwrotekspert.pl',
     siteName: 'Zwrot Ekspert',
-    title: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe',
-    description: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe od 2009 roku. Pomagamy odzyskać prowizje bankowe, uzyskać sankcję kredytu darmowego i skonsolidować kredyty. Darmowa konsultacja. Chełm, Lubelskie.',
+    title: 'Zwrot Ekspert | Zamość, Lubelskie',
+    description: defaultDescription,
     images: [
       {
         url: '/placeholder-logo.png',
@@ -43,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe',
-    description: 'Zwrot Ekspert - Profesjonalne doradztwo finansowe od 2009 roku. Pomagamy odzyskać prowizje bankowe, uzyskać sankcję kredytu darmowego i skonsolidować kredyty. Darmowa konsultacja. Chełm, Lubelskie.',
+    title: 'Zwrot Ekspert | Zamość, Lubelskie',
+    description: defaultDescription,
     images: ['/placeholder-logo.png'],
   },
   alternates: {

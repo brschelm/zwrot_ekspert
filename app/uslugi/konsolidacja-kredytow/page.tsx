@@ -1,27 +1,17 @@
-import { Metadata } from "next"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ContactSection } from "@/components/contact-section"
 import { ArrowLeft, RefreshCw, Check } from "lucide-react"
 import Link from "next/link"
 
-export const metadata: Metadata = {
-  title: "Konsolidacja kredytów - Zwrot Ekspert | Chełm, Zamość",
-  description:
-    "Konsolidacja kredytów: jedna rata miesięcznie, porównanie ofert w kilkunastu bankach. Chełm, Zamość i okolice. Bezpłatna konsultacja. +48 510 441 307",
-  keywords: [
-    "konsolidacja kredytów",
-    "refinansowanie kredytu",
-    "jedna rata miesięcznie",
-    "porównanie banków",
-    "Chełm",
-    "Zamość",
-    "Lubelskie",
-  ],
-  alternates: {
-    canonical: "https://www.zwrotekspert.pl/uslugi/konsolidacja-kredytow",
-  },
-}
+import { buildServiceMetadata } from "@/lib/local-seo"
+
+export const metadata = buildServiceMetadata({
+  title: "Konsolidacja kredytów",
+  description: "Konsolidacja kredytów — jedna rata, porównanie ofert banków. Pomoc przy połączeniu zobowiązań.",
+  path: "/uslugi/konsolidacja-kredytow",
+  extraKeywords: ["konsolidacja kredytów Chełm", "łączenie kredytów"],
+})
 
 const processSteps = [
   "przeglądu wszystkich zobowiązań",

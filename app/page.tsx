@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Header } from "@/components/header"
 import HeroSection from "@/components/hero-section"
 import { StatsSection } from "@/components/stats-section"
@@ -6,8 +7,12 @@ import { WhyUsSection } from "@/components/why-us-section"
 import { ProcessSection } from "@/components/process-section"
 import { TestimonialsSection } from "@/components/testimonials-section"
 import { FAQSection } from "@/components/faq-section"
+import { LocalSeoSection } from "@/components/local-seo-section"
 import { ContactSection } from "@/components/contact-section"
 import { Footer } from "@/components/footer"
+import { areaServedJsonLd, homeMetadata, LOCAL_FAQ } from "@/lib/local-seo"
+
+export const metadata: Metadata = homeMetadata
 
 export default function HomePage() {
   const structuredData = {
@@ -26,24 +31,18 @@ export default function HomePage() {
       "addressRegion": "Lubelskie",
       "addressCountry": "PL"
     },
-    "areaServed": {
-      "@type": "State",
-      "name": "Lubelskie"
-    },
+    "areaServed": areaServedJsonLd(),
+    "foundingDate": "2009",
     "priceRange": "$$",
     "serviceType": [
-      "Zwroty prowizji bankowych",
+      "Zwrot prowizji z pożyczki",
       "Sankcja kredytu darmowego",
       "Konsolidacja kredytów",
-      "Doradztwo finansowe",
-      "Ubezpieczenia kredytów"
+      "Kredyt gotówkowy",
+      "Kredyt hipoteczny",
+      "Rezygnacja z ubezpieczenia przy pożyczce"
     ],
-    "openingHours": "Mo-Fr 08:00-20:00, Sa 09:00-15:00",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "4.9",
-      "reviewCount": "127"
-    }
+    "openingHours": "Mo-Fr 08:00-20:00, Sa 09:00-15:00"
   }
 
   const organizationData = {
@@ -104,10 +103,8 @@ export default function HomePage() {
         "closes": "15:00"
       }
     ],
-    "areaServed": {
-      "@type": "City",
-      "name": "Zamość"
-    },
+    "areaServed": areaServedJsonLd(),
+    "foundingDate": "2009",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Usługi finansowe Zwrot Ekspert",
@@ -271,7 +268,15 @@ export default function HomePage() {
           "@type": "Answer",
           "text": "Nie zawsze. Dlatego zawsze przeprowadzamy szczegółową analizę Twojej sytuacji finansowej. Konsolidacja opłaca się, gdy pozwala obniżyć miesięczne raty lub całkowity koszt kredytu."
         }
-      }
+      },
+      ...LOCAL_FAQ.map((item) => ({
+        "@type": "Question" as const,
+        name: item.question,
+        acceptedAnswer: {
+          "@type": "Answer" as const,
+          text: item.answer,
+        },
+      }))
     ]
   }
 
@@ -310,6 +315,7 @@ export default function HomePage() {
         <ProcessSection />
         <TestimonialsSection />
         <FAQSection />
+        <LocalSeoSection />
         <ContactSection />
       </main>
       <Footer />
