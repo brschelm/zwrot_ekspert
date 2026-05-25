@@ -75,7 +75,7 @@ const additionalServices: ServiceItem[] = [
     icon: Scale,
     title: "SKD",
     description:
-      "Sankcja przy pożyczce konsumenckiej — gdy bank naruszył przepisy, sprawdzamy umowę i możliwe kroki.",
+      "Art. 45 u.k.k. — przy naruszeniu przepisów możliwy zwrot odsetek i kosztów pożyczki; najpierw analiza umowy.",
     features: ["Ocena umowy", "Podstawy prawne", "Strategia działania", "Wsparcie w procesie"],
     note: "Ocena sytuacji i możliwych rozwiązań",
     href: "/uslugi/sankcja-kredytu-darmowego",
